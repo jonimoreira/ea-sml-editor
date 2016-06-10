@@ -1,0 +1,145 @@
+ligar profa - doctoral coloquim ICRAM (particiption)
+
+1- toolbox:
+http://www.sparxsystems.com/enterprise_architect_user_guide/10/extending_uml_models/toolbox_profiles.html
+To save the Toolbox profile, right-click on the diagram and select the Save as Profile context menu option.
+certify to save in folder 
+../toolbox/toolbox.xml
+
+2- profile
+package <<profile>> -> Advanced -> Save as UML profile
+../profile/profile.xml 
+
+final- MDG technology (MTS) file:
+http://www.sparxsystems.com/enterprise_architect_user_guide/10/extending_uml_models/creatingmdgtechnologies.html
+
+
+http://stackoverflow.com/questions/29193297/ea-add-model-template-to-package-wizard
+
+http://stackoverflow.com/questions/31558453/in-ea-why-do-uml-profiles-included-in-a-custom-mdg-technology-not-appear-in-my
+
+http://www.sparxsystems.com.au/downloads/resources/booklets/enterprise_architect_sdk.pdf
+
+
+
+http://www.sparxsystems.com/enterprise_architect_user_guide/10/extending_uml_models/mdgtechnologies_2.html
+
+http://www.sparxsystems.com/enterprise_architect_user_guide/10/extending_uml_models/shape_editor_2.html
+
+https://github.com/MenthorTools/ea-plugin
+
+
+
+C:\Users\joao.moreira\Documents\Papers\FOIS2016_demo\Src\ea-sml-editor\config
+
+https://mail.google.com/mail/u/0/#search/sml+ontouml/152fae6e6df8feb8
+
+https://mail.google.com/mail/u/0/#search/sobral+mdg/1525f50e19bc3064
+
+
+http://ebooks.iospress.nl/publication/37966
+
+https://www.tigerteam.dk/2011/how-to-develop-mdgs-for-enterprise-architect-part-2/
+
+===============================================================================
+
+SML 2.0.1
+
+
+SituationType as Diagram:
+A Diagram corresponds to a single Enterprise Architect diagram. It is accessed through the Package
+Diagrams collection and in turn contains a collection of diagram objects and diagram connectors. Adding to the DiagramObjects collection adds an element to the diagram (the element must already exist). When adding a new diagram, you must set the diagram type to a valid type; these are:
+· Activity
+· Analysis
+· Component
+· Custom
+· Deployment
+· Logical
+· Sequence
+· Statechart
+· Use Case
+	
+<<metaclass>>
+DiagramFrame
+DiagramGate
+
+
+http://www.sparxsystems.com.au/products/ea/6.5/history.html
+Allow DiagramFrame elements to be created using profile stereotypes
+
+Situation Type composition:
+Via Diagram reference
+
+
+
+SituationType as Package
+
+===============================
+https://groups.google.com/forum/#!searchin/sparx-enterprise-architect-general/%22UMLDiagram%22/sparx-enterprise-architect-general/zN3OFTUPEUk/BIdzugxB33wJ
+
+https://groups.google.com/forum/#!topic/sparx-enterprise-architect-general/UJEsFqn8Bts
+
+http://www.sparxsystems.com/enterprise_architect_user_guide/10/extending_uml_models/model_templates2.html
+
+==========================================
+
+	rectangle(0, 0, 100, 100);
+
+https://leanpub.com/shapescript/read
+
+http://www.sparxsystems.com/enterprise_architect_user_guide/10/extending_uml_models/example_scripts.html
+
+
+shape main
+{	
+		
+	h_align = "center";
+	v_align = "center";
+	editablefield = "name";
+	//println("<<#stereotype#>>");
+	println("#name#");
+ 
+	Ellipse(-4,20, 104, 80);
+	
+	
+}
+
+
+==========================================
+
+SML::AttributeLink(UML::Association)
+SML::CharacterizationLink(UML::Association)
+SML::ContextFormalLink(UML::Association)
+SML::EqualsLink(UML::Association)
+SML::InstantiationLink(UML::Association)
+SML::MediationLink(UML::Association)
+SML::OrderedComparativeLink(UML::Association)
+SML::SituationType(UMLPattern)
+
+
+SML::TypeLiteral(UML::Class)
+SML::RelatorParticipant(UML::Class)
+SML::QualityLiteral(UML::Class)
+SML::ModeReference(UML::Class)
+SML::EntityParticipant(UML::Class)
+SML::AttributeReference(UML::Class)
+
+SML::Function(UML::Class)
+
+
+reflexivity
+symmetry
+transitivity
+
+
+label middlebottomlabel
+{	
+	if(HasTag("nature")) print("«Temporal» {#TAG:nature#}");
+	else print("«Temporal»");
+}
+
+
+
+
+
+
