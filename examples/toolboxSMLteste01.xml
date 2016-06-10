@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="343AE3B2-2" name="SMLteste01" version="1.0" alias="SMLteste01" notes="SMLteste01"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Teste 01" notes="" cx="285" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="SMLteste01::Diagrama(UMLDiagram)" type="" description="" unit="" values="" default="Diagrama"/>
+					<Tag name="SMLteste01::Frame(DiagramFrame)" type="" description="" unit="" values="" default="Frame"/>
+					<Tag name="SMLteste01::PacoteUML(UML::Package)" type="" description="" unit="" values="" default="PacoteUML"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

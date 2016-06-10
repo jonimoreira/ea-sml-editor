@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="859B361F-D" name="SML2.1" version="1.0" notes="SML2.1"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="animal" metatype="Animal" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAGiCSz63++MALwEAACgEAAAHABEAc3RyLmRhdFVUDQAHiGFVTYhhVU2IYVVN
+lVJNa8JAFJxrC/4HjwqKRusX3irVo0IRzwGlBk0UE9pD6X/vvJfEZjdZtSy8XXZnZud9xNjD
+xxk71BHyFCDCN2p4xhM6XHW88faCOLvb4cgVkBHz3EAPA7TQZuxyf9HYZ2xi6mAMFZMzRso3
+Ge/EJZiTI8wZTownepDf+uS34GGie49rXGKuGKN/8WyP4kc85vmIR8nUzRhmdUgZI40mw53V
+Ql/WqnSpRDRLOuUcTZVXvd3q2aVU7PKSrwE+tP8+0dL3I9mh/pNk2C1RPr4UkxD7ydf4OkGi
+XqW9ISIg7qBu8kkK6Uj4CfcGO+Pp/BQrJvWNroh2NmtS4T+MrSJ1l8lyq6S9NTG2ingZPOBF
+ZtnO2dQac+Ju5+U9kNekwrOtcj+v1MutvHIvxbx+NP4CUEsBAhcLFAAAAAgAaIJLPrf74wAv
+AQAAKAQAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB4hhVU1QSwUGAAAAAAEAAQA+
+AAAAZQEAAAAA</Image>
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

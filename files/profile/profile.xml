@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="15E88BE3-B" name="SML" version="1.0" alias="SML 2.0" notes="Situation Modeling Language"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="AllenLink" metatype="AllenLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIABKImEZ0UvU0hAAAAOoAAAAHABEAc3RyLmRhdFVUDQAHmXY6VZl2OlWZdjpV
+jY7BCcJAEEXfNYI9hOSiLejJkxZgAwajBFYTkvUUUpEl2JzPRRRv8mF2/8ybvxs4UFETyLnQ
+cFRBX9ESVWs3fJg5M0aydGbSJxbsnA7srWddwdVb5EbvRsFS5XS6xklMxF26NrczvZcOPGRG
+Svsbtqx+MkqmlLN+v/r6x2D9J/W7N/EEUEsBAhcLFAAAAAgAEoiYRnRS9TSEAAAA6gAAAAcA
+CQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB5l2OlVQSwUGAAAAAAEAAQA+AAAAugAAAAAA
+</Image>
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="_lineStyle" value="orthogonalS"/>
+						<Property name="_SourceMultiplicity" value="0..*"/>
+						<Property name="_TargetMultiplicity" value="0..*"/>
+						<Property name="direction" value="Unspecified"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
+					<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default=""/>
+					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default=""/>
+					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
+					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="AttributeLink" metatype="AttributeLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="_lineStyle" value="orthogonalS"/>
+						<Property name="_SourceMultiplicity" value="1"/>
+						<Property name="_TargetMultiplicity" value="1"/>
+						<Property name="direction" value="Unspecified"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
+					<Tag name="negated" type="boolean" description="" unit="" values="true,false" default="false"/>
+					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default=""/>
+					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
+					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="AttributeReference" metatype="AttributeReference" notes="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIADgFnEgPBamJ/wAAAC4CAAAHABEAc3RyLmRhdFVUDQAHKFwhVyhcIVcoXCFX
+lZFPS8NAEMXftUK/w5JcWqhoxYNg9aTgzYPeRe2aBtoYmihIyXf3N9OQLHiSYWdnsu/Nn5dG
+G72qVlTQjqhUpalOdNDE78lwb/TC+xZEASbohpPpHWalFr8nu+6x3//ARq3BteDfYER9kEWi
+9cCreNvxbeScYTVVbNoWbKUZryssV9N3iPok+vHdct1imeZDhb/sfOiTJ8jQ4+/B2T419SP4
+U11qoQud44OW3JYHXRGNXUbfubfTJIpvfWvb9qj5EW8dWj36hIVPafM9cRbeb0mXsUeJYjM9
+UKnRM75wdEl25zqU/A3T2NgZdff6ci3nWEh0MNYBXMrpEiU6ev0CUEsBAhcLFAAAAAgAOAWc
+SA8FqYn/AAAALgIAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAByhcIVdQSwUGAAAA
+AAEAAQA+AAAANQEAAAAA</Image>
+			</Stereotype>
+			<Stereotype name="CharacterizationLink" metatype="CharacterizationLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="_lineStyle" value="orthogonalS"/>
+						<Property name="_SourceMultiplicity" value="1"/>
+						<Property name="_TargetMultiplicity" value="1..*"/>
+						<Property name="direction" value="Unspecified"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default="acyclic"/>
+					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default="irreflexive"/>
+					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default="assymetric"/>
+					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default="transitive"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ContextFormalLink" metatype="ContextFormalLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation">
+				<TaggedValues>
+					<Tag name="parameter" type="string" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="EntityParticipant" metatype="EntityParticipant" notes="EntityParticipant, which are the object classes from the context model and represents the entities such as a person, a car, a client or a building." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Participant" baseStereotypes="Participant">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAIoFnEgC7Aw4EQEAAGoCAAAHABEAc3RyLmRhdFVUDQAH9VwhV/VcIVf1XCFX
+lZFLS8NQEIXPVsH/EJJNCgWNFlR8rFy4c6F70TSNgTSWJApS+t/9ZhKSC65kuHPnzj1nnp0+
+9KadCkXaYlVqdKJj7V0f8fuKt8Zf8hPpjhMrB9+oR7e8bkbs9z+whdbgevDvMApteBVY64nX
+8LfFN3NOkR1RrMYebKOU31skUTdmKPSJ9eMdJbpHYi2mCH/ZyZQnCZDRiO/w915bjeTErjkt
+zEwrXWsJ8lwXuhytFTJns2py77FhItZlqjNHDjrjDq2Zafrg2k4X7Kj2idmkwi3ZZIZan7zD
+0ru0/p45S8+S6SrIYIyKzlI9ErHTC7p0RsXrwWdZsVHbk0WIid3qy/exQKJglsbagws5h2Ca
+Qye/UEsBAhcLFAAAAAgAigWcSALsDDgRAQAAagIAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5k
+YXRVVAUAB/VcIVdQSwUGAAAAAAEAAQA+AAAARwEAAAAA</Image>
+			</Stereotype>
+			<Stereotype name="EqualsLink" metatype="EqualsLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation"/>
+			<Stereotype name="FormalRelation" metatype="FormalRelation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="_lineStyle" value="orthogonalS"/>
+						<Property name="_SourceMultiplicity" value="0..*"/>
+						<Property name="_TargetMultiplicity" value="0..*"/>
+						<Property name="direction" value="Unspecified"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
+					<Tag name="negated" type="boolean" description="" unit="" values="true,false" default="false"/>
+					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default=""/>
+					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
+					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Function" metatype="Function" notes="Formerly references to the so-called Qualitative Formal Relations, Functions are re- designed as user-defined operations on the situation type elements. Not every relation between elements in the SML model is necessarily established in the context model. Take for example the sum of two numbers. Although in the real world, given two numbers there exists a formal sum relation between them, usually the ontology designer (in our case the context-model designer) leaves out those subtleties that may not aggregate much in the description of a domain. This means establishing a modeling scope so that the model does not grow indefinitely in complexity, as technically the possibilities of talking about things are infinite. Thus, relations like sum may always be defined in the context model if wanted, but we also leave open the possibility of defining them as functions (without linking to any context model elements) in the SML model itself. It is important to mention, however, that functions must be manually implemented is some automatic process is to be used (such as simulation in Alloy). Figure 29 depicts an example of a High Body Mass Index (BMI) situation using functions.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAFQFnEhh7pjvEgEAAFwCAAAHABEAc3RyLmRhdFVUDQAHYlwhV2JcIVdiXCFX
+lZFLS8RQDIXPVsH/UNpNB0ac8S0+Nj5w52LcizrXTqFTh7YKMvS/+91waS+4kpCQNOecNLmt
+VnrVRk6J1mSlau1pV1uLOyGu9EKvolvQT3SNp3qHVasjNlSXAfv9D6zTElwH/g2G0weVI1sO
+vJremm8j5wDboOL/tANbK6d7hWVqwwSnT7If2yvTDZZqMij8ZWfDnCxCJgG/4HunBzgVdot2
+hTcwj3SmKbi5LkJ2qpNo0r0xSia2aOTa1zGoQ80Ca2Z1onOykeVjb9F7G71QZZfyF4rfyGt3
+erKtCtvM77TApzZpjv6oXnLlXI8otXomFoYuqe7sdiUv6N/Fs1N0G33Z/SdYEt3Os7bgYk4f
+Xa/XL1BLAQIXCxQAAAAIAFQFnEhh7pjvEgEAAFwCAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIu
+ZGF0VVQFAAdiXCFXUEsFBgAAAAABAAEAPgAAAEgBAAAAAA==</Image>
+			</Stereotype>
+			<Stereotype name="InstantiationLink" metatype="InstantiationLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation"/>
+			<Stereotype name="MediationLink" metatype="MediationLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Association">
+						<Property name="_lineStyle" value="orthogonalS"/>
+						<Property name="_SourceMultiplicity" value="0..*"/>
+						<Property name="_TargetMultiplicity" value="1..*"/>
+						<Property name="direction" value="Unspecified"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
+					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default="irreflexive"/>
+					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
+					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="ModeReference" metatype="ModeReference" notes="a ModeReference is a reference to a mode defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIABQFnEhk0IBySQEAAHIDAAAHABEAc3RyLmRhdFVUDQAHGlwhVxpcIVcaXCFX
+lVLLSsNAFD1bBf8hJJsUBK3YovjY+MCdhXYvasY0kKQlGQul5N899+Y1Nd2Uy9ybyZxzH2em
+xBKfWMPAQ8avBDnOcIqd+hNc0OawPCnoZ4yWjBAj3DmIDCtsmMMyhhjjknbexH1kqhX+IycD
+nNT7blCC6PMNo7BrxDDPfr3jujqEfCEuOqjDEh/8K5liYjw8cPmcwXBn6QvuWuzmCKxhvURv
+4IsMgx/uDL+ijpfzLOO/niOdrplFprLE5uzUxz0tQNlUMJzVYqt3H+CR5jvTDNlBVydwkDV6
+rtq9kpHSnpg55SrIu8I1bqnlDab0U8a+xkxxW2qw0hr1PU5o4tt7HTucqqtZOu82VW1EEzlp
+X26pPb3rHLHOIlPMudrX5PaSUNcQb8xUYkEfKzrh7lnVSvR9R8r2mbfAryo+onmOWsLaEedy
+KkevCn9QSwECFwsUAAAACAAUBZxIZNCAckkBAAByAwAABwAJAAAAAAAAAAAAAIAAAAAAc3Ry
+LmRhdFVUBQAHGlwhV1BLBQYAAAAAAQABAD4AAAB/AQAAAAA=</Image>
+			</Stereotype>
+			<Stereotype name="OrderedComparativeLink" metatype="OrderedComparativeLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation">
+				<TaggedValues>
+					<Tag name="type" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessOrEqualThan,greaterOrEqualThan" default="lessThan"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Participant" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement" strictness="profile">
+				<TaggedValues>
+					<Tag name="immutable" type="boolean" description="" unit="" values="true,false" default="true"/>
+					<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+					<Tag name="max" type="int" description="" unit="" values="" default="1"/>
+					<Tag name="min" type="int" description="" unit="" values="" default="1"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="QualityLiteral" metatype="QualityLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAHgFnEjfvrVEDwEAAFACAAAHABEAc3RyLmRhdFVUDQAHoFwhV6BcIVegXCFX
+lZFNS8NAEIbfq4L/ISSXFCq2RaHgx8UPvHmod6k2jYE0luwqSMl/99kxJAueZJhhZvZ9Z3Zm
+nN611l6FEu3wKjU60bEOZo94fSFbky95SXSNpnoD38hjW6LLHvv1D2yhDTgP/hVGoS1RgbcZ
+eA1vO3Ij5wzZUyX80YNtlPN6hWRyfYdCH3jfNlGmGyTVZKjwl50NfbIImfT4FXmvBzg1ckvt
+Gm1hLnSBTEHO8ZfmzaJO98ao6OioketU52AWYH45M4sTmCOrMxvURVepbUdhN/FdQlWvJ5un
+tJnCNCt0aj3mVB5/U7HfXI9UcnrGloauiO5saxW3CxcJ7JS6rT5t8xMkibYWWAdwMaeL9tbp
+B1BLAQIXCxQAAAAIAHgFnEjfvrVEDwEAAFACAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0
+VVQFAAegXCFXUEsFBgAAAAABAAEAPgAAAEUBAAAAAA==</Image>
+			</Stereotype>
+			<Stereotype name="RelatorParticipant" metatype="RelatorParticipant" notes="RelatorParticipant, which represents the external contexts of&#xA;the object classes, i.e. the relators. Are called participants since they provide identity to the situation type, but they are not connected to them by participation relations, in the ontological sense." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Participant" baseStereotypes="Participant">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAKAFnEhsWEYwEgEAAFoCAAAHABEAc3RyLmRhdFVUDQAHPF0hVzxdIVc8XSFX
+lZFPS8NAEMXfVcHvEJJLCwXbYrHgn4si3hTqXdSuaSBNSzYKpeS7+9sxpiueZJjZ2Z33Znff
+eK30oq2cEq3JClU60bH2Fo+oPnNacp5TSXSFp3oDX6kh1uwuOuznP7BOS3AN+FcYTu/sHNmy
+51XU1pwdOKfYli7hjQ3YSgOql1gm393gtCHb2Y8yXWOphn2Hv+ysvyf7hVxw0ugOdInd0LXE
+azhTjTXTiDdOsGmXnWMH9qPhd+iwsXtmcALuZz3r4nefcc9sLQb30VxKUymoE08mqOHtlQ/2
+q9x+Fv60wEd200Tz6FWBUaD0QPd09Hoi5sYo2N2afgVTDLMJHVJ61/qwGQyxJNIvsPbgYk4b
+KdjqC1BLAQIXCxQAAAAIAKAFnEhsWEYwEgEAAFoCAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIu
+ZGF0VVQFAAc8XSFXUEsFBgAAAAABAAEAPgAAAEgBAAAAAA==</Image>
+			</Stereotype>
+			<Stereotype name="SelfReference" metatype="SelfReference" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationParticipant" baseStereotypes="SituationParticipant">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIACICm0i3TuO+fQAAALoAAAAHABEAc3RyLmRhdFVUDQAHLQUgVy0FIFctBSBX
+TY6xCsIwFEXPquA/SCYLDroJrg5uDvoDFbUGSilNdSn9d0+jg8N9ee/l3JsknpS03FlS213t
+ahbMGXKdkdz0nOiIVKphReCs1mzUlh0F+x8deXh/NClxsVaZjk4Hc6aMt+ctu4O5HS/nYELh
+D9pMNO4n1yD37xkz931p5ANQSwECFwsUAAAACAAiAptIt07jvn0AAAC6AAAABwAJAAAAAAAA
+AAAAAIAAAAAAc3RyLmRhdFVUBQAHLQUgV1BLBQYAAAAAAQABAD4AAACzAAAAAAA=</Image>
+			</Stereotype>
+			<Stereotype name="SituationParticipant" metatype="SituationParticipant" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Participant" baseStereotypes="Participant">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIACICm0i3TuO+fQAAALoAAAAHABEAc3RyLmRhdFVUDQAHLQUgVy0FIFctBSBX
+TY6xCsIwFEXPquA/SCYLDroJrg5uDvoDFbUGSilNdSn9d0+jg8N9ee/l3JsknpS03FlS213t
+ahbMGXKdkdz0nOiIVKphReCs1mzUlh0F+x8deXh/NClxsVaZjk4Hc6aMt+ctu4O5HS/nYELh
+D9pMNO4n1yD37xkz931p5ANQSwECFwsUAAAACAAiAptIt07jvn0AAAC6AAAABwAJAAAAAAAA
+AAAAAIAAAAAAc3RyLmRhdFVUBQAHLQUgV1BLBQYAAAAAAQABAD4AAACzAAAAAAA=</Image>
+				<TaggedValues>
+					<Tag name="temporality" type="enumeration" description="" unit="" values="present,past,any" default="present"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="SituationTypeElement" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" strictness="profile">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="TypeLiteral" metatype="TypeLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAGIFnEjfvrVEDwEAAFACAAAHABEAc3RyLmRhdFVUDQAHxVwhV8VcIVfFXCFX
+lZFNS8NAEIbfq4L/ISSXFCq2RaHgx8UPvHmod6k2jYE0luwqSMl/99kxJAueZJhhZvZ9Z3Zm
+nN611l6FEu3wKjU60bEOZo94fSFbky95SXSNpnoD38hjW6LLHvv1D2yhDTgP/hVGoS1RgbcZ
+eA1vO3Ij5wzZUyX80YNtlPN6hWRyfYdCH3jfNlGmGyTVZKjwl50NfbIImfT4FXmvBzg1ckvt
+Gm1hLnSBTEHO8ZfmzaJO98ao6OioketU52AWYH45M4sTmCOrMxvURVepbUdhN/FdQlWvJ5un
+tJnCNCt0aj3mVB5/U7HfXI9UcnrGloauiO5saxW3CxcJ7JS6rT5t8xMkibYWWAdwMaeL9tbp
+B1BLAQIXCxQAAAAIAGIFnEjfvrVEDwEAAFACAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0
+VVQFAAfFXCFXUEsFBgAAAAABAAEAPgAAAEUBAAAAAA==</Image>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

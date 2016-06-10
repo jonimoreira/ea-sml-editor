@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="7AC3169B-5" name="SML" version="1.0" notes="SML"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="SML" alias="Class Diagram" notes="Situation Type diagram linked to OntoUML 2.0." cx="142" cy="43" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="SML"/>
+						<Property name="diagramID" value="SML"/>
+						<Property name="isActive" value=""/>
+						<Property name="toolbox" value="SML"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>

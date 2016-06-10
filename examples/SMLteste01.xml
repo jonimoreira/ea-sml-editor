@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<MDG.Technology version="1.0"><Documentation id="SMLteste01" name="SMLteste01" version="1.0" notes="sml teste"/><UMLProfiles><UMLProfile profiletype="uml2">
+			<Documentation id="5FFB1159-F" name="SMLteste01" version="1.0" notes="SMLteste01"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="Diagrama" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="UMLDiagram"/>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="Frame" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="DiagramFrame">
+								<Property name="diagramType" value=""/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+			</Content>
+		</UMLProfile>
+	</UMLProfiles><TaggedValueTypes><RefData version="1.0" exporter="EA.25">
+		</RefData></TaggedValueTypes><CodeModules/><DDLModules/><Transforms/><Images><RefData version="1.0" exporter="EA.25">
+		</RefData></Images><DiagramProfile><UMLProfile profiletype="uml2">
+			<Documentation id="C77662C4-D" name="SMLteste01" version="1.0" alias="SMLteste01" notes="SMLteste01"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="SMLteste01" alias="Class Diagram" notes="Situation Type diagram linked to OntoUML 2.0." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Diagram_Logical">
+								<Property name="alias" value="SMLteste01"/>
+								<Property name="diagramID" value="SMLteste01"/>
+								<Property name="isActive" value=""/>
+								<Property name="toolbox" value="SMLteste01"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+			</Content>
+		</UMLProfile>
+	</DiagramProfile><UIToolboxes><UMLProfile profiletype="uml2">
+			<Documentation id="5FFB1159-F" name="SMLteste01" version="1.0" notes="SMLteste01"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="Diagrama" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="UMLDiagram"/>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="Frame" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="DiagramFrame">
+								<Property name="diagramType" value="activity"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+			</Content>
+		</UMLProfile>
+	</UIToolboxes><ModelViews/><ModelSearches/><RTFTemplates><RefData version="1.0" exporter="EA.25">
+		</RefData></RTFTemplates><LinkedDocumentTemplates><RefData version="1.0" exporter="EA.25">
+		</RefData></LinkedDocumentTemplates><Scripts/><WorkspaceLayouts/></MDG.Technology>

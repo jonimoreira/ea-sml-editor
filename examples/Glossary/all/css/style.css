@@ -1,0 +1,64 @@
+h1 {
+    font-family:"Calibri";
+    font-style:bold;
+    color:#4D7008;
+    font-size:20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+body {
+    font-family:"Calibri";
+    color:#02704F;
+    font-size:20px;
+    line-height:125%;
+}
+div {
+    border:2px solid #4D7010;
+    padding:6px 30px;
+    text:#666666
+    background:#FFFFFF;
+	 background-color:#FAFFFD;
+    container:#E3F2D3
+    width:700px;
+    border-radius:10px;
+    box-shadow: 5px 5px 16px 0px rgba(50, 50, 50, 0.31);
+    margin-bottom: 20px
+}
+div.alphabet {
+	 text-align: center;
+	 border:3px solid #4D7010;
+	 padding:10px 0px;
+	 word-spacing: 0.0em;
+	 padding-left: 0%;
+	 text:#666666
+	 background:#FFFFFF;
+	 background-color:#246D2B;
+	 container:#E3F2D3
+	 width:700px;
+    height:30px;
+    border-radius:5px;
+	 box-shadow: 5px 5px 16px 0px rgba(50, 50, 50, 0.31);
+}
+div.letter {
+    display:inline-block;
+ 	 border:1px solid #4D7010;
+	 padding:0px 6px;
+ 	 word-spacing: 0.6em;
+	 padding-left: 0.4%;
+	 text:#666666
+	 background:#FFFFFF;
+	 background-color:#FFFFFF;
+	 container:#E3F2D3
+	 width:15px;
+    border-radius:4px;
+	 box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.31);
+}
+hr {
+    background: #02704F  no-repeat scroll center;
+    height:.01em;
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.20);
+}
+a.categoryReference{
+   text-decoration: none;
+   color:#0B3D18;
+}

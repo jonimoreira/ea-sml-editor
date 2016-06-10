@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="8E12E51D-9" name="SML" version="1.0" alias="SML" notes="Situation models with OntoUML 2.0.2"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="Situation Type" alias="SML 2.0.2 - Situation Type" notes="" cx="364" cy="140" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="SML::AllenLink(UML::Association)" type="" description="AllenLink, which represents a connection specifically&#xA;between&#xA;SituationParticipants that represents one of the Allen temporal&#xA;relations,&#xA;defined by the AllenKind enumeration." unit="" values="" default="Allen Link"/>
+					<Tag name="SML::AttributeLink(UML::Association)" type="" description="An AttributeLink is a connection between an AttributeReference and any node that represents a participant that may have an attribute. Those nodes are restricted to EntityParticipants, RelatorParticipants and ReferenceNodes that references one of the formers." unit="" values="" default="AttributeLink"/>
+					<Tag name="SML::CharacterizationLink(UML::Association)" type="" description="A CharacterizationLink represents the occurrence of a connection between a mode and its respective characterized entity (or a node representing that entity)." unit="" values="" default="Characterization Link"/>
+					<Tag name="SML::ContextFormalLink(UML::Association)" type="" description="ContextFormalLink, which is a formal relation derived from the context model and is used to connect only the respective elements connected by it in this model." unit="" values="" default="Context Formal Link"/>
+					<Tag name="SML::EqualsLink(UML::Association)" type="" description="ComparativeRelation, which represents a comparison connection between elements and are divided into: EqualsLink, which may be established between any elements and indicates whether two elements are equal; and OrderedComparativeLink, which may only be established between qualities that have a value order, such as high or temperature, and are defined by the ComparativeKind enumeration." unit="" values="" default="Equals Link"/>
+					<Tag name="SML::InstantiationLink(UML::Association)" type="" description="InstantiationLink, which represents the connection that restricts the type of a particular entity or relator participant. Is derived from the generalization relations from the context metamodel." unit="" values="" default="Instantiation Link"/>
+					<Tag name="SML::MediationLink(UML::Association)" type="" description="MediationLink represents the occurrence of an association between a relational context and an entity, e.g. the relations between Treatment and Patient and Treatment and Hospital in the situation Is Being Treated from Figure 7." unit="" values="" default="Mediation Link"/>
+					<Tag name="SML::OrderedComparativeLink(UML::Association)" type="" description="ComparativeRelation, which represents a comparison connection between elements and are divided into: EqualsLink, which may be established between any elements and indicates whether two elements are equal; and OrderedComparativeLink, which may only be established between qualities that have a value order, such as high or temperature, and are defined by the ComparativeKind enumeration." unit="" values="" default="Ordered Comparative Link"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Participant" alias="SML 2.0.2 - Participant" notes="&#xA;" cx="304" cy="127" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="SML::AttributeReference(UML::Class)" type="" description="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model." unit="" values="" default="Attribute Reference"/>
+					<Tag name="SML::EntityParticipant(UML::Class)" type="" description="EntityParticipant, which are the object classes from the context model and represents the entities such as a person, a car, a client or a building." unit="" values="" default="Entity Participant"/>
+					<Tag name="SML::ModeReference(UML::Class)" type="" description="a ModeReference is a reference to a mode defined in the context model." unit="" values="" default="Mode Reference"/>
+					<Tag name="SML::QualityLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Quality Literal"/>
+					<Tag name="SML::RelatorParticipant(UML::Class)" type="" description="RelatorParticipant, which represents the external contexts of&#xA;the object classes, i.e. the relators. Are called participants since they provide identity to the situation type, but they are not connected to them by participation relations, in the ontological sense." unit="" values="" default="Relator Participant"/>
+					<Tag name="SML::TypeLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Type Literal"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Participant relation" alias="SML 2.0.2 - Participant relation" notes="" cx="207" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="SML::Function(UML::Class)" type="" description="" unit="" values="" default="Function"/>
+				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="Comparative relation" alias="SML 2.0.2 - Comparative relation" notes="" cx="284" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="ToolboxPage">
+						<Property name="isActive" value=""/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="SML::SituationType(UMLPattern)" type="int" description="" unit="" values="" default="Situation Type"/>
+				</TaggedValues>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>
