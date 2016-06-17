@@ -12,18 +12,18 @@ CQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB5l2OlVQSwUGAAAAAAEAAQA+AAAAugAAAAAA
 </Image>
 				<AppliesTo>
 					<Apply type="Association">
+						<Property name="direction" value="Unspecified"/>
 						<Property name="_lineStyle" value="orthogonalS"/>
 						<Property name="_SourceMultiplicity" value="0..*"/>
 						<Property name="_TargetMultiplicity" value="0..*"/>
-						<Property name="direction" value="Unspecified"/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
 					<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default=""/>
 					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default=""/>
 					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
 					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="AllenLinkAfter" alias="AllenLinkBefore Alias" metatype="AllenLinkAfter" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
@@ -134,17 +134,17 @@ CQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB5l2OlVQSwUGAAAAAAEAAQA+AAAAugAAAAAA
 				<AppliesTo>
 					<Apply type="Association">
 						<Property name="_lineStyle" value="orthogonalS"/>
-						<Property name="_SourceMultiplicity" value="1"/>
 						<Property name="_TargetMultiplicity" value="1"/>
+						<Property name="_SourceMultiplicity" value="1"/>
 						<Property name="direction" value="Unspecified"/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
-					<Tag name="negated" type="boolean" description="" unit="" values="true,false" default="false"/>
 					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default=""/>
 					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
 					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
+					<Tag name="negated" type="boolean" description="" unit="" values="true,false" default="false"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="AttributeReference" metatype="AttributeReference" notes="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ReferableElement" baseStereotypes="ReferableElement">
@@ -161,15 +161,15 @@ AAEAAQA+AAAANQEAAAAA</Image>
 				<AppliesTo>
 					<Apply type="Association">
 						<Property name="_lineStyle" value="orthogonalS"/>
-						<Property name="_SourceMultiplicity" value="1"/>
 						<Property name="_TargetMultiplicity" value="1..*"/>
+						<Property name="_SourceMultiplicity" value="1"/>
 						<Property name="direction" value="Unspecified"/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default="acyclic"/>
 					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default="irreflexive"/>
 					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default="assymetric"/>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default="acyclic"/>
 					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default="transitive"/>
 				</TaggedValues>
 			</Stereotype>
@@ -198,18 +198,18 @@ AA==</Image>
 			<Stereotype name="FormalRelation" metatype="FormalRelation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Association">
+						<Property name="direction" value="Unspecified"/>
 						<Property name="_lineStyle" value="orthogonalS"/>
 						<Property name="_SourceMultiplicity" value="0..*"/>
 						<Property name="_TargetMultiplicity" value="0..*"/>
-						<Property name="direction" value="Unspecified"/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
-					<Tag name="negated" type="boolean" description="" unit="" values="true,false" default="false"/>
 					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default=""/>
 					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
 					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
+					<Tag name="negated" type="boolean" description="" unit="" values="true,false" default="false"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="Function" metatype="Function" notes="Formerly references to the so-called Qualitative Formal Relations, Functions are re- designed as user-defined operations on the situation type elements. Not every relation between elements in the SML model is necessarily established in the context model. Take for example the sum of two numbers. Although in the real world, given two numbers there exists a formal sum relation between them, usually the ontology designer (in our case the context-model designer) leaves out those subtleties that may not aggregate much in the description of a domain. This means establishing a modeling scope so that the model does not grow indefinitely in complexity, as technically the possibilities of talking about things are infinite. Thus, relations like sum may always be defined in the context model if wanted, but we also leave open the possibility of defining them as functions (without linking to any context model elements) in the SML model itself. It is important to mention, however, that functions must be manually implemented is some automatic process is to be used (such as simulation in Alloy). Figure 29 depicts an example of a High Body Mass Index (BMI) situation using functions.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ReferableElement" baseStereotypes="ReferableElement">
@@ -231,17 +231,17 @@ ZGF0VVQFAAdiXCFXUEsFBgAAAAABAAEAPgAAAEgBAAAAAA==</Image>
 			<Stereotype name="MediationLink" metatype="MediationLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="Association">
+						<Property name="direction" value="Unspecified"/>
 						<Property name="_lineStyle" value="orthogonalS"/>
 						<Property name="_SourceMultiplicity" value="0..*"/>
 						<Property name="_TargetMultiplicity" value="1..*"/>
-						<Property name="direction" value="Unspecified"/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
 					<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default="irreflexive"/>
 					<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
 					<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+					<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="ModeReference" metatype="ModeReference" notes="a ModeReference is a reference to a mode defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ReferableElement" baseStereotypes="ReferableElement">
@@ -269,41 +269,41 @@ AAAA</Image>
 			<Stereotype name="OrderedComparativeLinkGreaterThan" metatype="OrderedComparativeLinkGreaterThan" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
 				<TaggedValues>
 					<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="greaterThan"/>
+					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 					<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
 					<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
-					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="OrderedComparativeLinkGreaterThanOrEqualTo" metatype="OrderedComparativeLinkGreaterThanOrEqualTo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
 				<TaggedValues>
 					<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="greaterThanOrEqualTo"/>
+					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 					<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="reflexive"/>
 					<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="antisymetric"/>
-					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="OrderedComparativeLinkLessThan" metatype="OrderedComparativeLinkLessThan" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
 				<TaggedValues>
 					<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="lessThan"/>
+					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 					<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
 					<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
-					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="OrderedComparativeLinkLessThanOrEqualTo" metatype="OrderedComparativeLinkLessThanOrEqualTo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
 				<TaggedValues>
 					<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="lessThanOrEqualTo"/>
+					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 					<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="reflexive"/>
 					<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="antisymetric"/>
-					<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="Participant" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="ReferableElement" baseStereotypes="ReferableElement" strictness="profile">
 				<TaggedValues>
-					<Tag name="immutable" type="boolean" description="" unit="" values="true,false" default="true"/>
 					<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
 					<Tag name="max" type="int" description="" unit="" values="" default="1"/>
 					<Tag name="min" type="int" description="" unit="" values="" default="1"/>
+					<Tag name="immutable" type="boolean" description="" unit="" values="true,false" default="true"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="QualityLiteral" metatype="QualityLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Literal" baseStereotypes="Literal">
@@ -348,6 +348,18 @@ AAAAAIAAAAAAc3RyLmRhdFVUBQAHLQUgV1BLBQYAAAAAAQABAD4AAACzAAAAAAA=</Image>
 					<Tag name="temporality" type="enumeration" description="" unit="" values="present,past,any" default="present"/>
 				</TaggedValues>
 			</Stereotype>
+			<Stereotype name="SituationType" metatype="SituationType" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Package">
+						<Property name="URI" value=""/>
+						<Property name="_defaultDiagramType" value="SML::SML"/>
+						<Property name="_makeComposite" value="true"/>
+					</Apply>
+				</AppliesTo>
+				<TaggedValues>
+					<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+				</TaggedValues>
+			</Stereotype>
 			<Stereotype name="SituationTypeAssociation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement" strictness="profile">
 				<TaggedValues>
 					<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
@@ -362,6 +374,37 @@ AAAAAIAAAAAAc3RyLmRhdFVUBQAHLQUgV1BLBQYAAAAAAQABAD4AAACzAAAAAAA=</Image>
 				<TaggedValues>
 					<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
 				</TaggedValues>
+			</Stereotype>
+			<Stereotype name="TestDiagram01" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Activity">
+						<Property name="isReadOnly" value="false"/>
+						<Property name="isSingleExecution" value=""/>
+						<Property name="parameterName" value=""/>
+						<Property name="postcondition" value=""/>
+						<Property name="precondition" value=""/>
+						<Property name="_defaultDiagramType" value="Extended::Analysis"/>
+						<Property name="_makeComposite" value="true"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="TestDiagram02" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Class">
+						<Property name="isActive" value=""/>
+						<Property name="_defaultDiagramType" value="UML Structural::Class"/>
+						<Property name="_makeComposite" value="true"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+			<Stereotype name="TestDiagram03" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Package">
+						<Property name="URI" value=""/>
+						<Property name="_defaultDiagramType" value="SML::TestDiagram03"/>
+						<Property name="_makeComposite" value="true"/>
+					</Apply>
+				</AppliesTo>
 			</Stereotype>
 			<Stereotype name="TypeLiteral" metatype="TypeLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Literal" baseStereotypes="Literal">
 				<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAGIFnEjfvrVEDwEAAFACAAAHABEAc3RyLmRhdFVUDQAHxVwhV8VcIVfFXCFX

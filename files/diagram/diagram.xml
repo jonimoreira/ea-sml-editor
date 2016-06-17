@@ -10,6 +10,7 @@
 						<Property name="diagramID" value="SML"/>
 						<Property name="isActive" value=""/>
 						<Property name="toolbox" value="SML"/>
+						<Property name="styleex" value="DefaultLang=SML;"/>
 					</Apply>
 				</AppliesTo>
 			</Stereotype>

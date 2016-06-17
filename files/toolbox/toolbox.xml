@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <UMLProfile profiletype="uml2">
-	<Documentation id="8E12E51D-9" name="SML" version="1.0" alias="SML" notes="Situation models with OntoUML 2.0.8"/>
+	<Documentation id="8E12E51D-9" name="SML" version="1.0" alias="SML" notes="Situation models with OntoUML 2.0.9"/>
 	<Content>
 		<Stereotypes>
 			<Stereotype name="Participant" alias="SML - Participants (from OntoUML)" notes="&#xA;" cx="330" cy="166" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -22,7 +22,7 @@
 					<Tag name="SML::MediationLink(UML::Association)" type="" description="" unit="" values="" default="Mediation"/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="Situation Type" alias="SML - Situation Types" notes="" cx="364" cy="78" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="Situation Type" alias="SML - Situation Types" notes="" cx="364" cy="114" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="ToolboxPage">
 						<Property name="isActive" value=""/>
@@ -31,6 +31,10 @@
 				<TaggedValues>
 					<Tag name="SML::SituationTypeSimple(UMLPattern)" type="" description="" unit="" values="" default="Simple"/>
 					<Tag name="SML::SituationTypeComplex(UMLPattern)" type="" description="" unit="" values="" default="Composite"/>
+					<Tag name="SML::SituationType(UML::Package)" type="" description="" unit="" values="" default="Situation Type"/>
+					<Tag name="SML::TestDiagram01(UML::Activity)" type="" description="" unit="" values="" default="TestDiagram01"/>
+					<Tag name="SML::TestDiagram02(UML::Class)" type="" description="" unit="" values="" default="TestDiagram02"/>
+					<Tag name="SML::TestDiagram03(UML::Package)" type="" description="" unit="" values="" default="TestDiagram03"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="Comparative relation" alias="SML - Comparative relations" notes="" cx="457" cy="101" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
