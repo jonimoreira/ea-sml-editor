@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0" xmlns:OntoUML="http://www.sparxsystems.com/profiles/OntoUML/1.2">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" name="The Chartered Service Model" visibility="public">
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_75B84A59_33B9_4dbd_B29A_8CB7956C804C" body="Ontology about the micro-domain of the Offering of Passenger Rail Chatered Services.&#xA;&#xA;This ontology describes the service offering, an specific subdomain of Passenger Rail Chartered Domain, which has two other variants: the touristic and commemorative  freigh, which are not in the scope of the model.&#xA;&#xA;The ontology is based on the paper published in EDOC 2013, from Nardi et al., about the services core ontology, UFO-S.&#xA;&#xA;Note that the &amp;lt;&amp;lt;partOf&amp;gt;&amp;gt; relation does not belong to OntoUML, but has been used with the same semantics of the one in Figure 1 of Nardi's paper."/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" name="Eventual Passenger Rail Chartered Service" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8" name="describes" visibility="public">
+				<memberEnd xmi:idref="EAID_dstF35E18_03B1_4ad6_B6E4_5389AE2C29F8"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstF35E18_03B1_4ad6_B6E4_5389AE2C29F8" visibility="public" association="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001__03B1_4ad6_B6E4_5389AE2C29F8" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000002__03B1_4ad6_B6E4_5389AE2C29F8" value="1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_srcF35E18_03B1_4ad6_B6E4_5389AE2C29F8"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcF35E18_03B1_4ad6_B6E4_5389AE2C29F8" visibility="public" association="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000021__03B1_4ad6_B6E4_5389AE2C29F8" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000022__03B1_4ad6_B6E4_5389AE2C29F8" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE" visibility="public">
+				<memberEnd xmi:idref="EAID_dst20BAF6_FB17_4d8b_B908_33C077E877DE"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst20BAF6_FB17_4d8b_B908_33C077E877DE" visibility="public" association="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+					<type xmi:idref="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003__FB17_4d8b_B908_33C077E877DE" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000004__FB17_4d8b_B908_33C077E877DE" value="-1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_src20BAF6_FB17_4d8b_B908_33C077E877DE"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src20BAF6_FB17_4d8b_B908_33C077E877DE" visibility="public" association="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000033__FB17_4d8b_B908_33C077E877DE" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000034__FB17_4d8b_B908_33C077E877DE" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62" name="offered to" visibility="public">
+				<memberEnd xmi:idref="EAID_dst2A193D_80F3_4be9_9EC7_398D22B9BB62"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst2A193D_80F3_4be9_9EC7_398D22B9BB62" visibility="public" association="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005__80F3_4be9_9EC7_398D22B9BB62" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000006__80F3_4be9_9EC7_398D22B9BB62" value="1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_src2A193D_80F3_4be9_9EC7_398D22B9BB62"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src2A193D_80F3_4be9_9EC7_398D22B9BB62" visibility="public" association="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000049__80F3_4be9_9EC7_398D22B9BB62" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000050__80F3_4be9_9EC7_398D22B9BB62" value="-1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480" visibility="public">
+				<memberEnd xmi:idref="EAID_dstE9D209_B922_4d96_AF6E_BCBF596F7480"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstE9D209_B922_4d96_AF6E_BCBF596F7480" visibility="public" association="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+					<type xmi:idref="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007__B922_4d96_AF6E_BCBF596F7480" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000008__B922_4d96_AF6E_BCBF596F7480" value="-1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_srcE9D209_B922_4d96_AF6E_BCBF596F7480"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcE9D209_B922_4d96_AF6E_BCBF596F7480" visibility="public" association="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000027__B922_4d96_AF6E_BCBF596F7480" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000028__B922_4d96_AF6E_BCBF596F7480" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399" name="regulates" visibility="public">
+				<memberEnd xmi:idref="EAID_dstE39636_C9B6_43b9_9ADF_94B5A2E24399"/>
+				<memberEnd xmi:idref="EAID_srcE39636_C9B6_43b9_9ADF_94B5A2E24399"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcE39636_C9B6_43b9_9ADF_94B5A2E24399" visibility="public" association="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009__C9B6_43b9_9ADF_94B5A2E24399" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000010__C9B6_43b9_9ADF_94B5A2E24399" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstE39636_C9B6_43b9_9ADF_94B5A2E24399" visibility="public" association="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000041__C9B6_43b9_9ADF_94B5A2E24399" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000042__C9B6_43b9_9ADF_94B5A2E24399" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD" name="provides" visibility="public">
+				<memberEnd xmi:idref="EAID_dstC56EC9_305E_4598_8AEA_4A0DBE630CBD"/>
+				<memberEnd xmi:idref="EAID_srcC56EC9_305E_4598_8AEA_4A0DBE630CBD"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcC56EC9_305E_4598_8AEA_4A0DBE630CBD" visibility="public" association="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000011__305E_4598_8AEA_4A0DBE630CBD" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000012__305E_4598_8AEA_4A0DBE630CBD" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstC56EC9_305E_4598_8AEA_4A0DBE630CBD" visibility="public" association="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000015__305E_4598_8AEA_4A0DBE630CBD" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000016__305E_4598_8AEA_4A0DBE630CBD" value="-1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_434416AD_7E83_4f27_9893_A9DF461BA616" name="Interested Agent" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81" visibility="public">
+				<memberEnd xmi:idref="EAID_dstB65B95_07CF_449b_A8D0_BF0EEC8D4D81"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstB65B95_07CF_449b_A8D0_BF0EEC8D4D81" visibility="public" association="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000013__07CF_449b_A8D0_BF0EEC8D4D81" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000014__07CF_449b_A8D0_BF0EEC8D4D81" value="1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_srcB65B95_07CF_449b_A8D0_BF0EEC8D4D81"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcB65B95_07CF_449b_A8D0_BF0EEC8D4D81" visibility="public" association="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000039__07CF_449b_A8D0_BF0EEC8D4D81" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000040__07CF_449b_A8D0_BF0EEC8D4D81" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1" name="externally dependent in" visibility="public">
+				<memberEnd xmi:idref="EAID_dst107287_B8CC_4928_B25A_1150B5D762F1"/>
+				<memberEnd xmi:idref="EAID_src107287_B8CC_4928_B25A_1150B5D762F1"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src107287_B8CC_4928_B25A_1150B5D762F1" visibility="public" association="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000017__B8CC_4928_B25A_1150B5D762F1" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000018__B8CC_4928_B25A_1150B5D762F1" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst107287_B8CC_4928_B25A_1150B5D762F1" visibility="public" association="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000023__B8CC_4928_B25A_1150B5D762F1" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000024__B8CC_4928_B25A_1150B5D762F1" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" name="inhers in" visibility="public">
+				<memberEnd xmi:idref="EAID_dst41EDA6_0EBB_4ce9_9F9E_A00BE5D4021F"/>
+				<memberEnd xmi:idref="EAID_src41EDA6_0EBB_4ce9_9F9E_A00BE5D4021F"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src41EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" visibility="public" association="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000019__0EBB_4ce9_9F9E_A00BE5D4021F" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000020__0EBB_4ce9_9F9E_A00BE5D4021F" value="-1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst41EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" visibility="public" association="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000029__0EBB_4ce9_9F9E_A00BE5D4021F" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000030__0EBB_4ce9_9F9E_A00BE5D4021F" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4" name="PRCS Description" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358" name="PRCS Offering Claim" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_BE280078_ED66_48ce_8326_6970691EF647" name="inheres in" visibility="public">
+				<memberEnd xmi:idref="EAID_dst280078_ED66_48ce_8326_6970691EF647"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst280078_ED66_48ce_8326_6970691EF647" visibility="public" association="EAID_BE280078_ED66_48ce_8326_6970691EF647" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000025__ED66_48ce_8326_6970691EF647" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000026__ED66_48ce_8326_6970691EF647" value="1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_src280078_ED66_48ce_8326_6970691EF647"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src280078_ED66_48ce_8326_6970691EF647" visibility="public" association="EAID_BE280078_ED66_48ce_8326_6970691EF647" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000051__ED66_48ce_8326_6970691EF647" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000052__ED66_48ce_8326_6970691EF647" value="-1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454" name="PRCS Offering Commitment" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6" name="externally dependent in" visibility="public">
+				<memberEnd xmi:idref="EAID_dst181EBF_C03C_4b58_8556_B47DC8EF9BC6"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst181EBF_C03C_4b58_8556_B47DC8EF9BC6" visibility="public" association="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000031__C03C_4b58_8556_B47DC8EF9BC6" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000032__C03C_4b58_8556_B47DC8EF9BC6" value="1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_src181EBF_C03C_4b58_8556_B47DC8EF9BC6"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src181EBF_C03C_4b58_8556_B47DC8EF9BC6" visibility="public" association="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000053__C03C_4b58_8556_B47DC8EF9BC6" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000054__C03C_4b58_8556_B47DC8EF9BC6" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE" name="Railway Concessionaire" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241" visibility="public">
+				<memberEnd xmi:idref="EAID_dstBFAEB7_6EF7_4427_A883_3962CA67F241"/>
+				<memberEnd xmi:idref="EAID_srcBFAEB7_6EF7_4427_A883_3962CA67F241"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcBFAEB7_6EF7_4427_A883_3962CA67F241" visibility="public" association="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000035__6EF7_4427_A883_3962CA67F241" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000036__6EF7_4427_A883_3962CA67F241" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstBFAEB7_6EF7_4427_A883_3962CA67F241" visibility="public" association="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000037__6EF7_4427_A883_3962CA67F241" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000038__6EF7_4427_A883_3962CA67F241" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830" name="Railway Usage Agreement" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610" name="Regulatory Agency" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_49FB0C15_7A62_4814_9E32_2714867450A5" name="produces" visibility="public">
+				<memberEnd xmi:idref="EAID_dstFB0C15_7A62_4814_9E32_2714867450A5"/>
+				<memberEnd xmi:idref="EAID_srcFB0C15_7A62_4814_9E32_2714867450A5"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcFB0C15_7A62_4814_9E32_2714867450A5" visibility="public" association="EAID_49FB0C15_7A62_4814_9E32_2714867450A5" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000043__7A62_4814_9E32_2714867450A5" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000044__7A62_4814_9E32_2714867450A5" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstFB0C15_7A62_4814_9E32_2714867450A5" visibility="public" association="EAID_49FB0C15_7A62_4814_9E32_2714867450A5" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000045__7A62_4814_9E32_2714867450A5" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000046__7A62_4814_9E32_2714867450A5" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D" name="Regulatory Legislation" visibility="public"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44" name="User Community of PRCS" visibility="public"/>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52" visibility="public">
+				<memberEnd xmi:idref="EAID_dstAB05DA_C6F4_4fb2_8F1B_C7834000BD52"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstAB05DA_C6F4_4fb2_8F1B_C7834000BD52" visibility="public" association="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+					<type xmi:idref="EAID_C578638B_FD6F_4a42_8062_26431B88D37E"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000047__C6F4_4fb2_8F1B_C7834000BD52" value="2"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000048__C6F4_4fb2_8F1B_C7834000BD52" value="-1"/>
+				</ownedEnd>
+				<memberEnd xmi:idref="EAID_srcAB05DA_C6F4_4fb2_8F1B_C7834000BD52"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcAB05DA_C6F4_4fb2_8F1B_C7834000BD52" visibility="public" association="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000055__C6F4_4fb2_8F1B_C7834000BD52" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000056__C6F4_4fb2_8F1B_C7834000BD52" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C578638B_FD6F_4a42_8062_26431B88D37E" name="User of PRCS" visibility="public"/>
+		</packagedElement>
+		<OntoUML:Relator base_Class="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+		<OntoUML:Formal base_Association="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8"/>
+		<thecustomprofile:part_of base_Association="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE" __EAStereoName="part of"/>
+		<OntoUML:Mediation base_Association="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62"/>
+		<thecustomprofile:part_of base_Association="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480" __EAStereoName="part of"/>
+		<OntoUML:Mediation base_Association="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399"/>
+		<OntoUML:Mediation base_Association="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD"/>
+		<OntoUML:Role base_Class="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+		<OntoUML:Mediation base_Association="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81"/>
+		<OntoUML:Formal base_Association="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1"/>
+		<OntoUML:Characterization base_Association="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F"/>
+		<OntoUML:Category base_Class="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4"/>
+		<OntoUML:Mode base_Class="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358"/>
+		<OntoUML:Characterization base_Association="EAID_BE280078_ED66_48ce_8326_6970691EF647"/>
+		<OntoUML:Mode base_Class="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454"/>
+		<OntoUML:Formal base_Association="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6"/>
+		<OntoUML:Role base_Class="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE"/>
+		<OntoUML:Mediation base_Association="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241"/>
+		<OntoUML:Relator base_Class="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830"/>
+		<OntoUML:Role base_Class="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610"/>
+		<OntoUML:Formal base_Association="EAID_49FB0C15_7A62_4814_9E32_2714867450A5"/>
+		<OntoUML:Category base_Class="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D"/>
+		<OntoUML:Collective base_Class="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+		<OntoUML:MemberOf base_Association="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52"/>
+		<OntoUML:Role base_Class="EAID_C578638B_FD6F_4a42_8062_26431B88D37E"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" xmi:type="uml:Package" name="The Chartered Service Model" scope="public">
+				<model package2="EAID_36867B3A_5828_40ef_980C_763A47A9B795" package="EAPK_89ABEB62_0C2D_4a08_ACCA_C1797C2B9BF0" tpos="0" ea_localid="235" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-27 08:49:02" modified="2014-07-27 14:39:23" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Package - The Chartered Service Model"/>
+				<packageproperties version="1.0" tpos="0"/>
+				<paths/>
+				<times created="2013-11-05 10:37:45" modified="2014-07-27 14:39:23" lastloaddate="2013-11-27 08:48:10" lastsavedate="2013-11-27 08:48:10"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" xmi:type="uml:Class" name="Eventual Passenger Rail Chartered Service" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3799" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Relator" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-10-04 14:44:26" modified="2013-11-27 09:12:02" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={C8444688-FFEB-487f-9A70-446318A79F0A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Relator;FQName=OntoUML::Relator;@ENDSTEREO;$DES;$CLT={F8A00F0F-E038-4bdc-853A-9A22A49505E9}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4"/>
+					<Association xmi:id="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454"/>
+					<Association xmi:id="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<Association xmi:id="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358"/>
+					<Association xmi:id="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399" start="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610" end="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<Association xmi:id="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD" start="EAID_434416AD_7E83_4f27_9893_A9DF461BA616" end="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616" xmi:type="uml:Class" name="Interested Agent" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3798" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-08-21 08:39:23" modified="2013-11-27 08:49:34" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={E55D24AD-0831-4292-817B-DEA6DD841025}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={434416AD-7E83-4f27-9893-A9DF461BA616}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81" start="EAID_434416AD_7E83_4f27_9893_A9DF461BA616" end="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830"/>
+					<Association xmi:id="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD" start="EAID_434416AD_7E83_4f27_9893_A9DF461BA616" end="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<Association xmi:id="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1" start="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358" end="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+					<Association xmi:id="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" start="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454" end="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4" xmi:type="uml:Class" name="PRCS Description" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3804" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Category" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 14:53:43" modified="2013-11-27 09:15:21" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={DE7E6DA2-2657-47ad-9718-EF7803E70ACC}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Category;FQName=OntoUML::Category;@ENDSTEREO;$DES;$CLT={2E7DD20C-C5BB-474b-8A6E-C5DF296648C4}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358" xmi:type="uml:Class" name="PRCS Offering Claim" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3803" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Mode" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 15:11:37" modified="2013-11-27 09:14:32" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={E4B76642-5EEB-4f21-AEBC-F104E666E59A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mode;FQName=OntoUML::Mode;@ENDSTEREO;$DES;$CLT={51E6BDFD-11F7-4063-895D-737F59CAF358}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1" start="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358" end="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+					<Association xmi:id="EAID_BE280078_ED66_48ce_8326_6970691EF647" start="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358" end="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<Association xmi:id="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454" xmi:type="uml:Class" name="PRCS Offering Commitment" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3794" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Mode" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 15:10:02" modified="2013-11-27 09:12:41" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={461997D7-C59D-40cf-983E-927F872E1274}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mode;FQName=OntoUML::Mode;@ENDSTEREO;$DES;$CLT={B0C6370F-A0C8-46f2-9FB7-8933BE5C8454}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" start="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454" end="EAID_434416AD_7E83_4f27_9893_A9DF461BA616"/>
+					<Association xmi:id="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6" start="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454" end="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<Association xmi:id="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE" xmi:type="uml:Class" name="Railway Concessionaire" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3800" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 10:42:33" modified="2013-11-27 09:10:33" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={9572DAC6-4386-468c-88F7-726C64BABE10}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={334BDD81-1B7C-485d-8A3B-5A6D002A45DE}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241" start="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830" end="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830" xmi:type="uml:Class" name="Railway Usage Agreement" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3796" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Relator" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 14:50:58" modified="2013-11-27 08:49:26" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={3DC50ACC-60D1-4a32-9648-1DC9B7063D34}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Relator;FQName=OntoUML::Relator;@ENDSTEREO;$DES;$CLT={4BB9EAF9-834A-4eec-8BCC-5765F58B0830}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241" start="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830" end="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE"/>
+					<Association xmi:id="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81" start="EAID_434416AD_7E83_4f27_9893_A9DF461BA616" end="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610" xmi:type="uml:Class" name="Regulatory Agency" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3797" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 15:01:12" modified="2013-11-27 09:13:54" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={209341E2-A5E9-4c31-AD4C-DF10F30B6C4E}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={C02773AF-9F37-4260-835D-4CBF6BE22610}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399" start="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610" end="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9"/>
+					<Association xmi:id="EAID_49FB0C15_7A62_4814_9E32_2714867450A5" start="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D" end="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D" xmi:type="uml:Class" name="Regulatory Legislation" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3801" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Category" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 15:22:39" modified="2013-11-27 09:16:02" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={5E3021D9-4936-4260-9D52-657196C993A0}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Category;FQName=OntoUML::Category;@ENDSTEREO;$DES;$CLT={4F3F4BA2-FA4D-4a0f-9BE0-EA50B174CF3D}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_49FB0C15_7A62_4814_9E32_2714867450A5" start="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D" end="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44" xmi:type="uml:Class" name="User Community of PRCS" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3802" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Collective" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 14:57:43" modified="2013-11-27 09:13:06" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags>
+					<tag xmi:id="EAID_33A3BAE6_C346_76c3_899D_86C45EF79D1B" name="isExtensional" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={234FDC43-654F-4c47-99C8-BB7B4411B4C2}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Collective;FQName=OntoUML::Collective;@ENDSTEREO;$DES;$CLT={C60D13F4-425F-4825-9C36-03BDB5781D44}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52" start="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44" end="EAID_C578638B_FD6F_4a42_8062_26431B88D37E"/>
+					<Association xmi:id="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62" start="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" end="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<Association xmi:id="EAID_BE280078_ED66_48ce_8326_6970691EF647" start="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358" end="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+					<Association xmi:id="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6" start="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454" end="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_C578638B_FD6F_4a42_8062_26431B88D37E" xmi:type="uml:Class" name="User of PRCS" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3795" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="Ernani" version="1.0" phase="1.0" created="2013-11-05 14:59:56" modified="2013-11-27 09:13:15" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={59FE5B7A-3123-48f3-BB01-CFF6D0110976}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={C578638B-FD6F-4a42-8062-26431B88D37E}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+				<links>
+					<Association xmi:id="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52" start="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44" end="EAID_C578638B_FD6F_4a42_8062_26431B88D37E"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_75B84A59_33B9_4dbd_B29A_8CB7956C804C" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" tpos="0" ea_localid="3793" ea_eleType="element"/>
+				<properties documentation="Ontology about the micro-domain of the Offering of Passenger Rail Chatered Services.&#xA;&#xA;This ontology describes the service offering, an specific subdomain of Passenger Rail Chartered Domain, which has two other variants: the touristic and commemorative  freigh, which are not in the scope of the model.&#xA;&#xA;The ontology is based on the paper published in EDOC 2013, from Nardi et al., about the services core ontology, UFO-S.&#xA;&#xA;Note that the &amp;lt;&amp;lt;partOf&amp;gt;&amp;gt; relation does not belong to OntoUML, but has been used with the same semantics of the one in Figure 1 of Nardi's paper." isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="Nani" version="1.0" phase="1.0" created="2013-11-09 09:53:10" modified="2013-11-27 09:22:58" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<modelDocument/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="The Chartered Service Model"/>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8">
+				<source xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9">
+					<model ea_localid="3799" type="Class" name="Eventual Passenger Rail Chartered Service"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4">
+					<model ea_localid="3804" type="Class" name="PRCS Description"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3827"/>
+				<properties ea_type="Association" stereotype="Formal" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Formal»" mt="describes" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Formal»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={0B0CD268-3AA5-456b-A70B-7045A0BC5373}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Formal;FQName=OntoUML::Formal;@ENDSTEREO;$DES;$CLT={29F35E18-03B1-4ad6-B6E4-5389AE2C29F8}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE">
+				<source xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9">
+					<model ea_localid="3799" type="Class" name="Eventual Passenger Rail Chartered Service"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454">
+					<model ea_localid="3794" type="Class" name="PRCS Offering Commitment"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3837"/>
+				<properties ea_type="Association" stereotype="part of" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«part of»" rb="1..*"/>
+				<extendedProperties conditional=" &#xA;«part of»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={21B4D831-17B6-49a5-A5A9-E4B96696A4DC}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=part of;GUID={E6591B8B-32DC-4a1c-A777-1E9408CFEF80};@ENDSTEREO;$DES;$CLT={4D20BAF6-FB17-4d8b-B908-33C077E877DE}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62">
+				<source xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9">
+					<model ea_localid="3799" type="Class" name="Eventual Passenger Rail Chartered Service"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44">
+					<model ea_localid="3802" type="Class" name="User Community of PRCS"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3828"/>
+				<properties ea_type="Association" stereotype="Mediation" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1..*" mb=" &#xA;«Mediation»" mt="offered to" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Mediation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={A67D29A9-03E6-4132-A5E6-C041E9AD2B11}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mediation;FQName=OntoUML::Mediation;@ENDSTEREO;$DES;$CLT={5F2A193D-80F3-4be9-9EC7-398D22B9BB62}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480">
+				<source xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9">
+					<model ea_localid="3799" type="Class" name="Eventual Passenger Rail Chartered Service"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358">
+					<model ea_localid="3803" type="Class" name="PRCS Offering Claim"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3826"/>
+				<properties ea_type="Association" stereotype="part of" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«part of»" rb="1..*"/>
+				<extendedProperties conditional=" &#xA;«part of»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={7448F320-42F9-41a1-9951-FE8708989108}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=part of;@ENDSTEREO;$DES;$CLT={C1E9D209-B922-4d96-AF6E-BCBF596F7480}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399">
+				<source xmi:idref="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610">
+					<model ea_localid="3797" type="Class" name="Regulatory Agency"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9">
+					<model ea_localid="3799" type="Class" name="Eventual Passenger Rail Chartered Service"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3832"/>
+				<properties ea_type="Association" stereotype="Mediation" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Mediation»" mt="regulates" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Mediation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={16961915-03AF-45ec-9EFD-842EE631B230}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mediation;FQName=OntoUML::Mediation;@ENDSTEREO;$DES;$CLT={74E39636-C9B6-43b9-9ADF-94B5A2E24399}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD">
+				<source xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616">
+					<model ea_localid="3798" type="Class" name="Interested Agent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9">
+					<model ea_localid="3799" type="Class" name="Eventual Passenger Rail Chartered Service"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3829"/>
+				<properties ea_type="Association" stereotype="Mediation" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Mediation»" mt="provides" rb="1..*"/>
+				<extendedProperties conditional=" &#xA;«Mediation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={721D5F31-E6A1-4cc8-8043-F77E602146FC}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mediation;FQName=OntoUML::Mediation;@ENDSTEREO;$DES;$CLT={98C56EC9-305E-4598-8AEA-4A0DBE630CBD}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81">
+				<source xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616">
+					<model ea_localid="3798" type="Class" name="Interested Agent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830">
+					<model ea_localid="3796" type="Class" name="Railway Usage Agreement"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3834"/>
+				<properties ea_type="Association" stereotype="Mediation" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Mediation»" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Mediation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={E06F00D0-B394-4f2d-8B7A-714F887A987C}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mediation;FQName=OntoUML::Mediation;@ENDSTEREO;$DES;$CLT={31B65B95-07CF-449b-A8D0-BF0EEC8D4D81}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1">
+				<source xmi:idref="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358">
+					<model ea_localid="3803" type="Class" name="PRCS Offering Claim"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616">
+					<model ea_localid="3798" type="Class" name="Interested Agent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3830"/>
+				<properties ea_type="Association" stereotype="Formal" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Formal»" mt="externally dependent in" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Formal»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={FA82D561-C8FF-4257-91BC-B9CB1DF6B961}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Formal;FQName=OntoUML::Formal;@ENDSTEREO;$DES;$CLT={4B107287-B8CC-4928-B25A-1150B5D762F1}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F">
+				<source xmi:idref="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454">
+					<model ea_localid="3794" type="Class" name="PRCS Offering Commitment"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_434416AD_7E83_4f27_9893_A9DF461BA616">
+					<model ea_localid="3798" type="Class" name="Interested Agent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3838"/>
+				<properties ea_type="Association" stereotype="Characterization" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1..*" mb=" &#xA;«Characterization»" mt="inhers in" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Characterization»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={9BC28375-0A5C-45d2-BD1F-89AB77A5C1CE}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Characterization;FQName=OntoUML::Characterization;@ENDSTEREO;$DES;$CLT={8741EDA6-0EBB-4ce9-9F9E-A00BE5D4021F}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_BE280078_ED66_48ce_8326_6970691EF647">
+				<source xmi:idref="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358">
+					<model ea_localid="3803" type="Class" name="PRCS Offering Claim"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44">
+					<model ea_localid="3802" type="Class" name="User Community of PRCS"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3825"/>
+				<properties ea_type="Association" stereotype="Characterization" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1..*" mb=" &#xA;«Characterization»" mt="inheres in" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Characterization»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={B84020A1-EC4B-4b00-933E-C8F5CD250486}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Characterization;FQName=OntoUML::Characterization;@ENDSTEREO;$DES;$CLT={BE280078-ED66-48ce-8326-6970691EF647}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6">
+				<source xmi:idref="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454">
+					<model ea_localid="3794" type="Class" name="PRCS Offering Commitment"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44">
+					<model ea_localid="3802" type="Class" name="User Community of PRCS"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3836"/>
+				<properties ea_type="Association" stereotype="Formal" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Formal»" mt="externally dependent in" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Formal»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={260CBF84-D579-4feb-89AF-912EDB830DA5}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Formal;FQName=OntoUML::Formal;@ENDSTEREO;$DES;$CLT={E0181EBF-C03C-4b58-8556-B47DC8EF9BC6}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241">
+				<source xmi:idref="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830">
+					<model ea_localid="3796" type="Class" name="Railway Usage Agreement"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE">
+					<model ea_localid="3800" type="Class" name="Railway Concessionaire"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3833"/>
+				<properties ea_type="Association" stereotype="Mediation" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Mediation»" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Mediation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={C3F5BC36-B884-4031-81D1-C6354BDE7D2E}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mediation;FQName=OntoUML::Mediation;@ENDSTEREO;$DES;$CLT={B1BFAEB7-6EF7-4427-A883-3962CA67F241}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_49FB0C15_7A62_4814_9E32_2714867450A5">
+				<source xmi:idref="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D">
+					<model ea_localid="3801" type="Class" name="Regulatory Legislation"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610">
+					<model ea_localid="3797" type="Class" name="Regulatory Agency"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3831"/>
+				<properties ea_type="Association" stereotype="Formal" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Formal»" mt="produces" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Formal»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={14D5D47F-4370-4542-90EC-F2F4AC23292A}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Formal;FQName=OntoUML::Formal;@ENDSTEREO;$DES;$CLT={49FB0C15-7A62-4814-9E32-2714867450A5}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52">
+				<source xmi:idref="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44">
+					<model ea_localid="3802" type="Class" name="User Community of PRCS"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_C578638B_FD6F_4a42_8062_26431B88D37E">
+					<model ea_localid="3795" type="Class" name="User of PRCS"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="2..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3835"/>
+				<properties ea_type="Association" stereotype="MemberOf" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«MemberOf»" rb="2..*"/>
+				<extendedProperties conditional=" &#xA;«MemberOf»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={67C33862-EC2C-4279-8A2C-3A6D8A8745B1}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=MemberOf;FQName=OntoUML::MemberOf;@ENDSTEREO;$DES;$CLT={86AB05DA-C6F4-4fb2-8F1B-C7834000BD52}$CLT;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0E827003_E06C_cbe0_A94F_25EAA7D68D49" name="isShareable" notes="Values: true,false&#xA;"/>
+					<tag xmi:id="EAID_15A22C3B_3624_fc36_8603_8BBD001CF91E" name="isImmutableWhole" notes="Values: true,false&#xA;"/>
+					<tag xmi:id="EAID_1CC30F62_3E0B_2a3e_9D79_68A509084B34" name="isInseparable" notes="Values: true,false&#xA;"/>
+					<tag xmi:id="EAID_227B0124_718D_c471_9657_B5AC54830F6F" name="isEssential" notes="Values: true,false&#xA;"/>
+					<tag xmi:id="EAID_657D1513_05DC_5905_B6D8_1E78BECBF08E" name="isImmutablePart" notes="Values: true,false&#xA;"/>
+				</tags>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:id="thecustomprofile" nsPrefix="thecustomprofile" name="thecustomprofile" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="thecustomprofile">
+					<body> Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="part of" name="part of">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="part of-base_Association" name="base_Association" association="Association_part of">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_part of" name="A_Association_part of" memberEnd="extension_part of part of-base_Association">
+					<ownedEnd xmi:id="extension_part of" name="extension_part of" type="part of" isComposite="true" lower="0" upper="1" memberEnd="extension_part of part of-base_Association"/>
+				</packagedElement>
+			</uml:Profile>
+			<uml:Profile xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:id="672070D9-B" nsPrefix="OntoUML" name="OntoUML" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="672070D9-B">
+					<body>OntoUML Version:1.2</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="DependencyRelationship" name="DependencyRelationship" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="DependencyRelationship_DirectedBinaryAssociation_generalization" general="DirectedBinaryAssociation"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Mode" name="Mode">
+					<generalization xmi:type="uml:Generalization" xmi:id="Mode_MomentClass_generalization" general="MomentClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Semi-RigidMixinClass" name="Semi-RigidMixinClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="Semi-RigidMixinClass_Non-RigidMixinClass_generalization" general="Non-RigidMixinClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Meronymic" name="Meronymic" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="Meronymic_DirectedBinaryAssociation_generalization" general="DirectedBinaryAssociation"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Meronymic-isImmutablePart" name="isImmutablePart">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Meronymic-isImmutableWhole" name="isImmutableWhole">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Meronymic-isEssential" name="isEssential">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Meronymic-isInseparable" name="isInseparable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Meronymic-isShareable" name="isShareable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Material" name="Material">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Material-base_Association" name="base_Association" association="Association_Material">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Material" name="A_Association_Material" memberEnd="extension_Material Material-base_Association">
+					<ownedEnd xmi:id="extension_Material" name="extension_Material" type="Material" isComposite="true" lower="0" upper="1" memberEnd="extension_Material Material-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Mediation" name="Mediation">
+					<generalization xmi:type="uml:Generalization" xmi:id="Mediation_DependencyRelationship_generalization" general="DependencyRelationship"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Mediation-base_Association" name="base_Association" association="Association_Mediation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Mediation" name="A_Association_Mediation" memberEnd="extension_Mediation Mediation-base_Association">
+					<ownedEnd xmi:id="extension_Mediation" name="extension_Mediation" type="Mediation" isComposite="true" lower="0" upper="1" memberEnd="extension_Mediation Mediation-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ComponentOf" name="ComponentOf">
+					<generalization xmi:type="uml:Generalization" xmi:id="ComponentOf_Meronymic_generalization" general="Meronymic"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-base_Association" name="base_Association" association="Association_ComponentOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_ComponentOf" name="A_Association_ComponentOf" memberEnd="extension_ComponentOf ComponentOf-base_Association">
+					<ownedEnd xmi:id="extension_ComponentOf" name="extension_ComponentOf" type="ComponentOf" isComposite="true" lower="0" upper="1" memberEnd="extension_ComponentOf ComponentOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="MomentClass" name="MomentClass" isAbstract="true">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MomentClass-base_Class" name="base_Class" association="Class_MomentClass">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_MomentClass" name="A_Class_MomentClass" memberEnd="extension_MomentClass MomentClass-base_Class">
+					<ownedEnd xmi:id="extension_MomentClass" name="extension_MomentClass" type="MomentClass" isComposite="true" lower="0" upper="1" memberEnd="extension_MomentClass MomentClass-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubCollectionOf" name="SubCollectionOf">
+					<generalization xmi:type="uml:Generalization" xmi:id="SubCollectionOf_Meronymic_generalization" general="Meronymic"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-base_Association" name="base_Association" association="Association_SubCollectionOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_SubCollectionOf" name="A_Association_SubCollectionOf" memberEnd="extension_SubCollectionOf SubCollectionOf-base_Association">
+					<ownedEnd xmi:id="extension_SubCollectionOf" name="extension_SubCollectionOf" type="SubCollectionOf" isComposite="true" lower="0" upper="1" memberEnd="extension_SubCollectionOf SubCollectionOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Mixin" name="Mixin">
+					<generalization xmi:type="uml:Generalization" xmi:id="Mixin_Semi-RigidMixinClass_generalization" general="Semi-RigidMixinClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubKind" name="SubKind">
+					<generalization xmi:type="uml:Generalization" xmi:id="SubKind_RigidSortalClass_generalization" general="RigidSortalClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Characterization" name="Characterization">
+					<generalization xmi:type="uml:Generalization" xmi:id="Characterization_DependencyRelationship_generalization" general="DependencyRelationship"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Characterization-base_Association" name="base_Association" association="Association_Characterization">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Characterization" name="A_Association_Characterization" memberEnd="extension_Characterization Characterization-base_Association">
+					<ownedEnd xmi:id="extension_Characterization" name="extension_Characterization" type="Characterization" isComposite="true" lower="0" upper="1" memberEnd="extension_Characterization Characterization-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="DirectedBinaryAssociation" name="DirectedBinaryAssociation" isAbstract="true"/>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Relator" name="Relator">
+					<generalization xmi:type="uml:Generalization" xmi:id="Relator_MomentClass_generalization" general="MomentClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SortalClass" name="SortalClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="SortalClass_ObjectClass_generalization" general="ObjectClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Role" name="Role">
+					<generalization xmi:type="uml:Generalization" xmi:id="Role_Anti-RigidSortalClass_generalization" general="Anti-RigidSortalClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="MemberOf" name="MemberOf">
+					<generalization xmi:type="uml:Generalization" xmi:id="MemberOf_Meronymic_generalization" general="Meronymic"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-base_Association" name="base_Association" association="Association_MemberOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_MemberOf" name="A_Association_MemberOf" memberEnd="extension_MemberOf MemberOf-base_Association">
+					<ownedEnd xmi:id="extension_MemberOf" name="extension_MemberOf" type="MemberOf" isComposite="true" lower="0" upper="1" memberEnd="extension_MemberOf MemberOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="MixinClass" name="MixinClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="MixinClass_ObjectClass_generalization" general="ObjectClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="RoleMixin" name="RoleMixin">
+					<generalization xmi:type="uml:Generalization" xmi:id="RoleMixin_Anti-RigidMixinClass_generalization" general="Anti-RigidMixinClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ObjectClass" name="ObjectClass" isAbstract="true">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ObjectClass-base_Class" name="base_Class" association="Class_ObjectClass">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_ObjectClass" name="A_Class_ObjectClass" memberEnd="extension_ObjectClass ObjectClass-base_Class">
+					<ownedEnd xmi:id="extension_ObjectClass" name="extension_ObjectClass" type="ObjectClass" isComposite="true" lower="0" upper="1" memberEnd="extension_ObjectClass ObjectClass-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Anti-RigidMixinClass" name="Anti-RigidMixinClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="Anti-RigidMixinClass_Non-RigidMixinClass_generalization" general="Non-RigidMixinClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubstanceSortal" name="SubstanceSortal" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="SubstanceSortal_RigidSortalClass_generalization" general="RigidSortalClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Derivation" name="Derivation">
+					<generalization xmi:type="uml:Generalization" xmi:id="Derivation_DependencyRelationship_generalization" general="DependencyRelationship"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Derivation-base_Association" name="base_Association" association="Association_Derivation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Derivation" name="A_Association_Derivation" memberEnd="extension_Derivation Derivation-base_Association">
+					<ownedEnd xmi:id="extension_Derivation" name="extension_Derivation" type="Derivation" isComposite="true" lower="0" upper="1" memberEnd="extension_Derivation Derivation-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Category" name="Category">
+					<generalization xmi:type="uml:Generalization" xmi:id="Category_RigidMixinClass_generalization" general="RigidMixinClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Formal" name="Formal">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Formal-base_Association" name="base_Association" association="Association_Formal">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Formal" name="A_Association_Formal" memberEnd="extension_Formal Formal-base_Association">
+					<ownedEnd xmi:id="extension_Formal" name="extension_Formal" type="Formal" isComposite="true" lower="0" upper="1" memberEnd="extension_Formal Formal-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Phase" name="Phase">
+					<generalization xmi:type="uml:Generalization" xmi:id="Phase_Anti-RigidSortalClass_generalization" general="Anti-RigidSortalClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Quantity" name="Quantity">
+					<generalization xmi:type="uml:Generalization" xmi:id="Quantity_SubstanceSortal_generalization" general="SubstanceSortal"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubQuantityOf" name="SubQuantityOf">
+					<generalization xmi:type="uml:Generalization" xmi:id="SubQuantityOf_Meronymic_generalization" general="Meronymic"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-base_Association" name="base_Association" association="Association_SubQuantityOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_SubQuantityOf" name="A_Association_SubQuantityOf" memberEnd="extension_SubQuantityOf SubQuantityOf-base_Association">
+					<ownedEnd xmi:id="extension_SubQuantityOf" name="extension_SubQuantityOf" type="SubQuantityOf" isComposite="true" lower="0" upper="1" memberEnd="extension_SubQuantityOf SubQuantityOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="RigidSortalClass" name="RigidSortalClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="RigidSortalClass_SortalClass_generalization" general="SortalClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Anti-RigidSortalClass" name="Anti-RigidSortalClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="Anti-RigidSortalClass_SortalClass_generalization" general="SortalClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Non-RigidMixinClass" name="Non-RigidMixinClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="Non-RigidMixinClass_MixinClass_generalization" general="MixinClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Kind" name="Kind">
+					<generalization xmi:type="uml:Generalization" xmi:id="Kind_SubstanceSortal_generalization" general="SubstanceSortal"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="RigidMixinClass" name="RigidMixinClass" isAbstract="true">
+					<generalization xmi:type="uml:Generalization" xmi:id="RigidMixinClass_MixinClass_generalization" general="MixinClass"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Collective" name="Collective">
+					<generalization xmi:type="uml:Generalization" xmi:id="Collective_SubstanceSortal_generalization" general="SubstanceSortal"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Collective-isExtensional" name="isExtensional">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_64647BD9_7137_4a0f_BB2F_E91EC36D8975">
+				<model package="EAPK_36867B3A_5828_40ef_980C_763A47A9B795" localID="214" owner="EAPK_36867B3A_5828_40ef_980C_763A47A9B795"/>
+				<properties name="The Chartered Service Model" type="Logical"/>
+				<project author="Ernani" version="1.0" created="2013-11-27 08:49:03" modified="2015-03-02 20:28:02"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=0;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=1134;DocSize.cy=799;ShowDetails=0;Orientation=L;Zoom=155;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;MatrixLineWidth=1;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=OntoUML::OntoUML;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=E3C0DF11;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=0;bold=false;fcol=0;;cls=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;width=1;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=790;Top=0;Right=1101;Bottom=196;" subject="EAID_75B84A59_33B9_4dbd_B29A_8CB7956C804C" seqno="1" style="DUID=17046A2D;"/>
+					<element geometry="Left=88;Top=202;Right=402;Bottom=272;" subject="EAID_434416AD_7E83_4f27_9893_A9DF461BA616" seqno="2" style="NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;DUID=01463690;"/>
+					<element geometry="Left=941;Top=219;Right=1031;Bottom=289;" subject="EAID_4F3F4BA2_FA4D_4a0f_9BE0_EA50B174CF3D" seqno="3" style="HideIcon=0;DUID=7BECB385;"/>
+					<element geometry="Left=547;Top=606;Right=663;Bottom=676;" subject="EAID_51E6BDFD_11F7_4063_895D_737F59CAF358" seqno="4" style="HideIcon=0;DUID=6D26A1BB;"/>
+					<element geometry="Left=446;Top=513;Right=536;Bottom=583;" subject="EAID_B0C6370F_A0C8_46f2_9FB7_8933BE5C8454" seqno="5" style="HideIcon=0;DUID=13E00A32;"/>
+					<element geometry="Left=727;Top=226;Right=826;Bottom=296;" subject="EAID_C02773AF_9F37_4260_835D_4CBF6BE22610" seqno="6" style="HideIcon=0;DUID=EE1EF277;"/>
+					<element geometry="Left=979;Top=363;Right=1084;Bottom=433;" subject="EAID_C578638B_FD6F_4a42_8062_26431B88D37E" seqno="7" style="HideIcon=0;DUID=75D7477D;"/>
+					<element geometry="Left=765;Top=354;Right=874;Bottom=424;" subject="EAID_C60D13F4_425F_4825_9C36_03BDB5781D44" seqno="8" style="HideIcon=0;DUID=34CC4A51;"/>
+					<element geometry="Left=484;Top=177;Right=574;Bottom=247;" subject="EAID_2E7DD20C_C5BB_474b_8A6E_C5DF296648C4" seqno="9" style="HideIcon=0;DUID=B3EF7270;"/>
+					<element geometry="Left=197;Top=65;Right=300;Bottom=135;" subject="EAID_4BB9EAF9_834A_4eec_8BCC_5765F58B0830" seqno="10" style="HideIcon=0;DUID=8F0D2EF2;"/>
+					<element geometry="Left=484;Top=65;Right=596;Bottom=146;" subject="EAID_334BDD81_1B7C_485d_8A3B_5A6D002A45DE" seqno="11" style="HideIcon=0;DUID=A4E9DEB9;"/>
+					<element geometry="Left=445;Top=365;Right=630;Bottom=435;" subject="EAID_F8A00F0F_E038_4bdc_853A_9A22A49505E9" seqno="12" style="DUID=FCA153A5;"/>
+					<element geometry="SX=19;SY=-31;EX=-24;EY=-34;EDGE=3;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=39:CY=13:OX=-6:OY=-3:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=1:ROT=0;LMB=CX=60:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_98C56EC9_305E_4598_8AEA_4A0DBE630CBD" style="Mode=2;EOID=FCA153A5;SOID=01463690;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-44;SY=-6;EX=-10;EY=-7;EDGE=4;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=43:CY=13:OX=59:OY=-53:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=1:ROT=0;LMB=CX=60:CY=13:OX=17:OY=-24:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=-9:OY=2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_74E39636_C9B6_43b9_9ADF_94B5A2E24399" style="Mode=2;EOID=FCA153A5;SOID=EE1EF277;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-6;SY=2;EX=6;EY=28;EDGE=2;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=60:CY=13:OX=3:OY=1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_B1BFAEB7_6EF7_4427_A883_3962CA67F241" style="Mode=2;EOID=A4E9DEB9;SOID=8F0D2EF2;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=-2;EY=-1;EDGE=1;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=60:CY=13:OX=-6:OY=-11:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_31B65B95_07CF_449b_A8D0_BF0EEC8D4D81" style="Mode=1;EOID=8F0D2EF2;SOID=01463690;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=43:CY=13:OX=-37:OY=-11:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=-1:ROT=0;LMB=CX=45:CY=13:OX=-1:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_29F35E18_03B1_4ad6_B6E4_5389AE2C29F8" style="Mode=3;EOID=B3EF7270;SOID=FCA153A5;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=53;SY=-1;EX=33;EY=-34;EDGE=2;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=46:CY=13:OX=-143:OY=101:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=1:ROT=0;LMB=CX=89:CY=13:OX=0:OY=-22:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=-30:OY=5:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=612:-460$771:-460$;" subject="EAID_BE280078_ED66_48ce_8326_6970691EF647" style="Mode=2;EOID=34CC4A51;SOID=6D26A1BB;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=5;SY=-19;EX=-31;EY=-34;EDGE=2;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=112:CY=13:OX=-95:OY=61:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=1:ROT=0;LMB=CX=45:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_E0181EBF_C03C_4b58_8556_B47DC8EF9BC6" style="Mode=2;EOID=34CC4A51;SOID=13E00A32;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=13;EX=0;EY=13;EDGE=2;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=45:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=1:ROT=0;LMB=CX=60:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_5F2A193D_80F3_4be9_9EC7_398D22B9BB62" style="Mode=3;EOID=34CC4A51;SOID=FCA153A5;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=43;SY=-2;EX=0;EY=0;EDGE=2;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=62:CY=13:OX=4:OY=-30:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_86AB05DA_C6F4_4fb2_8F1B_C7834000BD52" style="Mode=3;EOID=75D7477D;SOID=34CC4A51;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=42:CY=13:OX=3:OY=-11:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=-1:ROT=0;LMB=CX=45:CY=13:OX=1:OY=-7:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_49FB0C15_7A62_4814_9E32_2714867450A5" style="Mode=3;EOID=EE1EF277;SOID=7BECB385;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=-44;SY=-35;EX=2;EY=32;EDGE=4;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=42:CY=13:OX=0:OY=-7:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=470:-449$444:-449$;" subject="EAID_4D20BAF6_FB17_4d8b_B908_33C077E877DE" style="Mode=1;EOID=13E00A32;SOID=FCA153A5;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=64;SY=-2;EX=13;EY=-2;EDGE=3;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=42:CY=13:OX=3:OY=-50:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_C1E9D209_B922_4d96_AF6E_BCBF596F7480" style="Mode=3;EOID=6D26A1BB;SOID=FCA153A5;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=17;SY=-11;EX=-105;EY=3;EDGE=4;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=112:CY=13:OX=125:OY=162:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=1:ROT=0;LMB=CX=45:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=140:-637$;" subject="EAID_4B107287_B8CC_4928_B25A_1150B5D762F1" style="Mode=3;EOID=01463690;SOID=6D26A1BB;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=-29;SY=-30;EX=-24;EY=-2;EDGE=4;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=CX=40:CY=13:OX=81:OY=115:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=1:ROT=0;LMB=CX=89:CY=13:OX=2:OY=-15:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=220:-542$;" subject="EAID_8741EDA6_0EBB_4ce9_9F9E_A00BE5D4021F" style="Mode=3;EOID=01463690;SOID=13E00A32;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>
