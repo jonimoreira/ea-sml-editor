@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<UMLProfile profiletype="uml2">
+	<Documentation id="209567CD-0" name="SML2" version="1.0" notes="SML2"/>
+	<Content>
+		<Stereotypes>
+			<Stereotype name="ecoSystem" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+				<AppliesTo>
+					<Apply type="Diagram_Logical">
+						<Property name="alias" value="ecoSystem"/>
+						<Property name="diagramID" value="eco"/>
+						<Property name="toolbox" value="SML2"/>
+					</Apply>
+				</AppliesTo>
+			</Stereotype>
+		</Stereotypes>
+		<TaggedValueTypes/>
+	</Content>
+</UMLProfile>
