@@ -1,0 +1,2139 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:OntoUML="http://www.sparxsystems.com/profiles/OntoUML/1.0">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" name="Human" visibility="public">
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_A41C3468_5EB5_45f5_9E33_4AFA8610797A" body="-- Trans-temporal fact in plain OCL in the Growing Block View: people should not be descendants/ancestors of themselves&#xA;&#xA;context _'Biological Person'&#xA;inv: self-&amp;gt;asSet()-&amp;gt;closure(parentOf)-&amp;gt;excludes(self)&#xA;&#xA;-- Initial Classification Rule in Temporal OCL: first phase of a person should be Child&#xA;&#xA;context _'Biological Person' &#xA;temp initialChild:&#xA;	World.allInstances()-&amp;gt;exists(w | self.exists(w) and w.allPrevious()-&amp;gt;forAll(p | not self.existsIn(p)) implies self.oclIsKindOf(Child, w))&#xA;&#xA;-- Final Classification Rule in Temporal OCL: for every person, for every world, if that instance is an Elder at that world, then for every world after that, if the instance exists, then it instantiates Elder or does to exist. In other words, there is no other allowed classification for it before ceasing to exist&#xA;&#xA;context Person &#xA;temp finalElder: World.allInstances()-&amp;gt;forAll(w | self.oclIsKindOf(Elder, w) implies w.allNext()-&amp;gt;forAll(n | not self.existsIn(n) or self.oclIsKindOf(Elder, n)))&#xA;"/>
+			<ownedComment xmi:type="uml:Comment" xmi:id="EAID_1D818267_8D49_4f48_83E0_5EB6CD4B998B" body="J. Guerson, T. P. Sales, G. Guizzardi&lt;i&gt; et al.&lt;/i&gt;, “OntoUML Lightweight Editor: A Model-Based Environment to Build, Evaluate and Implement Reference Ontologies,” &lt;i&gt;2015 IEEE 19th International Enterprise Distributed Object Computing Workshop&lt;/i&gt;, pp. 144-147, 2015."/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07" name="Adult" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_2E1E837D_E298_4f8d_8150_5CC6789F65D1" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE" name="BiologicalPerson" visibility="public">
+				<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_54AA691E_3EBE_41e7_901E_4BF1AE535F2E" name="bodyTemperature" visibility="private" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+					<type xmi:idref="EAID_C02D6ED8_A691_4245_9A47_F92603D8A9B9"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001_3EBE_41e7_901E_4BF1AE535F2E" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000002_3EBE_41e7_901E_4BF1AE535F2E" value="1"/>
+				</ownedAttribute>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_96391B9C_8678_403a_839D_30175B733E68" name="Child" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_A25ABECB_2E1C_4c4e_A0E8_91F117D62A2E" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057" name="Deceased" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_273E9486_CE34_4921_84CB_054EC937C0DC" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:GeneralizationSet" xmi:id="EAID_ADB41200_CFAA_42b5_8A54_20B2B70B4F83" name="gs-PersonLivingPhase" visibility="public" isCovering="true" isDisjoint="true">
+				<generalization xmi:idref="EAID_273E9486_CE34_4921_84CB_054EC937C0DC"/>
+				<generalization xmi:idref="EAID_829E1F2F_3CC3_485a_BBB5_9E8F8F8235AB"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5" name="Elder" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_2F7BD378_4041_45a2_AF4E_C741FF7F2B30" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24" name="Father" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_20910975_46EB_4dbf_891F_63BC46975C1C" general="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_3F50EC26_BCE2_4c31_9F9D_32E3A9951C43" general="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21" name="Female person" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_3D17365A_DE7E_42d1_825C_0B2C0BD2E47D" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC" name="Living" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_829E1F2F_3CC3_485a_BBB5_9E8F8F8235AB" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B" name="Male person" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_3FFB2D74_6709_44ee_9F42_6423E4A10639" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE" name="Mother" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_771DB32F_8B83_4304_8392_E8D041167EB0" general="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_EDB669C5_35FA_461b_B4DB_77409B78DDDB" general="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF" name="Offspring" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_68282DA2_30EB_4c65_8313_ED886EB87D9F" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E" visibility="public">
+				<memberEnd xmi:idref="EAID_dst106539_4FF6_4509_B0BC_86AD2C2FC69E"/>
+				<memberEnd xmi:idref="EAID_src106539_4FF6_4509_B0BC_86AD2C2FC69E"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src106539_4FF6_4509_B0BC_86AD2C2FC69E" visibility="public" association="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005__4FF6_4509_B0BC_86AD2C2FC69E" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000006__4FF6_4509_B0BC_86AD2C2FC69E" value="1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst106539_4FF6_4509_B0BC_86AD2C2FC69E" visibility="public" association="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000011__4FF6_4509_B0BC_86AD2C2FC69E" value="1"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000012__4FF6_4509_B0BC_86AD2C2FC69E" value="1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61" name="Parent" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_EAC602EE_C35F_403f_858C_8D262DAF8654" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Association" xmi:id="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB" visibility="public">
+				<memberEnd xmi:idref="EAID_dst7E662C_1B39_4fcb_82F8_929A03C4EACB"/>
+				<memberEnd xmi:idref="EAID_src7E662C_1B39_4fcb_82F8_929A03C4EACB"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src7E662C_1B39_4fcb_82F8_929A03C4EACB" visibility="public" association="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009__1B39_4fcb_82F8_929A03C4EACB" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000010__1B39_4fcb_82F8_929A03C4EACB" value="-1"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst7E662C_1B39_4fcb_82F8_929A03C4EACB" visibility="public" association="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000013__1B39_4fcb_82F8_929A03C4EACB" value="2"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000014__1B39_4fcb_82F8_929A03C4EACB" value="2"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:AssociationClass" xmi:id="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" name="Parenthood" visibility="public">
+				<memberEnd xmi:idref="EAID_dstB7D688_EB86_4193_96FC_603546392A1F"/>
+				<memberEnd xmi:idref="EAID_srcB7D688_EB86_4193_96FC_603546392A1F"/>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcB7D688_EB86_4193_96FC_603546392A1F" name="livingParent" visibility="public" association="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003__EB86_4193_96FC_603546392A1F" value="2"/>
+					<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000004__EB86_4193_96FC_603546392A1F" value="2"/>
+				</ownedEnd>
+				<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstB7D688_EB86_4193_96FC_603546392A1F" name="livingChildren" visibility="public" association="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+					<type xmi:idref="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF"/>
+					<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007__EB86_4193_96FC_603546392A1F" value="1"/>
+					<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000008__EB86_4193_96FC_603546392A1F" value="-1"/>
+				</ownedEnd>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A" name="Teenager" visibility="public">
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_F41F228A_2F12_415b_9168_F500BFD714D4" general="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_66175DD8_C706_4344_96F4_FAED01361A0C" name="$inet://http://doc.utwente.nl/50826/" visibility="public"/>
+		</packagedElement>
+		<OntoUML:Phase base_Class="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07"/>
+		<OntoUML:Kind base_Class="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+		<OntoUML:Phase base_Class="EAID_96391B9C_8678_403a_839D_30175B733E68"/>
+		<OntoUML:Phase base_Class="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057"/>
+		<OntoUML:Phase base_Class="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5"/>
+		<OntoUML:Role base_Class="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24"/>
+		<OntoUML:SubKind base_Class="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21"/>
+		<OntoUML:Phase base_Class="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC"/>
+		<OntoUML:SubKind base_Class="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B"/>
+		<OntoUML:Role base_Class="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE"/>
+		<OntoUML:Role base_Class="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF"/>
+		<OntoUML:Mediation base_Association="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E"/>
+		<OntoUML:Role base_Class="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+		<OntoUML:Mediation base_Association="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB"/>
+		<OntoUML:Relator base_Class="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A"/>
+		<OntoUML:Phase base_Class="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" xmi:type="uml:Package" name="Human" scope="public">
+				<model package2="EAID_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" package="EAPK_8999FF34_01A5_4795_A352_D85961DC8FE6" tpos="0" ea_localid="4" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" scope="public"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 14:37:11" modified="2015-06-18 17:31:23" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Disaster Core Ontology"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2012-09-24 14:37:11" modified="2015-06-18 17:31:23" lastloaddate="2015-06-04 20:27:09" lastsavedate="2015-06-04 20:27:09"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" batchsave="0" batchload="0" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07" xmi:type="uml:Class" name="Adult" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1679" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Phase" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="luizrebelomoreiraj" version="1.0" phase="1.0" created="2016-07-04 14:37:05" modified="2016-07-04 14:37:09" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_EE403DFF_1E56_741e_8CF9_A5FAA129074D" name="isDerived" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07"/>
+					<tag xmi:id="EAID_609A902B_7672_4576_8827_8E3237D2E727" name="transition" value="#NOTES#Values: initial,final&#xA;" modelElement="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={3B21F542-E628-4dc8-B8EF-2DED2A78F349}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Phase;FQName=OntoUML::Phase;@ENDSTEREO;$DES;$CLT={813CB9B8-8742-4bcb-B8B7-FA50C8BD4E07}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_2E1E837D_E298_4f8d_8150_5CC6789F65D1" start="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE" xmi:type="uml:Class" name="BiologicalPerson" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="11" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Kind" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 15:58:30" modified="2016-07-07 13:44:44" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\Person.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={711B82C6-C017-497c-8133-EBEBA868CC59}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Kind;FQName=OntoUML::Kind;@ENDSTEREO;$DES;$CLT={517DE8D5-DF7B-4b6c-BACA-1BE1A56394EE}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<attributes>
+					<attribute xmi:idref="EAID_54AA691E_3EBE_41e7_901E_4BF1AE535F2E" name="bodyTemperature" scope="Private">
+						<initial/>
+						<documentation/>
+						<model ea_localid="7" ea_guid="{54AA691E-3EBE-41e7-901E-4BF1AE535F2E}"/>
+						<properties type="Degrees" derived="0" collection="false" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="IsLiteral=0;volatile=0;"/>
+						<tags/>
+						<xrefs/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_05D21874_9F9E_4947_B2CD_600C8FFF5BEC" start="EAID_1257550E_A1AD_4241_B902_FE2A53679068" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_273E9486_CE34_4921_84CB_054EC937C0DC" start="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_2B8BD556_0822_4d1e_A622_E0CDE958F59D" start="EAID_99FF0777_BA15_44eb_8579_CF23EAED02F9" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_2E1E837D_E298_4f8d_8150_5CC6789F65D1" start="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_2F7BD378_4041_45a2_AF4E_C741FF7F2B30" start="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_3D17365A_DE7E_42d1_825C_0B2C0BD2E47D" start="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_3FFB2D74_6709_44ee_9F42_6423E4A10639" start="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_68282DA2_30EB_4c65_8313_ED886EB87D9F" start="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_6B355ABB_482C_48a1_8C67_85668B32A55A" start="EAID_900113D3_D9FC_448a_8906_8554FCF5810E" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_6FBACCE9_7B63_4aa7_B9C1_7B9DB2252408" start="EAID_0345339D_DD6A_46d1_ADD6_19A20CA74A51" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Dependency xmi:id="EAID_7D1C9428_CC8B_442c_B9C4_FF530F153032" start="EAID_A4DA609A_69F8_4f5b_9985_54E291E923EA" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_7ECDCE53_85AE_4c3c_B2E9_BA6DA8DD41A6" start="EAID_AEBFF5AB_AA2B_40b4_9F23_E8B3DCB9C718" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_829E1F2F_3CC3_485a_BBB5_9E8F8F8235AB" start="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Dependency xmi:id="EAID_8A083EB3_08E1_44ce_9F0E_198E50B18B23" start="EAID_6EDE6FAC_0AE9_4e53_9482_695144507BB8" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_A25ABECB_2E1C_4c4e_A0E8_91F117D62A2E" start="EAID_96391B9C_8678_403a_839D_30175B733E68" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_B9F30979_9EC2_4df8_888A_368FB02EAEEA" start="EAID_F59918C8_B3B9_4f4a_AFEE_64F33C3D4861" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_BF99BA65_5E46_4cd7_9CCF_F9223A0BBA49" start="EAID_1F053F3D_CA16_4354_989B_8EE5CAC34EE9" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_E94FF40F_59C5_4b61_AF0E_119B1B6E525C" start="EAID_0A835C7B_A719_4fb6_BCA6_048A8964FD32" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_EAC602EE_C35F_403f_858C_8D262DAF8654" start="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_F41F228A_2F12_415b_9168_F500BFD714D4" start="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_FAEA5750_9E51_451a_9AE8_C6CC9D03FABB" start="EAID_095D420F_419E_4863_A0F0_D772CD768218" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_FD594379_9BD4_4928_9F29_0675F4FF4A36" start="EAID_0A4A9095_4BB3_481d_8F65_18AE2AFA73D2" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_96391B9C_8678_403a_839D_30175B733E68" xmi:type="uml:Class" name="Child" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1677" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Phase" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="luizrebelomoreiraj" version="1.0" phase="1.0" created="2016-07-04 14:36:37" modified="2016-07-04 14:36:42" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_EE403DFF_1E56_741e_BFC4_A19009B7D91E" name="isDerived" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_96391B9C_8678_403a_839D_30175B733E68"/>
+					<tag xmi:id="EAID_609A902B_7672_4576_9B1E_779D9D0E585A" name="transition" value="#NOTES#Values: initial,final&#xA;" modelElement="EAID_96391B9C_8678_403a_839D_30175B733E68"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={4B2841C6-173F-4372-8107-F95A2784A57E}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Phase;FQName=OntoUML::Phase;@ENDSTEREO;$DES;$CLT={96391B9C-8678-403a-839D-30175B733E68}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_A25ABECB_2E1C_4c4e_A0E8_91F117D62A2E" start="EAID_96391B9C_8678_403a_839D_30175B733E68" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057" xmi:type="uml:Class" name="Deceased" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1654" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Phase" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="joao.moreira" version="1.0" phase="1.0" created="2016-06-29 19:47:02" modified="2016-06-29 19:53:02" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_EE403DFF_1E56_741e_8588_1AA309833BD6" name="isDerived" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057"/>
+					<tag xmi:id="EAID_609A902B_7672_4576_B418_F296E6B706CC" name="transition" value="#NOTES#Values: initial,final&#xA;" modelElement="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={3B4EA712-23A6-4f0a-BACB-844C56BA7EA2}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Phase;FQName=OntoUML::Phase;@ENDSTEREO;$DES;$CLT={B2EAC696-3B55-47eb-837E-0F7EDC1E6057}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_273E9486_CE34_4921_84CB_054EC937C0DC" start="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5" xmi:type="uml:Class" name="Elder" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1680" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Phase" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="luizrebelomoreiraj" version="1.0" phase="1.0" created="2016-07-04 14:37:34" modified="2016-07-04 14:37:38" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_EE403DFF_1E56_741e_85A9_F1E8976B30CF" name="isDerived" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5"/>
+					<tag xmi:id="EAID_609A902B_7672_4576_BF3E_80641EC90BE3" name="transition" value="#NOTES#Values: initial,final&#xA;" modelElement="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={9839BF47-9EDA-4539-BDAA-78382796D867}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Phase;FQName=OntoUML::Phase;@ENDSTEREO;$DES;$CLT={5146BAE1-4656-4ed4-99B2-BC06DBADEFB5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_2F7BD378_4041_45a2_AF4E_C741FF7F2B30" start="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24" xmi:type="uml:Class" name="Father" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="5" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 16:00:25" modified="2015-06-10 09:45:22" complexity="1" status="Proposed"/>
+				<code gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\Father.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={453B9BE6-E25A-43d9-BBB1-70A3B4C3998A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={C1E78E48-6F92-4b3f-98AB-5B6F96BA1A24}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_20910975_46EB_4dbf_891F_63BC46975C1C" start="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24" end="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+					<Generalization xmi:id="EAID_3F50EC26_BCE2_4c31_9F9D_32E3A9951C43" start="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24" end="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21" xmi:type="uml:Class" name="Female person" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="6" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="SubKind" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 15:59:35" modified="2016-07-04 14:36:04" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\FemalePerson.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={743B4356-0AC1-46d2-BAF1-44C3B15DBEEC}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=SubKind;FQName=OntoUML::SubKind;@ENDSTEREO;$DES;$CLT={BA18054F-2848-4e0d-9630-F441A0DA8D21}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_3D17365A_DE7E_42d1_825C_0B2C0BD2E47D" start="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_A140E822_2634_4ff9_8516_F957E814B793" start="EAID_863BD5AB_DC22_48a2_81A3_97C28985492A" end="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21"/>
+					<Generalization xmi:id="EAID_EDB669C5_35FA_461b_B4DB_77409B78DDDB" start="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE" end="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC" xmi:type="uml:Class" name="Living" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1653" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Phase" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="joao.moreira" version="1.0" phase="1.0" created="2016-06-29 19:46:49" modified="2016-06-29 19:46:56" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_EE403DFF_1E56_741e_AC65_992E91A335FE" name="isDerived" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC"/>
+					<tag xmi:id="EAID_609A902B_7672_4576_9EC1_F92AF347E3D7" name="transition" value="#NOTES#Values: initial,final&#xA;" modelElement="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={B4FDB365-D64B-488c-9CB6-66041F99A16C}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Phase;FQName=OntoUML::Phase;@ENDSTEREO;$DES;$CLT={F229067F-FAF5-44b7-B06E-29BF5DDA93AC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_829E1F2F_3CC3_485a_BBB5_9E8F8F8235AB" start="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B" xmi:type="uml:Class" name="Male person" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="7" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="SubKind" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 15:59:43" modified="2016-07-04 14:36:18" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\MalePerson.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={6421EBC4-1945-4e03-B914-B9E0E327957E}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=SubKind;FQName=OntoUML::SubKind;@ENDSTEREO;$DES;$CLT={8A19A5B6-FBCC-4ab4-B724-F5A5E1D9C64B}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_3FFB2D74_6709_44ee_9F42_6423E4A10639" start="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_3F50EC26_BCE2_4c31_9F9D_32E3A9951C43" start="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24" end="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B"/>
+					<Generalization xmi:id="EAID_C3A20885_4992_4f0b_93E3_C010C10D845D" start="EAID_BBD0479C_8DFA_4ea6_BCB7_B124C7210284" end="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE" xmi:type="uml:Class" name="Mother" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="8" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 16:00:31" modified="2015-06-10 09:45:29" complexity="1" status="Proposed"/>
+				<code gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\Mother.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={63188EC9-9343-4667-BD3B-3D83E667A6FA}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={91EC1289-C31D-4377-8A0C-EF14949B92FE}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_771DB32F_8B83_4304_8392_E8D041167EB0" start="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE" end="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+					<Generalization xmi:id="EAID_EDB669C5_35FA_461b_B4DB_77409B78DDDB" start="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE" end="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF" xmi:type="uml:Class" name="Offspring" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="9" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 15:59:03" modified="2016-07-04 14:41:57" complexity="1" status="Proposed"/>
+				<code gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\Offspring.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={BAEBB4EC-9265-4c16-B203-63AE59E23E85}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={BDD03259-0D78-4506-AA0D-20832C7F2CFF}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_68282DA2_30EB_4c65_8313_ED886EB87D9F" start="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Association xmi:id="EAID_28B7D688_EB86_4193_96FC_603546392A1F" start="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61" end="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF"/>
+					<Association xmi:id="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E" start="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" end="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61" xmi:type="uml:Class" name="Parent" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="10" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Role" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 15:59:21" modified="2016-07-04 14:41:57" complexity="1" status="Proposed"/>
+				<code gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\Parent.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={23ABE66B-DB6E-47c7-8646-BD6927A4721A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Role;FQName=OntoUML::Role;@ENDSTEREO;$DES;$CLT={6C2C0235-480F-49d8-9115-CBF0A7DE3F61}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Association xmi:id="EAID_28B7D688_EB86_4193_96FC_603546392A1F" start="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61" end="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF"/>
+					<Generalization xmi:id="EAID_EAC602EE_C35F_403f_858C_8D262DAF8654" start="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+					<Generalization xmi:id="EAID_20910975_46EB_4dbf_891F_63BC46975C1C" start="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24" end="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+					<Association xmi:id="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB" start="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" end="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+					<Generalization xmi:id="EAID_771DB32F_8B83_4304_8392_E8D041167EB0" start="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE" end="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" xmi:type="uml:Class" name="Parenthood" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="12" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="17" scope="public" stereotype="Relator" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 16:06:01" modified="2016-07-04 17:46:12" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java" genfile="C:\Projects\SML\01ExampleEmergency\Registration.java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs value="$XREFPROP=$XID={11802C1C-EFDA-440a-A982-D78BDCF79288}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Relator;FQName=OntoUML::Relator;@ENDSTEREO;$DES;$CLT={E8B5D615-68F8-4b61-8A3C-E358F6EA571A}$CLT;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human" conID="EAID_28B7D688_EB86_4193_96FC_603546392A1F"/>
+				<links>
+					<Association xmi:id="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E" start="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" end="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF"/>
+					<Association xmi:id="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB" start="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" end="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A" xmi:type="uml:Class" name="Teenager" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1678" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="Phase" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="luizrebelomoreiraj" version="1.0" phase="1.0" created="2016-07-04 14:36:49" modified="2016-07-04 14:37:01" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_EE403DFF_1E56_741e_8C56_DE5B415EABC0" name="isDerived" value="#NOTES#Values: true,false&#xA;" modelElement="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A"/>
+					<tag xmi:id="EAID_609A902B_7672_4576_8F75_8EDE76874B6F" name="transition" value="#NOTES#Values: initial,final&#xA;" modelElement="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={7596D940-1216-456c-B56E-53960AA1C7DC}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Phase;FQName=OntoUML::Phase;@ENDSTEREO;$DES;$CLT={220C8FD4-A50D-4ac3-9063-7350306B0C1A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Human"/>
+				<links>
+					<Generalization xmi:id="EAID_F41F228A_2F12_415b_9168_F500BFD714D4" start="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A" end="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_1D818267_8D49_4f48_83E0_5EB6CD4B998B" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1655" ea_eleType="element"/>
+				<properties documentation="J. Guerson, T. P. Sales, G. Guizzardi&lt;i&gt; et al.&lt;/i&gt;, “OntoUML Lightweight Editor: A Model-Based Environment to Build, Evaluate and Implement Reference Ontologies,” &lt;i&gt;2015 IEEE 19th International Enterprise Distributed Object Computing Workshop&lt;/i&gt;, pp. 144-147, 2015." isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="joao.moreira" version="1.0" phase="1.0" created="2016-06-29 19:48:25" modified="2016-06-29 19:48:44" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Human"/>
+			</element>
+			<element xmi:idref="EAID_66175DD8_C706_4344_96F4_FAED01361A0C" xmi:type="uml:Text" name="$inet://http://doc.utwente.nl/50826/" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="13" ea_eleType="element" name="$inet://http://doc.utwente.nl/50826/"/>
+				<properties isSpecification="false" sType="Text" nType="19" alias="(Guizzardi G. 2005 Ontological Foundations for Structural Conceptual Models p.360)" scope="public"/>
+				<project author="John" version="1.0" phase="1.0" created="2012-09-24 16:14:40" modified="2012-09-24 16:15:54" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Human"/>
+			</element>
+			<element xmi:idref="EAID_A41C3468_5EB5_45f5_9E33_4AFA8610797A" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" tpos="0" ea_localid="1681" ea_eleType="element"/>
+				<properties documentation="-- Trans-temporal fact in plain OCL in the Growing Block View: people should not be descendants/ancestors of themselves&#xA;&#xA;context _'Biological Person'&#xA;inv: self-&amp;gt;asSet()-&amp;gt;closure(parentOf)-&amp;gt;excludes(self)&#xA;&#xA;-- Initial Classification Rule in Temporal OCL: first phase of a person should be Child&#xA;&#xA;context _'Biological Person' &#xA;temp initialChild:&#xA;	World.allInstances()-&amp;gt;exists(w | self.exists(w) and w.allPrevious()-&amp;gt;forAll(p | not self.existsIn(p)) implies self.oclIsKindOf(Child, w))&#xA;&#xA;-- Final Classification Rule in Temporal OCL: for every person, for every world, if that instance is an Elder at that world, then for every world after that, if the instance exists, then it instantiates Elder or does to exist. In other words, there is no other allowed classification for it before ceasing to exist&#xA;&#xA;context Person &#xA;temp finalElder: World.allInstances()-&amp;gt;forAll(w | self.oclIsKindOf(Elder, w) implies w.allNext()-&amp;gt;forAll(n | not self.existsIn(n) or self.oclIsKindOf(Elder, n)))&#xA;" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="luizrebelomoreiraj" version="1.0" phase="1.0" created="2016-07-04 16:05:12" modified="2016-07-04 17:34:43" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Human"/>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_2E1E837D_E298_4f8d_8150_5CC6789F65D1">
+				<source xmi:idref="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07">
+					<model ea_localid="1679" type="Class" name="Adult"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="818"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_05D21874_9F9E_4947_B2CD_600C8FFF5BEC">
+				<source xmi:idref="EAID_1257550E_A1AD_4241_B902_FE2A53679068">
+					<model ea_localid="1673" type="Class" name="Child"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="812"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-PersonStagesOfLife"/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={AC9D1C78-045B-4fe7-9E78-0355EEAC0DD6}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={EBCAC700-79D1-4427-915F-6AF58A2AB078};Name=gs-PersonStagesOfLife;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={05D21874-9F9E-4947-B2CD-600C8FFF5BEC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_273E9486_CE34_4921_84CB_054EC937C0DC">
+				<source xmi:idref="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057">
+					<model ea_localid="1654" type="Class" name="Deceased"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="791"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-PersonLivingPhase"/>
+				<extendedProperties conditional="gs-PersonLivingPhase" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={3745D263-BC02-4715-B303-01E32EC8E7F8}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={ADB41200-CFAA-42b5-8A54-20B2B70B4F83};Name=gs-PersonLivingPhase;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={273E9486-CE34-4921-84CB-054EC937C0DC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_2B8BD556_0822_4d1e_A622_E0CDE958F59D">
+				<source xmi:idref="EAID_99FF0777_BA15_44eb_8579_CF23EAED02F9">
+					<model ea_localid="216" type="Class" name="Infected Person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="277"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-personHealthPhase"/>
+				<extendedProperties conditional="gs-personHealthPhase" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={6CDA661C-59AE-472d-B2EC-D20D8AA305F9}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={7E855CAD-A07B-4752-A957-0B964C2D3A15};Name=gs-personHealthPhase;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={2B8BD556-0822-4d1e-A622-E0CDE958F59D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_2F7BD378_4041_45a2_AF4E_C741FF7F2B30">
+				<source xmi:idref="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5">
+					<model ea_localid="1680" type="Class" name="Elder"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="819"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_3D17365A_DE7E_42d1_825C_0B2C0BD2E47D">
+				<source xmi:idref="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21">
+					<model ea_localid="6" type="Class" name="Female person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="9"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_3FFB2D74_6709_44ee_9F42_6423E4A10639">
+				<source xmi:idref="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B">
+					<model ea_localid="7" type="Class" name="Male person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="8"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_68282DA2_30EB_4c65_8313_ED886EB87D9F">
+				<source xmi:idref="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF">
+					<model ea_localid="9" type="Class" name="Offspring"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="5"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_6B355ABB_482C_48a1_8C67_85668B32A55A">
+				<source xmi:idref="EAID_900113D3_D9FC_448a_8906_8554FCF5810E">
+					<model ea_localid="1676" type="Class" name="Elder"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="815"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-PersonStagesOfLife"/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={0E84EB72-7069-49f5-89AB-FB598B475448}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={EBCAC700-79D1-4427-915F-6AF58A2AB078};Name=gs-PersonStagesOfLife;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={6B355ABB-482C-48a1-8C67-85668B32A55A}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_6FBACCE9_7B63_4aa7_B9C1_7B9DB2252408">
+				<source xmi:idref="EAID_0345339D_DD6A_46d1_ADD6_19A20CA74A51">
+					<model ea_localid="228" type="Class" name="Health Professional"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="452"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_7D1C9428_CC8B_442c_B9C4_FF530F153032">
+				<source xmi:idref="EAID_A4DA609A_69F8_4f5b_9985_54E291E923EA">
+					<model ea_localid="387" type="Class" name="Person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="411"/>
+				<properties ea_type="Dependency" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_7ECDCE53_85AE_4c3c_B2E9_BA6DA8DD41A6">
+				<source xmi:idref="EAID_AEBFF5AB_AA2B_40b4_9F23_E8B3DCB9C718">
+					<model ea_localid="1674" type="Class" name="Teenager"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="813"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-PersonStagesOfLife"/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={E1B5D9CA-964E-4181-9AFC-6258BE605B72}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={EBCAC700-79D1-4427-915F-6AF58A2AB078};Name=gs-PersonStagesOfLife;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={7ECDCE53-85AE-4c3c-B2E9-BA6DA8DD41A6}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_829E1F2F_3CC3_485a_BBB5_9E8F8F8235AB">
+				<source xmi:idref="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC">
+					<model ea_localid="1653" type="Class" name="Living"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="790"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-PersonLivingPhase"/>
+				<extendedProperties conditional="gs-PersonLivingPhase" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={EDDBDB22-FA06-43c1-A5A6-9BBD010078E0}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={ADB41200-CFAA-42b5-8A54-20B2B70B4F83};Name=gs-PersonLivingPhase;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={829E1F2F-3CC3-485a-BBB5-9E8F8F8235AB}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_8A083EB3_08E1_44ce_9F0E_198E50B18B23">
+				<source xmi:idref="EAID_6EDE6FAC_0AE9_4e53_9482_695144507BB8">
+					<model ea_localid="382" type="Class" name="temperature"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Non-Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="400"/>
+				<properties ea_type="Dependency" direction="Source -&gt; Destination"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_A25ABECB_2E1C_4c4e_A0E8_91F117D62A2E">
+				<source xmi:idref="EAID_96391B9C_8678_403a_839D_30175B733E68">
+					<model ea_localid="1677" type="Class" name="Child"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="816"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_B9F30979_9EC2_4df8_888A_368FB02EAEEA">
+				<source xmi:idref="EAID_F59918C8_B3B9_4f4a_AFEE_64F33C3D4861">
+					<model ea_localid="1675" type="Class" name="Adult"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="814"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-PersonStagesOfLife"/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={2799DB4E-84E0-43c3-AB9C-3D7EAE81CF9D}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={EBCAC700-79D1-4427-915F-6AF58A2AB078};Name=gs-PersonStagesOfLife;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={B9F30979-9EC2-4df8-888A-368FB02EAEEA}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_BF99BA65_5E46_4cd7_9CCF_F9223A0BBA49">
+				<source xmi:idref="EAID_1F053F3D_CA16_4354_989B_8EE5CAC34EE9">
+					<model ea_localid="217" type="Class" name="Healthy Person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="278"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels mb="gs-personHealthPhase"/>
+				<extendedProperties conditional="gs-personHealthPhase" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={3EC3DCAF-F1CE-4821-AAD1-9E1B09DB202B}$XID;$NAM=MOFProps$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$BEH=generalizationSet$BEH;$PAR=0$PAR;$DES=GUID={7E855CAD-A07B-4752-A957-0B964C2D3A15};Name=gs-personHealthPhase;IsCovering=1;IsDisjoint=1;PowerTypeGUID=;$DES;$CLT={BF99BA65-5E46-4cd7-9CCF-F9223A0BBA49}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_E94FF40F_59C5_4b61_AF0E_119B1B6E525C">
+				<source xmi:idref="EAID_0A835C7B_A719_4fb6_BCA6_048A8964FD32">
+					<model ea_localid="31" type="Class" name="Person Holder"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="38"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_EAC602EE_C35F_403f_858C_8D262DAF8654">
+				<source xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61">
+					<model ea_localid="10" type="Class" name="Parent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="3"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_F41F228A_2F12_415b_9168_F500BFD714D4">
+				<source xmi:idref="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A">
+					<model ea_localid="1678" type="Class" name="Teenager"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="817"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_FAEA5750_9E51_451a_9AE8_C6CC9D03FABB">
+				<source xmi:idref="EAID_095D420F_419E_4863_A0F0_D772CD768218">
+					<model ea_localid="1660" type="Class" name="Traveler"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="797"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_FD594379_9BD4_4928_9F29_0675F4FF4A36">
+				<source xmi:idref="EAID_0A4A9095_4BB3_481d_8F65_18AE2AFA73D2">
+					<model ea_localid="224" type="Class" name="Patient"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE">
+					<model ea_localid="11" type="Class" name="BiologicalPerson"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="282"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_20910975_46EB_4dbf_891F_63BC46975C1C">
+				<source xmi:idref="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24">
+					<model ea_localid="5" type="Class" name="Father"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61">
+					<model ea_localid="10" type="Class" name="Parent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="10"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_3F50EC26_BCE2_4c31_9F9D_32E3A9951C43">
+				<source xmi:idref="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24">
+					<model ea_localid="5" type="Class" name="Father"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B">
+					<model ea_localid="7" type="Class" name="Male person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="11"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_A140E822_2634_4ff9_8516_F957E814B793">
+				<source xmi:idref="EAID_863BD5AB_DC22_48a2_81A3_97C28985492A">
+					<model ea_localid="1670" type="Class" name="Wife"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21">
+					<model ea_localid="6" type="Class" name="Female person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="807"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_EDB669C5_35FA_461b_B4DB_77409B78DDDB">
+				<source xmi:idref="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE">
+					<model ea_localid="8" type="Class" name="Mother"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21">
+					<model ea_localid="6" type="Class" name="Female person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="6"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_C3A20885_4992_4f0b_93E3_C010C10D845D">
+				<source xmi:idref="EAID_BBD0479C_8DFA_4ea6_BCB7_B124C7210284">
+					<model ea_localid="1671" type="Class" name="Husband"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B">
+					<model ea_localid="7" type="Class" name="Male person"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="808"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_771DB32F_8B83_4304_8392_E8D041167EB0">
+				<source xmi:idref="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE">
+					<model ea_localid="8" type="Class" name="Mother"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61">
+					<model ea_localid="10" type="Class" name="Parent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="7"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_28B7D688_EB86_4193_96FC_603546392A1F" name="livingParentOf">
+				<source xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61">
+					<model ea_localid="10" type="Class" name="Parent"/>
+					<role name="livingParent" visibility="Public" targetScope="instance"/>
+					<type multiplicity="2" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF">
+					<model ea_localid="9" type="Class" name="Offspring"/>
+					<role name="livingChildren" visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="1"/>
+				<properties ea_type="Association" subtype="Class" stereotype="Material" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation value="A relação parentOf do modelo é relação de parentesco entre pessoas vivas. 'Biological Person' é uma pessoa viva se existir, e morta se deixar de existir. A relação parentOf nesse modelo sempre vai conectar pessoas vivas i.e. que existem. Mude o nome dessa relação pra &quot;livingParentOf&quot; e os end-names para &quot;livingParent&quot; e &quot;livingChildren&quot;. &#xA;&#xA;A regra TOCL com o closure em questão é uma regra de parentesco entre coisas vivas e mortas e que não está definida no modelo. O modelo é dito presentista por definir só pessoas que estão vivas e existem. Tal relação não dá pra ser escrita nesse modelo (sem reificar a existência do tipo i.e. phases living and deceased). Entretanto, é possível definí-la em TOCL. Eu chamei essa relação de Transtemporal i.e. uma relação que transcende o tempo (os mundos) e não existe em um mundo particular (na verdade tem um detalhes aqui mas deixa pra discutir depois). Então a relação de parentesco deve ser definida assim antes da regra do closure:"/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="2" lt="+livingParent" mb=" &#xA;«Material»" mt="livingParentOf" rb="1..*" rt="+livingChildren"/>
+				<extendedProperties conditional=" &#xA;«Material»" associationclass="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" privatedata1="12"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={F14A6ACE-5880-4b20-A797-656099D9E7E9}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Material;FQName=OntoUML::Material;@ENDSTEREO;$DES;$CLT={28B7D688-EB86-4193-96FC-603546392A1F}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E">
+				<source xmi:idref="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A">
+					<model ea_localid="12" type="Class" name="Parenthood"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF">
+					<model ea_localid="9" type="Class" name="Offspring"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="4"/>
+				<properties ea_type="Association" stereotype="Mediation" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«Mediation»" rb="1"/>
+				<extendedProperties conditional=" &#xA;«Mediation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={ADB8CB89-9366-4dfd-A6EC-2AA612D78ED6}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mediation;FQName=OntoUML::Mediation;@ENDSTEREO;$DES;$CLT={63106539-4FF6-4509-B0BC-86AD2C2FC69E}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB">
+				<source xmi:idref="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A">
+					<model ea_localid="12" type="Class" name="Parenthood"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61">
+					<model ea_localid="10" type="Class" name="Parent"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="2" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="2"/>
+				<properties ea_type="Association" stereotype="Mediation" direction="Unspecified"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1..*" mb=" &#xA;«Mediation»" rb="2"/>
+				<extendedProperties conditional=" &#xA;«Mediation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={ADCD6106-A116-463e-A1CF-ED3B28358C4B}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=Mediation;FQName=OntoUML::Mediation;@ENDSTEREO;$DES;$CLT={6C7E662C-1B39-4fcb-82F8-929A03C4EACB}$CLT;$ENDXREF;"/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:id="672070D9-B" nsPrefix="OntoUML" name="OntoUML" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="672070D9-B">
+					<body>OntoUML Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Mode" name="Mode">
+					<generalization xmi:type="uml:Generalization" xmi:id="Mode_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Mode-existence" name="existence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Material" name="Material">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Material-base_Association" name="base_Association" association="Association_Material">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Material-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Material-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Material-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Material-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Material" name="A_Association_Material" memberEnd="extension_Material Material-base_Association">
+					<ownedEnd xmi:id="extension_Material" name="extension_Material" type="Material" isComposite="true" lower="0" upper="1" memberEnd="extension_Material Material-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="QuaPartOf" name="QuaPartOf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-base_Association" name="base_Association" association="Association_QuaPartOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-shareable" name="shareable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-partInseparable" name="partInseparable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-partEssential" name="partEssential">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-wholeImmutable" name="wholeImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-partImmutable" name="partImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="QuaPartOf-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_QuaPartOf" name="A_Association_QuaPartOf" memberEnd="extension_QuaPartOf QuaPartOf-base_Association">
+					<ownedEnd xmi:id="extension_QuaPartOf" name="extension_QuaPartOf" type="QuaPartOf" isComposite="true" lower="0" upper="1" memberEnd="extension_QuaPartOf QuaPartOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Constitution" name="Constitution">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Constitution-base_Association" name="base_Association" association="Association_Constitution">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Constitution-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Constitution-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Constitution-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Constitution-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Constitution" name="A_Association_Constitution" memberEnd="extension_Constitution Constitution-base_Association">
+					<ownedEnd xmi:id="extension_Constitution" name="extension_Constitution" type="Constitution" isComposite="true" lower="0" upper="1" memberEnd="extension_Constitution Constitution-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Temporal" name="Temporal">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Temporal-base_Association" name="base_Association" association="Association_Temporal">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Temporal-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Temporal-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Temporal-nature" name="nature">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Temporal-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Temporal-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Temporal" name="A_Association_Temporal" memberEnd="extension_Temporal Temporal-base_Association">
+					<ownedEnd xmi:id="extension_Temporal" name="extension_Temporal" type="Temporal" isComposite="true" lower="0" upper="1" memberEnd="extension_Temporal Temporal-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Mediation" name="Mediation">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Mediation-base_Association" name="base_Association" association="Association_Mediation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Mediation-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Mediation-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Mediation-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Mediation-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Mediation" name="A_Association_Mediation" memberEnd="extension_Mediation Mediation-base_Association">
+					<ownedEnd xmi:id="extension_Mediation" name="extension_Mediation" type="Mediation" isComposite="true" lower="0" upper="1" memberEnd="extension_Mediation Mediation-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Measurement" name="Measurement">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Measurement-base_Enumeration" name="base_Enumeration" association="Enumeration_Measurement">
+						<type href="http://schema.omg.org/spec/UML/2.1/Enumeration"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Measurement-structure" name="structure">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Enumeration_Measurement" name="A_Enumeration_Measurement" memberEnd="extension_Measurement Measurement-base_Enumeration">
+					<ownedEnd xmi:id="extension_Measurement" name="extension_Measurement" type="Measurement" isComposite="true" lower="0" upper="1" memberEnd="extension_Measurement Measurement-base_Enumeration"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ComponentOf" name="ComponentOf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-base_Association" name="base_Association" association="Association_ComponentOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-shareable" name="shareable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-partInseparable" name="partInseparable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-partEssential" name="partEssential">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-wholeImmutable" name="wholeImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-partImmutable" name="partImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ComponentOf-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_ComponentOf" name="A_Association_ComponentOf" memberEnd="extension_ComponentOf ComponentOf-base_Association">
+					<ownedEnd xmi:id="extension_ComponentOf" name="extension_ComponentOf" type="ComponentOf" isComposite="true" lower="0" upper="1" memberEnd="extension_ComponentOf ComponentOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubEventOf" name="SubEventOf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-base_Association" name="base_Association" association="Association_SubEventOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-shareable" name="shareable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-partInseparable" name="partInseparable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-partEssential" name="partEssential">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-wholeImmutable" name="wholeImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-partImmutable" name="partImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubEventOf-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_SubEventOf" name="A_Association_SubEventOf" memberEnd="extension_SubEventOf SubEventOf-base_Association">
+					<ownedEnd xmi:id="extension_SubEventOf" name="extension_SubEventOf" type="SubEventOf" isComposite="true" lower="0" upper="1" memberEnd="extension_SubEventOf SubEventOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubCollectionOf" name="SubCollectionOf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-base_Association" name="base_Association" association="Association_SubCollectionOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-shareable" name="shareable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-partInseparable" name="partInseparable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-partEssential" name="partEssential">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-wholeImmutable" name="wholeImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-partImmutable" name="partImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubCollectionOf-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_SubCollectionOf" name="A_Association_SubCollectionOf" memberEnd="extension_SubCollectionOf SubCollectionOf-base_Association">
+					<ownedEnd xmi:id="extension_SubCollectionOf" name="extension_SubCollectionOf" type="SubCollectionOf" isComposite="true" lower="0" upper="1" memberEnd="extension_SubCollectionOf SubCollectionOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Mixin" name="Mixin">
+					<generalization xmi:type="uml:Generalization" xmi:id="Mixin_Endurant_generalization" general="Endurant"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubKind" name="SubKind">
+					<generalization xmi:type="uml:Generalization" xmi:id="SubKind_Endurant_generalization" general="Endurant"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Characterization" name="Characterization">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Characterization-base_Association" name="base_Association" association="Association_Characterization">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Characterization-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Characterization-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Characterization-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Characterization-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Characterization" name="A_Association_Characterization" memberEnd="extension_Characterization Characterization-base_Association">
+					<ownedEnd xmi:id="extension_Characterization" name="extension_Characterization" type="Characterization" isComposite="true" lower="0" upper="1" memberEnd="extension_Characterization Characterization-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Relator" name="Relator">
+					<generalization xmi:type="uml:Generalization" xmi:id="Relator_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Relator-existence" name="existence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="InstanceOf" name="InstanceOf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="InstanceOf-base_Association" name="base_Association" association="Association_InstanceOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="InstanceOf-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="InstanceOf-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="InstanceOf-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="InstanceOf-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_InstanceOf" name="A_Association_InstanceOf" memberEnd="extension_InstanceOf InstanceOf-base_Association">
+					<ownedEnd xmi:id="extension_InstanceOf" name="extension_InstanceOf" type="InstanceOf" isComposite="true" lower="0" upper="1" memberEnd="extension_InstanceOf InstanceOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Dimension" name="Dimension">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Dimension-base_DataType" name="base_DataType" association="DataType_Dimension">
+						<type href="http://schema.omg.org/spec/UML/2.1/DataType"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Dimension-upperBound" name="upperBound">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Dimension-unitOfMeasure" name="unitOfMeasure">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Dimension-lowerBound" name="lowerBound">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Dimension-scale" name="scale">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Dimension-basicType" name="basicType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="DataType_Dimension" name="A_DataType_Dimension" memberEnd="extension_Dimension Dimension-base_DataType">
+					<ownedEnd xmi:id="extension_Dimension" name="extension_Dimension" type="Dimension" isComposite="true" lower="0" upper="1" memberEnd="extension_Dimension Dimension-base_DataType"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Role" name="Role">
+					<generalization xmi:type="uml:Generalization" xmi:id="Role_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Role-transition" name="transition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Participation" name="Participation">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Participation-base_Association" name="base_Association" association="Association_Participation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Participation-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Participation-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Participation-nature" name="nature">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Participation-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Participation-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Participation" name="A_Association_Participation" memberEnd="extension_Participation Participation-base_Association">
+					<ownedEnd xmi:id="extension_Participation" name="extension_Participation" type="Participation" isComposite="true" lower="0" upper="1" memberEnd="extension_Participation Participation-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Quality" name="Quality">
+					<generalization xmi:type="uml:Generalization" xmi:id="Quality_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Quality-nature" name="nature">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Quality-existence" name="existence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="MemberOf" name="MemberOf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-base_Association" name="base_Association" association="Association_MemberOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-shareable" name="shareable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-partInseparable" name="partInseparable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-partEssential" name="partEssential">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-wholeImmutable" name="wholeImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-partImmutable" name="partImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MemberOf-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_MemberOf" name="A_Association_MemberOf" memberEnd="extension_MemberOf MemberOf-base_Association">
+					<ownedEnd xmi:id="extension_MemberOf" name="extension_MemberOf" type="MemberOf" isComposite="true" lower="0" upper="1" memberEnd="extension_MemberOf MemberOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Perdurant" name="Perdurant" isAbstract="true">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Perdurant-base_Class" name="base_Class" association="Class_Perdurant">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Perdurant-isDerived" name="isDerived">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Perdurant" name="A_Class_Perdurant" memberEnd="extension_Perdurant Perdurant-base_Class">
+					<ownedEnd xmi:id="extension_Perdurant" name="extension_Perdurant" type="Perdurant" isComposite="true" lower="0" upper="1" memberEnd="extension_Perdurant Perdurant-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Causation" name="Causation">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Causation-base_Association" name="base_Association" association="Association_Causation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Causation-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Causation-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Causation-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Causation-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Causation" name="A_Association_Causation" memberEnd="extension_Causation Causation-base_Association">
+					<ownedEnd xmi:id="extension_Causation" name="extension_Causation" type="Causation" isComposite="true" lower="0" upper="1" memberEnd="extension_Causation Causation-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="RoleMixin" name="RoleMixin">
+					<generalization xmi:type="uml:Generalization" xmi:id="RoleMixin_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="RoleMixin-transition" name="transition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Event" name="Event">
+					<generalization xmi:type="uml:Generalization" xmi:id="Event_Perdurant_generalization" general="Perdurant"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="HighOrder" name="HighOrder">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="HighOrder-base_Class" name="base_Class" association="Class_HighOrder">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="HighOrder-isDerived" name="isDerived">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_HighOrder" name="A_Class_HighOrder" memberEnd="extension_HighOrder HighOrder-base_Class">
+					<ownedEnd xmi:id="extension_HighOrder" name="extension_HighOrder" type="HighOrder" isComposite="true" lower="0" upper="1" memberEnd="extension_HighOrder HighOrder-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Comparative" name="Comparative">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Comparative-base_Association" name="base_Association" association="Association_Comparative">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Comparative-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Comparative-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Comparative-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Comparative-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Comparative" name="A_Association_Comparative" memberEnd="extension_Comparative Comparative-base_Association">
+					<ownedEnd xmi:id="extension_Comparative" name="extension_Comparative" type="Comparative" isComposite="true" lower="0" upper="1" memberEnd="extension_Comparative Comparative-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Structuration" name="Structuration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Structuration-base_Association" name="base_Association" association="Association_Structuration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Structuration-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Structuration-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Structuration-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Structuration-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Structuration" name="A_Association_Structuration" memberEnd="extension_Structuration Structuration-base_Association">
+					<ownedEnd xmi:id="extension_Structuration" name="extension_Structuration" type="Structuration" isComposite="true" lower="0" upper="1" memberEnd="extension_Structuration Structuration-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Domain" name="Domain">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Domain-base_DataType" name="base_DataType" association="DataType_Domain">
+						<type href="http://schema.omg.org/spec/UML/2.1/DataType"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="DataType_Domain" name="A_DataType_Domain" memberEnd="extension_Domain Domain-base_DataType">
+					<ownedEnd xmi:id="extension_Domain" name="extension_Domain" type="Domain" isComposite="true" lower="0" upper="1" memberEnd="extension_Domain Domain-base_DataType"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="MeasurementLiteral" name="MeasurementLiteral">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MeasurementLiteral-base_Attribute" name="base_Attribute" association="Attribute_MeasurementLiteral">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MeasurementLiteral-upperBound" name="upperBound">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="MeasurementLiteral-lowerBound" name="lowerBound">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_MeasurementLiteral" name="A_Attribute_MeasurementLiteral" memberEnd="extension_MeasurementLiteral MeasurementLiteral-base_Attribute">
+					<ownedEnd xmi:id="extension_MeasurementLiteral" name="extension_MeasurementLiteral" type="MeasurementLiteral" isComposite="true" lower="0" upper="1" memberEnd="extension_MeasurementLiteral MeasurementLiteral-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Category" name="Category">
+					<generalization xmi:type="uml:Generalization" xmi:id="Category_Endurant_generalization" general="Endurant"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Formal" name="Formal">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Formal-base_Association" name="base_Association" association="Association_Formal">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Formal-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Formal-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Formal-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Formal-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_Formal" name="A_Association_Formal" memberEnd="extension_Formal Formal-base_Association">
+					<ownedEnd xmi:id="extension_Formal" name="extension_Formal" type="Formal" isComposite="true" lower="0" upper="1" memberEnd="extension_Formal Formal-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Phase" name="Phase">
+					<generalization xmi:type="uml:Generalization" xmi:id="Phase_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Phase-transition" name="transition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Quantity" name="Quantity">
+					<generalization xmi:type="uml:Generalization" xmi:id="Quantity_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Quantity-existence" name="existence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="SubQuantityOf" name="SubQuantityOf">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-base_Association" name="base_Association" association="Association_SubQuantityOf">
+						<type href="http://schema.omg.org/spec/UML/2.1/Association"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-symmetry" name="symmetry">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-transitivity" name="transitivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-shareable" name="shareable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-partInseparable" name="partInseparable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-cyclicity" name="cyclicity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-partEssential" name="partEssential">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-wholeImmutable" name="wholeImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-partImmutable" name="partImmutable">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="SubQuantityOf-reflexivity" name="reflexivity">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Association_SubQuantityOf" name="A_Association_SubQuantityOf" memberEnd="extension_SubQuantityOf SubQuantityOf-base_Association">
+					<ownedEnd xmi:id="extension_SubQuantityOf" name="extension_SubQuantityOf" type="SubQuantityOf" isComposite="true" lower="0" upper="1" memberEnd="extension_SubQuantityOf SubQuantityOf-base_Association"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Kind" name="Kind">
+					<generalization xmi:type="uml:Generalization" xmi:id="Kind_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Kind-existence" name="existence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="PhaseMixin" name="PhaseMixin">
+					<generalization xmi:type="uml:Generalization" xmi:id="PhaseMixin_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="PhaseMixin-transition" name="transition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Endurant" name="Endurant" isAbstract="true">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Endurant-base_Class" name="base_Class" association="Class_Endurant">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Endurant-isDerived" name="isDerived">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_Endurant" name="A_Class_Endurant" memberEnd="extension_Endurant Endurant-base_Class">
+					<ownedEnd xmi:id="extension_Endurant" name="extension_Endurant" type="Endurant" isComposite="true" lower="0" upper="1" memberEnd="extension_Endurant Endurant-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="Collective" name="Collective">
+					<generalization xmi:type="uml:Generalization" xmi:id="Collective_Endurant_generalization" general="Endurant"/>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Collective-extensional" name="extensional">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="Collective-existence" name="existence">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_D446FE29_9979_48b4_8834_CD5EF37314A0">
+				<model package="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53" localID="309" owner="EAPK_4C837A51_AFFC_4a9e_8F49_9FEFCB992C53"/>
+				<properties name="Human" type="Logical"/>
+				<project author="joao.moreira" version="1.0" created="2016-06-29 19:46:27" modified="2016-07-07 17:39:14"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=791;DocSize.cy=1043;ShowDetails=0;Orientation=P;Zoom=113;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ProfileData=;MDGDgm=OntoUML 2.0::OntoUML;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;SaveTag=75126E21;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;hl=1;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:ARIAL,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=78;Top=609;Right=770;Bottom=845;" subject="EAID_A41C3468_5EB5_45f5_9E33_4AFA8610797A" seqno="1" style="DUID=7E562AF4;"/>
+					<element geometry="Left=602;Top=41;Right=692;Bottom=87;" subject="EAID_5146BAE1_4656_4ed4_99B2_BC06DBADEFB5" seqno="2" style="DUID=09DEABF8;HideIcon=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=501;Top=41;Right=591;Bottom=85;" subject="EAID_813CB9B8_8742_4bcb_B8B7_FA50C8BD4E07" seqno="3" style="DUID=C7F3B5A0;HideIcon=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=401;Top=41;Right=491;Bottom=86;" subject="EAID_220C8FD4_A50D_4ac3_9063_7350306B0C1A" seqno="4" style="DUID=4594D74D;HideIcon=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=304;Top=41;Right=394;Bottom=87;" subject="EAID_96391B9C_8678_403a_839D_30175B733E68" seqno="5" style="DUID=866D5A4F;HideIcon=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=75;Top=542;Right=596;Bottom=600;" subject="EAID_1D818267_8D49_4f48_83E0_5EB6CD4B998B" seqno="6" style="DUID=54E74B82;"/>
+					<element geometry="Left=659;Top=202;Right=748;Bottom=244;" subject="EAID_B2EAC696_3B55_47eb_837E_0F7EDC1E6057" seqno="7" style="DUID=62FDE880;HideIcon=0;LBL=CX=89:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=659;Top=140;Right=748;Bottom=182;" subject="EAID_F229067F_FAF5_44b7_B06E_29BF5DDA93AC" seqno="8" style="DUID=ECE11435;HideIcon=0;LBL=CX=89:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=61;Top=484;Right=482;Bottom=505;" subject="EAID_66175DD8_C706_4344_96F4_FAED01361A0C" seqno="9" style="HideIcon=1;font=Arial;fontsz=90;bold=0;italic=0;ul=0;charset=0;pitch=34;DUID=0684CF81;NSL=0;"/>
+					<element geometry="Left=22;Top=225;Right=112;Bottom=269;" subject="EAID_E8B5D615_68F8_4b61_8A3C_E358F6EA571A" seqno="10" style="HideIcon=0;DUID=FFF93AFA;NSL=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=362;Top=371;Right=452;Bottom=416;" subject="EAID_91EC1289_C31D_4377_8A0C_EF14949B92FE" seqno="11" style="HideIcon=0;DUID=FF19FF23;NSL=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=502;Top=371;Right=592;Bottom=415;" subject="EAID_C1E78E48_6F92_4b3f_98AB_5B6F96BA1A24" seqno="12" style="HideIcon=0;DUID=E4CB1465;NSL=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=505;Top=276;Right=595;Bottom=320;" subject="EAID_8A19A5B6_FBCC_4ab4_B724_F5A5E1D9C64B" seqno="13" style="HideIcon=0;DUID=E6572DCF;NSL=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=362;Top=277;Right=452;Bottom=320;" subject="EAID_BA18054F_2848_4e0d_9630_F441A0DA8D21" seqno="14" style="HideIcon=0;DUID=42A77CD3;NSL=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=174;Top=372;Right=264;Bottom=415;" subject="EAID_6C2C0235_480F_49d8_9115_CBF0A7DE3F61" seqno="15" style="HideIcon=0;DUID=FD687C54;NSL=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=167;Top=79;Right=257;Bottom=122;" subject="EAID_BDD03259_0D78_4506_AA0D_20832C7F2CFF" seqno="16" style="HideIcon=0;DUID=28071F22;NSL=0;LBL=CX=90:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="Left=433;Top=159;Right=588;Bottom=218;" subject="EAID_517DE8D5_DF7B_4b6c_BACA_1BE1A56394EE" seqno="17" style="HideIcon=0;DUID=B5A8A527;NSL=0;LBL=CX=155:CY=15:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:ALT=0:ROT=0;"/>
+					<element geometry="SX=6;SY=0;EX=0;EY=-5;EDGE=3;$LLB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=60:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=73:-398$;" subject="EAID_6C7E662C_1B39_4fcb_82F8_929A03C4EACB" style="Mode=3;EOID=FD687C54;SOID=FFF93AFA;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=-23;EY=0;EDGE=1;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=CX=63:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMT=CX=68:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LMB=CX=51:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=CX=72:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRB=CX=16:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=;" subject="EAID_28B7D688_EB86_4193_96FC_603546392A1F" style="Mode=3;EOID=28071F22;SOID=FD687C54;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=16;SY=0;EX=0;EY=4;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=235:-184$;" subject="EAID_EAC602EE_C35F_403f_858C_8D262DAF8654" style="Mode=3;EOID=B5A8A527;SOID=FD687C54;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=407:-268$510:-268$;" subject="EAID_3D17365A_DE7E_42d1_825C_0B2C0BD2E47D" style="Mode=3;EOID=B5A8A527;SOID=42A77CD3;Color=-1;LWidth=0;TREE=V;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=548:-268$510:-268$;" subject="EAID_3FFB2D74_6709_44ee_9F42_6423E4A10639" style="Mode=3;EOID=B5A8A527;SOID=E6572DCF;Color=-1;LWidth=0;TREE=V;Hidden=0;"/>
+					<element geometry="SX=-6;SY=0;EX=-1;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=541:-466$218:-466$;" subject="EAID_20910975_46EB_4dbf_891F_63BC46975C1C" style="Mode=3;EOID=FD687C54;SOID=E4CB1465;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_3F50EC26_BCE2_4c31_9F9D_32E3A9951C43" style="Mode=3;EOID=E6572DCF;SOID=E4CB1465;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=23;SY=0;EX=0;EY=4;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=235:-184$;" subject="EAID_68282DA2_30EB_4c65_8313_ED886EB87D9F" style="Mode=3;EOID=B5A8A527;SOID=28071F22;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=-1;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=407:-466$218:-466$;" subject="EAID_771DB32F_8B83_4304_8392_E8D041167EB0" style="Mode=3;EOID=FD687C54;SOID=FF19FF23;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=645:-109$510:-109$;" subject="EAID_2F7BD378_4041_45a2_AF4E_C741FF7F2B30" style="Mode=3;EOID=B5A8A527;SOID=09DEABF8;Color=-1;LWidth=0;TREE=V;Hidden=0;"/>
+					<element geometry="SX=6;SY=0;EX=0;EY=-1;EDGE=1;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=60:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;IRHS=;ILHS=;Path=73:-101$;" subject="EAID_63106539_4FF6_4509_B0BC_86AD2C2FC69E" style="Mode=3;EOID=28071F22;SOID=FFF93AFA;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=103:CY=13:OX=-53:OY=-24:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=638:-161$638:-188$;" subject="EAID_829E1F2F_3CC3_485a_BBB5_9E8F8F8235AB" style="Mode=3;EOID=B5A8A527;SOID=ECE11435;Color=-1;LWidth=0;TREE=H;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=CX=103:CY=13:OX=-58:OY=6:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=0:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=638:-223$638:-188$;" subject="EAID_273E9486_CE34_4921_84CB_054EC937C0DC" style="Mode=3;EOID=B5A8A527;SOID=62FDE880;Color=-1;LWidth=0;TREE=H;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=347:-109$510:-109$;" subject="EAID_A25ABECB_2E1C_4c4e_A0E8_91F117D62A2E" style="Mode=3;EOID=B5A8A527;SOID=866D5A4F;Color=-1;LWidth=0;TREE=V;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=445:-109$510:-109$;" subject="EAID_F41F228A_2F12_415b_9168_F500BFD714D4" style="Mode=3;EOID=B5A8A527;SOID=4594D74D;Color=-1;LWidth=0;TREE=V;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=545:-109$510:-109$;" subject="EAID_2E1E837D_E298_4f8d_8150_5CC6789F65D1" style="Mode=3;EOID=B5A8A527;SOID=C7F3B5A0;Color=-1;LWidth=0;TREE=V;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_EDB669C5_35FA_461b_B4DB_77409B78DDDB" style="Mode=3;EOID=42A77CD3;SOID=FF19FF23;Color=-1;LWidth=0;TREE=OS;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+		<EAStub xmi:id="EAID_C02D6ED8_A691_4245_9A47_F92603D8A9B9" name="Degrees" UMLType="DataType"/>
+	</xmi:Extension>
+</xmi:XMI>
