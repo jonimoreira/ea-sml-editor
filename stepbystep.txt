@@ -1,5 +1,3 @@
-ligar profa - doctoral coloquim ICRAM (particiption)
-
 1- toolbox:
 http://www.sparxsystems.com/enterprise_architect_user_guide/10/extending_uml_models/toolbox_profiles.html
 To save the Toolbox profile, right-click on the diagram and select the Save as Profile context menu option.
@@ -103,42 +101,6 @@ shape main
 	
 	
 }
-
-
-==========================================
-
-SML::AttributeLink(UML::Association)
-SML::CharacterizationLink(UML::Association)
-SML::ContextFormalLink(UML::Association)
-SML::EqualsLink(UML::Association)
-SML::InstantiationLink(UML::Association)
-SML::MediationLink(UML::Association)
-SML::OrderedComparativeLink(UML::Association)
-SML::SituationType(UMLPattern)
-
-
-SML::TypeLiteral(UML::Class)
-SML::RelatorParticipant(UML::Class)
-SML::QualityLiteral(UML::Class)
-SML::ModeReference(UML::Class)
-SML::EntityParticipant(UML::Class)
-SML::AttributeReference(UML::Class)
-
-SML::Function(UML::Class)
-
-
-reflexivity
-symmetry
-transitivity
-
-
-label middlebottomlabel
-{	
-	if(HasTag("nature")) print("«Temporal» {#TAG:nature#}");
-	else print("«Temporal»");
-}
-
-
 
 
 
