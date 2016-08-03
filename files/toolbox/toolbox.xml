@@ -11,33 +11,30 @@
 				</AppliesTo>
 				<TaggedValues>
 					<Tag name="SML::EntityParticipant(UML::Class)" type="" description="EntityParticipant, which are the object classes from the context model and represents the entities such as a person, a car, a client or a building." unit="" values="" default="Entity"/>
-					<Tag name="SML::AttributeReference(UML::Class)" type="" description="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model." unit="" values="" default="Attribute"/>
 					<Tag name="SML::RelatorParticipant(UML::Class)" type="" description="RelatorParticipant, which represents the external contexts of&#xA;the object classes, i.e. the relators. Are called participants since they provide identity to the situation type, but they are not connected to them by participation relations, in the ontological sense." unit="" values="" default="Relator"/>
 					<Tag name="SML::ModeReference(UML::Class)" type="" description="a ModeReference is a reference to a mode defined in the context model." unit="" values="" default="Mode"/>
-					<Tag name="SML::QualityLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Quality Literal"/>
+					<Tag name="SML::AttributeReference(UML::Class)" type="" description="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model." unit="" values="" default="Attribute"/>
 					<Tag name="SML::TypeLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Type Literal"/>
+					<Tag name="SML::QualityLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Quality Literal"/>
 					<Tag name="SML::AttributeLink(UML::Association)" type="" description="" unit="" values="" default="Attribute link"/>
 					<Tag name="SML::ContextFormalLink(UML::Association)" type="" description="" unit="" values="" default="Formal link"/>
-					<Tag name="SML::CharacterizationLink(UML::Association)" type="" description="" unit="" values="" default="Characterization link"/>
 					<Tag name="SML::MediationLink(UML::Association)" type="" description="" unit="" values="" default="Mediation"/>
+					<Tag name="SML::CharacterizationLink(UML::Association)" type="" description="" unit="" values="" default="Characterization link"/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="Situation Type" alias="SML - Situation Types" notes="" cx="364" cy="114" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="Situation Type" alias="SML - Situation Types" notes="" cx="364" cy="84" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="ToolboxPage">
 						<Property name="isActive" value=""/>
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="SML::SituationTypeSimple(UMLPattern)" type="" description="" unit="" values="" default="Simple"/>
-					<Tag name="SML::SituationTypeComplex(UMLPattern)" type="" description="" unit="" values="" default="Composite"/>
 					<Tag name="SML::SituationType(UML::Package)" type="" description="" unit="" values="" default="Situation Type"/>
-					<Tag name="SML::TestDiagram01(UML::Activity)" type="" description="" unit="" values="" default="TestDiagram01"/>
-					<Tag name="SML::TestDiagram02(UML::Class)" type="" description="" unit="" values="" default="TestDiagram02"/>
-					<Tag name="SML::TestDiagram03(UML::Package)" type="" description="" unit="" values="" default="TestDiagram03"/>
+					<Tag name="SML::SituationTypeComplex(UML::Package)" type="" description="&#xA;	- Equals Simple &amp;&amp;&#xA;&#xA;&#xA;	- Allows situation composition: use of situation type reference instances with status (avtivated, deactivated) and temporal relations." unit="" values="" default="Composite"/>
+					<Tag name="SML::SituationTypeSimple(UML::Package)" type="" description="Allows basic rule specification options in a situation type with:&#xA;&#xA;	- context model elements &#xA;	- comparative links&#xA;	- logic expressions&#xA;&#xA;Restrictions: &#xA;&#xA;	- disable situation type reference instances&#xA;	- disable temporal relations" unit="" values="" default="Simple"/>
 				</TaggedValues>
 			</Stereotype>
-			<Stereotype name="Comparative relation" alias="SML - Comparative relations" notes="" cx="457" cy="101" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+			<Stereotype name="Comparative relation" alias="SML - Comparative relations" notes="" cx="457" cy="114" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 				<AppliesTo>
 					<Apply type="ToolboxPage">
 						<Property name="isActive" value=""/>
@@ -45,6 +42,7 @@
 				</AppliesTo>
 				<TaggedValues>
 					<Tag name="SML::EqualsLink(UML::Association)" type="" description="" unit="" values="" default="equals (=)"/>
+					<Tag name="SML::InstanceOf(UML::Association)" type="" description="" unit="" values="" default="instance of (--&gt;)"/>
 					<Tag name="SML::OrderedComparativeLinkGreaterThan(UML::Association)" type="" description="" unit="" values="" default="greater than (&gt;)"/>
 					<Tag name="SML::OrderedComparativeLinkGreaterThanOrEqualTo(UML::Association)" type="" description="" unit="" values="" default="greater than or equal to (&gt;=)"/>
 					<Tag name="SML::OrderedComparativeLinkLessThan(UML::Association)" type="" description="" unit="" values="" default="less than (&lt;)"/>
@@ -58,19 +56,19 @@
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="SML::AllenLinkOverlaps(UML::Association)" type="" description="" unit="" values="" default="overlaps (1)"/>
-					<Tag name="SML::AllenLinkOverlappedBy(UML::Association)" type="" description="" unit="" values="" default="overlapped by (1)"/>
-					<Tag name="SML::AllenLinkBefore(UML::Association)" type="" description="" unit="" values="" default="before (2)"/>
 					<Tag name="SML::AllenLinkAfter(UML::Association)" type="" description="" unit="" values="" default="after (2)"/>
+					<Tag name="SML::AllenLinkBefore(UML::Association)" type="" description="" unit="" values="" default="before (2)"/>
+					<Tag name="SML::AllenLinkCoincides(UML::Association)" type="" description="" unit="" values="" default="coincides"/>
+					<Tag name="SML::AllenLinkDuring(UML::Association)" type="" description="" unit="" values="" default="during (4)"/>
+					<Tag name="SML::AllenLinkFinishedBy(UML::Association)" type="" description="" unit="" values="" default="finished by (6)"/>
+					<Tag name="SML::AllenLinkFinishes(UML::Association)" type="" description="" unit="" values="" default="finishes (6)"/>
+					<Tag name="SML::AllenLinkIncludes(UML::Association)" type="" description="" unit="" values="" default="includes (4)"/>
 					<Tag name="SML::AllenLinkMeets(UML::Association)" type="" description="" unit="" values="" default="meets (3)"/>
 					<Tag name="SML::AllenLinkMetBy(UML::Association)" type="" description="" unit="" values="" default="met by (3)"/>
-					<Tag name="SML::AllenLinkIncludes(UML::Association)" type="" description="" unit="" values="" default="includes (4)"/>
-					<Tag name="SML::AllenLinkDuring(UML::Association)" type="" description="" unit="" values="" default="during (4)"/>
-					<Tag name="SML::AllenLinkStarts(UML::Association)" type="" description="" unit="" values="" default="starts (5)"/>
+					<Tag name="SML::AllenLinkOverlappedBy(UML::Association)" type="" description="" unit="" values="" default="overlapped by (1)"/>
+					<Tag name="SML::AllenLinkOverlaps(UML::Association)" type="" description="" unit="" values="" default="overlaps (1)"/>
 					<Tag name="SML::AllenLinkStartedBy(UML::Association)" type="" description="" unit="" values="" default="started by (5)"/>
-					<Tag name="SML::AllenLinkFinishes(UML::Association)" type="" description="" unit="" values="" default="finishes (6)"/>
-					<Tag name="SML::AllenLinkFinishedBy(UML::Association)" type="" description="" unit="" values="" default="finished by (6)"/>
-					<Tag name="SML::AllenLinkCoincides(UML::Association)" type="" description="" unit="" values="" default="coincides"/>
+					<Tag name="SML::AllenLinkStarts(UML::Association)" type="" description="" unit="" values="" default="starts (5)"/>
 				</TaggedValues>
 			</Stereotype>
 			<Stereotype name="Functions" alias="SML - Functions" notes="" cx="311" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
@@ -80,8 +78,8 @@
 					</Apply>
 				</AppliesTo>
 				<TaggedValues>
-					<Tag name="SML::FunctionParameter(UMLPattern)" type="" description="" unit="" values="" default="Function parameter"/>
 					<Tag name="SML::Function(UMLPattern)" type="" description="" unit="" values="" default="Function"/>
+					<Tag name="SML::FunctionParameter(UMLPattern)" type="" description="" unit="" values="" default="Function parameter"/>
 				</TaggedValues>
 			</Stereotype>
 		</Stereotypes>

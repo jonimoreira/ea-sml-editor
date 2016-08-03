@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<MDG.Technology version="1.0"><Documentation id="SML" name="SML" version="2.0.2" notes="Situation Modeling Language (SML)"/><UMLProfiles><UMLProfile profiletype="uml2">
+<MDG.Technology version="1.0"><Documentation id="SML" name="SML" version="2.0.9" notes="Situation Modeling Language (SML)"/><UMLProfiles><UMLProfile profiletype="uml2">
 			<Documentation id="15E88BE3-B" name="SML" version="1.0" alias="SML 2.0" notes="Situation Modeling Language"/>
 			<Content>
 				<Stereotypes>
@@ -26,7 +26,111 @@ CQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB5l2OlVQSwUGAAAAAAEAAQA+AAAAugAAAAAA
 							<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="AttributeLink" metatype="AttributeLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="AllenLinkAfter" alias="AllenLinkBefore Alias" metatype="AllenLinkAfter" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="after"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkBefore" alias="AllenLinkBefore Alias" metatype="AllenLinkBefore" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="before"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkCoincides" alias="AllenLinkBefore Alias" metatype="AllenLinkCoincids" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="coincids"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="reflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="symetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkDuring" alias="AllenLinkBefore Alias" metatype="AllenLinkDuring" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="during"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkFinishedBy" alias="AllenLinkBefore Alias" metatype="AllenLinkFinishedBy" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="finishedBy"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkFinishes" alias="AllenLinkBefore Alias" metatype="AllenLinkFinishes" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="finishes"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkIncludes" alias="AllenLinkBefore Alias" metatype="AllenLinkIncludes" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="includes"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkMeets" alias="AllenLinkBefore Alias" metatype="AllenLinkMeets" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="meets"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkMetBy" alias="AllenLinkBefore Alias" metatype="AllenLinkMetBy" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="metBy"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkOverlappedBy" alias="AllenLinkBefore Alias" metatype="AllenLinkOverlappedBy" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="overlappedBy"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkOverlaps" alias="AllenLinkBefore Alias" metatype="AllenLinkOverlaps" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="overlaps"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkStartedBy" alias="AllenLinkBefore Alias" metatype="AllenLinkStartedBy" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="startedBy"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AllenLinkStarts" alias="AllenLinkBefore Alias" metatype="AllenLinkStarts" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="AllenLink" baseStereotypes="AllenLink">
+						<TaggedValues>
+							<Tag name="nature" type="AllenRelationType" description="" unit="" values="" default="starts"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="AttributeLink" alias="testando alias" metatype="AttributeLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Association">
 								<Property name="_lineStyle" value="orthogonalS"/>
@@ -43,7 +147,7 @@ CQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB5l2OlVQSwUGAAAAAAEAAQA+AAAAugAAAAAA
 							<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="AttributeReference" metatype="AttributeReference" notes="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+					<Stereotype name="AttributeReference" metatype="AttributeReference" notes="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ReferableElement" baseStereotypes="ReferableElement">
 						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIADgFnEgPBamJ/wAAAC4CAAAHABEAc3RyLmRhdFVUDQAHKFwhVyhcIVcoXCFX
 lZFPS8NAEMXftUK/w5JcWqhoxYNg9aTgzYPeRe2aBtoYmihIyXf3N9OQLHiSYWdnsu/Nn5dG
 G72qVlTQjqhUpalOdNDE78lwb/TC+xZEASbohpPpHWalFr8nu+6x3//ARq3BteDfYER9kEWi
@@ -84,7 +188,13 @@ zEwrXWsJ8lwXuhytFTJns2py77FhItZlqjNHDjrjDq2Zafrg2k4X7Kj2idmkwi3ZZIZan7zD
 Qye/UEsBAhcLFAAAAAgAigWcSALsDDgRAQAAagIAAAcACQAAAAAAAAAAAACAAAAAAHN0ci5k
 YXRVVAUAB/VcIVdQSwUGAAAAAAEAAQA+AAAARwEAAAAA</Image>
 					</Stereotype>
-					<Stereotype name="EqualsLink" metatype="EqualsLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation"/>
+					<Stereotype name="EqualsLink" metatype="EqualsLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation">
+						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAHygykhfbivzTwAAAGQAAAAHABEAc3RyLmRhdFVUDQAHAh1bVwIdW1cCHVtX
+y2FIZEhiSGXIYVBgyGXIZEgBwhwgP4khn6EECPOBojlwNbwMXAzVDJxgmpOhgKEIqCMPqEqD
+QYlhNYMrQyFDKVBtDsNuIF+TwRqsrpYBAFBLAQIXCxQAAAAIAHygykhfbivzTwAAAGQAAAAH
+AAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0VVQFAAcCHVtXUEsFBgAAAAABAAEAPgAAAIUAAAAA
+AA==</Image>
+					</Stereotype>
 					<Stereotype name="FormalRelation" metatype="FormalRelation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Association">
@@ -102,7 +212,7 @@ YXRVVAUAB/VcIVdQSwUGAAAAAAEAAQA+AAAARwEAAAAA</Image>
 							<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="Function" metatype="Function" notes="Formerly references to the so-called Qualitative Formal Relations, Functions are re- designed as user-defined operations on the situation type elements. Not every relation between elements in the SML model is necessarily established in the context model. Take for example the sum of two numbers. Although in the real world, given two numbers there exists a formal sum relation between them, usually the ontology designer (in our case the context-model designer) leaves out those subtleties that may not aggregate much in the description of a domain. This means establishing a modeling scope so that the model does not grow indefinitely in complexity, as technically the possibilities of talking about things are infinite. Thus, relations like sum may always be defined in the context model if wanted, but we also leave open the possibility of defining them as functions (without linking to any context model elements) in the SML model itself. It is important to mention, however, that functions must be manually implemented is some automatic process is to be used (such as simulation in Alloy). Figure 29 depicts an example of a High Body Mass Index (BMI) situation using functions.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+					<Stereotype name="Function" metatype="Function" notes="Formerly references to the so-called Qualitative Formal Relations, Functions are re- designed as user-defined operations on the situation type elements. Not every relation between elements in the SML model is necessarily established in the context model. Take for example the sum of two numbers. Although in the real world, given two numbers there exists a formal sum relation between them, usually the ontology designer (in our case the context-model designer) leaves out those subtleties that may not aggregate much in the description of a domain. This means establishing a modeling scope so that the model does not grow indefinitely in complexity, as technically the possibilities of talking about things are infinite. Thus, relations like sum may always be defined in the context model if wanted, but we also leave open the possibility of defining them as functions (without linking to any context model elements) in the SML model itself. It is important to mention, however, that functions must be manually implemented is some automatic process is to be used (such as simulation in Alloy). Figure 29 depicts an example of a High Body Mass Index (BMI) situation using functions.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ReferableElement" baseStereotypes="ReferableElement">
 						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAFQFnEhh7pjvEgEAAFwCAAAHABEAc3RyLmRhdFVUDQAHYlwhV2JcIVdiXCFX
 lZFLS8RQDIXPVsH/UNpNB0ac8S0+Nj5w52LcizrXTqFTh7YKMvS/+91waS+4kpCQNOecNLmt
 VnrVRk6J1mSlau1pV1uLOyGu9EKvolvQT3SNp3qHVasjNlSXAfv9D6zTElwH/g2G0weVI1sO
@@ -112,7 +222,29 @@ erKtCtvM77TApzZpjv6oXnLlXI8otXomFoYuqe7sdiUv6N/Fs1N0G33Z/SdYEt3Os7bgYk4f
 Xa/XL1BLAQIXCxQAAAAIAFQFnEhh7pjvEgEAAFwCAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIu
 ZGF0VVQFAAdiXCFXUEsFBgAAAAABAAEAPgAAAEgBAAAAAA==</Image>
 					</Stereotype>
+					<Stereotype name="InstanceOf" alias="testando alias" metatype="InstanceOf" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Association">
+								<Property name="_lineStyle" value="direct"/>
+								<Property name="_SourceMultiplicity" value="1"/>
+								<Property name="_TargetMultiplicity" value="1"/>
+								<Property name="direction" value="Unspecified"/>
+							</Apply>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="cyclicity" type="Ciclicity" description="" unit="" values="" default=""/>
+							<Tag name="negated" type="boolean" description="" unit="" values="true,false" default="false"/>
+							<Tag name="reflexivity" type="Reflexivity" description="" unit="" values="" default=""/>
+							<Tag name="symmetry" type="Symmetry" description="" unit="" values="" default=""/>
+							<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
+						</TaggedValues>
+					</Stereotype>
 					<Stereotype name="InstantiationLink" metatype="InstantiationLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation"/>
+					<Stereotype name="Literal" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement" strictness="profile">
+						<TaggedValues>
+							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+						</TaggedValues>
+					</Stereotype>
 					<Stereotype name="MediationLink" metatype="MediationLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="Association">
@@ -129,7 +261,7 @@ ZGF0VVQFAAdiXCFXUEsFBgAAAAABAAEAPgAAAEgBAAAAAA==</Image>
 							<Tag name="transitivity" type="Transitivity" description="" unit="" values="" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="ModeReference" metatype="ModeReference" notes="a ModeReference is a reference to a mode defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+					<Stereotype name="ModeReference" metatype="ModeReference" notes="a ModeReference is a reference to a mode defined in the context model.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="ReferableElement" baseStereotypes="ReferableElement">
 						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIABQFnEhk0IBySQEAAHIDAAAHABEAc3RyLmRhdFVUDQAHGlwhVxpcIVcaXCFX
 lVLLSsNAFD1bBf8hJJsUBK3YovjY+MCdhXYvasY0kKQlGQul5N899+Y1Nd2Uy9ybyZxzH2em
 xBKfWMPAQ8avBDnOcIqd+hNc0OawPCnoZ4yWjBAj3DmIDCtsmMMyhhjjknbexH1kqhX+IycD
@@ -141,11 +273,49 @@ KkevCn9QSwECFwsUAAAACAAUBZxIZNCAckkBAAByAwAABwAJAAAAAAAAAAAAAIAAAAAAc3Ry
 LmRhdFVUBQAHGlwhV1BLBQYAAAAAAQABAD4AAAB/AQAAAAA=</Image>
 					</Stereotype>
 					<Stereotype name="OrderedComparativeLink" metatype="OrderedComparativeLink" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="FormalRelation" baseStereotypes="FormalRelation">
+						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIACydykhtyRfYhwAAAPYAAAAHABEAc3RyLmRhdFVUDQAH0hdbV9IXW1fSF1tX
+jY5BDoIwEEXfFhPuQGCDV8CVcaEH8AIQ0TQpQqC4IZzII3g5vxOiYWd+Mp3fefNbT0lFjSeh
+wXGRvHxFS5Ba3fovE7NhIrIzEn0l56TpwFn1JpdyVxcY6bWRspUSOjmnSTDiycFyO5G90Y6H
+6JfIiUxZe44Uq6SM2dJ2y9uf3wyq/2f/tmfeUEsBAhcLFAAAAAgALJ3KSG3JF9iHAAAA9gAA
+AAcACQAAAAAAAAAAAACAAAAAAHN0ci5kYXRVVAUAB9IXW1dQSwUGAAAAAAEAAQA+AAAAvQAA
+AAAA</Image>
 						<TaggedValues>
-							<Tag name="type" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessOrEqualThan,greaterOrEqualThan" default="lessThan"/>
+							<Tag name="type" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="lessThan"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="Participant" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement" strictness="profile">
+					<Stereotype name="OrderedComparativeLinkGreaterThan" metatype="OrderedComparativeLinkGreaterThan" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
+						<TaggedValues>
+							<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="greaterThan"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="OrderedComparativeLinkGreaterThanOrEqualTo" metatype="OrderedComparativeLinkGreaterThanOrEqualTo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
+						<TaggedValues>
+							<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="greaterThanOrEqualTo"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="reflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="antisymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="OrderedComparativeLinkLessThan" metatype="OrderedComparativeLinkLessThan" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
+						<TaggedValues>
+							<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="lessThan"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="irreflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="assymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="OrderedComparativeLinkLessThanOrEqualTo" metatype="OrderedComparativeLinkLessThanOrEqualTo" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="OrderedComparativeLink" baseStereotypes="OrderedComparativeLink">
+						<TaggedValues>
+							<Tag name="nature" type="enumeration" description="" unit="" values="lessThan,greaterThan,lessThanOrEqualTo,greaterThanOrEqualTo" default="lessThanOrEqualTo"/>
+							<Tag name="reflexivity" type="enumeration" description="" unit="" values="reflexive,irreflexive,nonreflexive" default="reflexive"/>
+							<Tag name="symmetry" type="enumeration" description="" unit="" values="symmetric,assymetric,antisymmetric,nonsymmetric" default="antisymetric"/>
+							<Tag name="transitivity" type="enumeration" description="" unit="" values="transitive,intransitive,nontransitive" default="transitive"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Participant" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="ReferableElement" baseStereotypes="ReferableElement" strictness="profile">
 						<TaggedValues>
 							<Tag name="immutable" type="boolean" description="" unit="" values="true,false" default="true"/>
 							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
@@ -153,7 +323,7 @@ LmRhdFVUBQAHGlwhV1BLBQYAAAAAAQABAD4AAAB/AQAAAAA=</Image>
 							<Tag name="min" type="int" description="" unit="" values="" default="1"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="QualityLiteral" metatype="QualityLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
+					<Stereotype name="QualityLiteral" metatype="QualityLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Literal" baseStereotypes="Literal">
 						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAHgFnEjfvrVEDwEAAFACAAAHABEAc3RyLmRhdFVUDQAHoFwhV6BcIVegXCFX
 lZFNS8NAEIbfq4L/ISSXFCq2RaHgx8UPvHmod6k2jYE0luwqSMl/99kxJAueZJhhZvZ9Z3Zm
 nN611l6FEu3wKjU60bEOZo94fSFbky95SXSNpnoD38hjW6LLHvv1D2yhDTgP/hVGoS1RgbcZ
@@ -162,6 +332,11 @@ Gm1hLnSBTEHO8ZfmzaJO98ao6OioketU52AWYH45M4sTmCOrMxvURVepbUdhN/FdQlWvJ5un
 tJnCNCt0aj3mVB5/U7HfXI9UcnrGloauiO5saxW3CxcJ7JS6rT5t8xMkibYWWAdwMaeL9tbp
 B1BLAQIXCxQAAAAIAHgFnEjfvrVEDwEAAFACAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0
 VVQFAAegXCFXUEsFBgAAAAABAAEAPgAAAEUBAAAAAA==</Image>
+					</Stereotype>
+					<Stereotype name="ReferableElement" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement" strictness="profile">
+						<TaggedValues>
+							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+						</TaggedValues>
 					</Stereotype>
 					<Stereotype name="RelatorParticipant" metatype="RelatorParticipant" notes="RelatorParticipant, which represents the external contexts of&#xA;the object classes, i.e. the relators. Are called participants since they provide identity to the situation type, but they are not connected to them by participation relations, in the ontological sense." cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Participant" baseStereotypes="Participant">
 						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAKAFnEhsWEYwEgEAAFoCAAAHABEAc3RyLmRhdFVUDQAHPF0hVzxdIVc8XSFX
@@ -190,6 +365,28 @@ AAAAAIAAAAAAc3RyLmRhdFVUBQAHLQUgV1BLBQYAAAAAAQABAD4AAACzAAAAAAA=</Image>
 							<Tag name="temporality" type="enumeration" description="" unit="" values="present,past,any" default="present"/>
 						</TaggedValues>
 					</Stereotype>
+					<Stereotype name="SituationType" metatype="SituationType" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Package">
+								<Property name="_defaultDiagramType" value="SML::SML"/>
+								<Property name="_makeComposite" value="true"/>
+								<Property name="URI" value=""/>
+							</Apply>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="SituationTypeAssociation" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement" strictness="profile">
+						<TaggedValues>
+							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="SituationTypeComplex" metatype="SituationTypeComplex" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationType" baseStereotypes="SituationType">
+						<TaggedValues>
+							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default="true"/>
+						</TaggedValues>
+					</Stereotype>
 					<Stereotype name="SituationTypeElement" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" isAbstract="true" strictness="profile">
 						<AppliesTo>
 							<Apply type="Class">
@@ -200,15 +397,51 @@ AAAAAIAAAAAAc3RyLmRhdFVUBQAHLQUgV1BLBQYAAAAAAQABAD4AAACzAAAAAAA=</Image>
 							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="TypeLiteral" metatype="TypeLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationTypeElement" baseStereotypes="SituationTypeElement">
-						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAGIFnEjfvrVEDwEAAFACAAAHABEAc3RyLmRhdFVUDQAHxVwhV8VcIVfFXCFX
-lZFNS8NAEIbfq4L/ISSXFCq2RaHgx8UPvHmod6k2jYE0luwqSMl/99kxJAueZJhhZvZ9Z3Zm
-nN611l6FEu3wKjU60bEOZo94fSFbky95SXSNpnoD38hjW6LLHvv1D2yhDTgP/hVGoS1RgbcZ
-eA1vO3Ij5wzZUyX80YNtlPN6hWRyfYdCH3jfNlGmGyTVZKjwl50NfbIImfT4FXmvBzg1ckvt
-Gm1hLnSBTEHO8ZfmzaJO98ao6OioketU52AWYH45M4sTmCOrMxvURVepbUdhN/FdQlWvJ5un
-tJnCNCt0aj3mVB5/U7HfXI9UcnrGloauiO5saxW3CxcJ7JS6rT5t8xMkibYWWAdwMaeL9tbp
-B1BLAQIXCxQAAAAIAGIFnEjfvrVEDwEAAFACAAAHAAkAAAAAAAAAAAAAgAAAAABzdHIuZGF0
-VVQFAAfFXCFXUEsFBgAAAAABAAEAPgAAAEUBAAAAAA==</Image>
+					<Stereotype name="SituationTypeSimple" metatype="SituationTypeSimple" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="SituationType" baseStereotypes="SituationType">
+						<TaggedValues>
+							<Tag name="isDerived" type="boolean" description="" unit="" values="true,false" default=""/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="TestDiagram01" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Activity">
+								<Property name="_defaultDiagramType" value="Extended::Analysis"/>
+								<Property name="_makeComposite" value="true"/>
+								<Property name="isReadOnly" value="false"/>
+								<Property name="isSingleExecution" value=""/>
+								<Property name="parameterName" value=""/>
+								<Property name="postcondition" value=""/>
+								<Property name="precondition" value=""/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="TestDiagram02" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Class">
+								<Property name="_defaultDiagramType" value="UML Structural::Class"/>
+								<Property name="_makeComposite" value="true"/>
+								<Property name="isActive" value=""/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="TestDiagram03" notes="" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="Package">
+								<Property name="_defaultDiagramType" value="SML::TestDiagram03"/>
+								<Property name="_makeComposite" value="true"/>
+								<Property name="URI" value=""/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="TypeLiteral" metatype="TypeLiteral" notes="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class.&#xA;" cx="90" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0" generalizes="Literal" baseStereotypes="Literal">
+						<Image type="EAShapeScript 1.0" xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">UEsDBBQAAAAIAHqO/EiJ7RllEwEAAFICAAAHABEAc3RyLmRhdFVUDQAHMUaaVzFGmlcxRppX
+lZFLS8RAEITrquB/CMklCytuFkXFx8UH3jysd1E3xkA2LkkUZMl/9+smJAOepOmZnumq6pnu
+Vh960Va5Im2IStU60L52vu6Rfea24r4gE+kKj/UGvlbH2nC6GLDf/8DmWoPrwL/CyPXOKSda
+j7ya3Ia7iXOEbVGxN3Zga6VkL7FE7VAh1yfRj/8o0TUWazYq/GUnY50kQEYDfsV9p3s4FXaD
+doU3MDOd61RzkEud4BadsU+17pxTUrNFJdWhjkEttXBsxm5nYy1GVu+reRvMpfIuWXfCyZhq
+p0f/UeG/sv+s8LnXyFCeXlPS4VQPKLV6Yi0cXXK69b6VTM9mYuwY3UZf3vsZFgV9M9YOXMjp
+g871+gVQSwECFwsUAAAACAB6jvxIie0ZZRMBAABSAgAABwAJAAAAAAAAAAAAAIAAAAAAc3Ry
+LmRhdFVUBQAHMUaaV1BLBQYAAAAAAQABAD4AAABJAQAAAAA=</Image>
 					</Stereotype>
 				</Stereotypes>
 				<TaggedValueTypes/>
@@ -235,59 +468,86 @@ VVQFAAfFXCFXUEsFBgAAAAABAAEAPgAAAEUBAAAAAA==</Image>
 			</Content>
 		</UMLProfile>
 	</DiagramProfile><UIToolboxes><UMLProfile profiletype="uml2">
-			<Documentation id="8E12E51D-9" name="SML" version="1.0" alias="SML" notes="Situation models with OntoUML 2.0.2"/>
+			<Documentation id="8E12E51D-9" name="SML" version="1.0" alias="SML" notes="Situation models with OntoUML 2.0.9"/>
 			<Content>
 				<Stereotypes>
-					<Stereotype name="Situation Type" alias="SML 2.0.2 - Situation Type" notes="" cx="364" cy="140" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Participant" alias="SML - Participants (from OntoUML)" notes="&#xA;" cx="330" cy="166" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="ToolboxPage">
 								<Property name="isActive" value=""/>
 							</Apply>
 						</AppliesTo>
 						<TaggedValues>
-							<Tag name="SML::AllenLink(UML::Association)" type="" description="AllenLink, which represents a connection specifically&#xA;between&#xA;SituationParticipants that represents one of the Allen temporal&#xA;relations,&#xA;defined by the AllenKind enumeration." unit="" values="" default="Allen Link"/>
-							<Tag name="SML::AttributeLink(UML::Association)" type="" description="An AttributeLink is a connection between an AttributeReference and any node that represents a participant that may have an attribute. Those nodes are restricted to EntityParticipants, RelatorParticipants and ReferenceNodes that references one of the formers." unit="" values="" default="AttributeLink"/>
-							<Tag name="SML::CharacterizationLink(UML::Association)" type="" description="A CharacterizationLink represents the occurrence of a connection between a mode and its respective characterized entity (or a node representing that entity)." unit="" values="" default="Characterization Link"/>
-							<Tag name="SML::ContextFormalLink(UML::Association)" type="" description="ContextFormalLink, which is a formal relation derived from the context model and is used to connect only the respective elements connected by it in this model." unit="" values="" default="Context Formal Link"/>
-							<Tag name="SML::EqualsLink(UML::Association)" type="" description="ComparativeRelation, which represents a comparison connection between elements and are divided into: EqualsLink, which may be established between any elements and indicates whether two elements are equal; and OrderedComparativeLink, which may only be established between qualities that have a value order, such as high or temperature, and are defined by the ComparativeKind enumeration." unit="" values="" default="Equals Link"/>
-							<Tag name="SML::InstantiationLink(UML::Association)" type="" description="InstantiationLink, which represents the connection that restricts the type of a particular entity or relator participant. Is derived from the generalization relations from the context metamodel." unit="" values="" default="Instantiation Link"/>
-							<Tag name="SML::MediationLink(UML::Association)" type="" description="MediationLink represents the occurrence of an association between a relational context and an entity, e.g. the relations between Treatment and Patient and Treatment and Hospital in the situation Is Being Treated from Figure 7." unit="" values="" default="Mediation Link"/>
-							<Tag name="SML::OrderedComparativeLink(UML::Association)" type="" description="ComparativeRelation, which represents a comparison connection between elements and are divided into: EqualsLink, which may be established between any elements and indicates whether two elements are equal; and OrderedComparativeLink, which may only be established between qualities that have a value order, such as high or temperature, and are defined by the ComparativeKind enumeration." unit="" values="" default="Ordered Comparative Link"/>
-						</TaggedValues>
-					</Stereotype>
-					<Stereotype name="Participant" alias="SML 2.0.2 - Participant" notes="&#xA;" cx="304" cy="127" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
-						<AppliesTo>
-							<Apply type="ToolboxPage">
-								<Property name="isActive" value=""/>
-							</Apply>
-						</AppliesTo>
-						<TaggedValues>
-							<Tag name="SML::AttributeReference(UML::Class)" type="" description="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model." unit="" values="" default="Attribute Reference"/>
-							<Tag name="SML::EntityParticipant(UML::Class)" type="" description="EntityParticipant, which are the object classes from the context model and represents the entities such as a person, a car, a client or a building." unit="" values="" default="Entity Participant"/>
-							<Tag name="SML::ModeReference(UML::Class)" type="" description="a ModeReference is a reference to a mode defined in the context model." unit="" values="" default="Mode Reference"/>
-							<Tag name="SML::QualityLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Quality Literal"/>
-							<Tag name="SML::RelatorParticipant(UML::Class)" type="" description="RelatorParticipant, which represents the external contexts of&#xA;the object classes, i.e. the relators. Are called participants since they provide identity to the situation type, but they are not connected to them by participation relations, in the ontological sense." unit="" values="" default="Relator Participant"/>
+							<Tag name="SML::EntityParticipant(UML::Class)" type="" description="EntityParticipant, which are the object classes from the context model and represents the entities such as a person, a car, a client or a building." unit="" values="" default="Entity"/>
+							<Tag name="SML::RelatorParticipant(UML::Class)" type="" description="RelatorParticipant, which represents the external contexts of&#xA;the object classes, i.e. the relators. Are called participants since they provide identity to the situation type, but they are not connected to them by participation relations, in the ontological sense." unit="" values="" default="Relator"/>
+							<Tag name="SML::ModeReference(UML::Class)" type="" description="a ModeReference is a reference to a mode defined in the context model." unit="" values="" default="Mode"/>
+							<Tag name="SML::AttributeReference(UML::Class)" type="" description="An AttributeReference is a reference to a quality (also can be a reference to an attribute) defined in the context model." unit="" values="" default="Attribute"/>
 							<Tag name="SML::TypeLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Type Literal"/>
+							<Tag name="SML::QualityLiteral(UML::Class)" type="" description="A Literal either represents a Quality’s value (QualityLiteral, but can also represent a Datatype’s value) such as $1000.00 or 37º, or some Type (TypeLiteral) used in instantiation relations to indicate whether an entity is or is not an instance of that class." unit="" values="" default="Quality Literal"/>
+							<Tag name="SML::AttributeLink(UML::Association)" type="" description="" unit="" values="" default="Attribute link"/>
+							<Tag name="SML::ContextFormalLink(UML::Association)" type="" description="" unit="" values="" default="Formal link"/>
+							<Tag name="SML::MediationLink(UML::Association)" type="" description="" unit="" values="" default="Mediation"/>
+							<Tag name="SML::CharacterizationLink(UML::Association)" type="" description="" unit="" values="" default="Characterization link"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="Participant relation" alias="SML 2.0.2 - Participant relation" notes="" cx="207" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Situation Type" alias="SML - Situation Types" notes="" cx="364" cy="84" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="ToolboxPage">
 								<Property name="isActive" value=""/>
 							</Apply>
 						</AppliesTo>
 						<TaggedValues>
-							<Tag name="SML::Function(UML::Class)" type="" description="" unit="" values="" default="Function"/>
+							<Tag name="SML::SituationType(UML::Package)" type="" description="" unit="" values="" default="Situation Type"/>
+							<Tag name="SML::SituationTypeComplex(UML::Package)" type="" description="&#xA;	- Equals Simple &amp;&amp;&#xA;&#xA;&#xA;	- Allows situation composition: use of situation type reference instances with status (avtivated, deactivated) and temporal relations." unit="" values="" default="Composite"/>
+							<Tag name="SML::SituationTypeSimple(UML::Package)" type="" description="Allows basic rule specification options in a situation type with:&#xA;&#xA;	- context model elements &#xA;	- comparative links&#xA;	- logic expressions&#xA;&#xA;Restrictions: &#xA;&#xA;	- disable situation type reference instances&#xA;	- disable temporal relations" unit="" values="" default="Simple"/>
 						</TaggedValues>
 					</Stereotype>
-					<Stereotype name="Comparative relation" alias="SML 2.0.2 - Comparative relation" notes="" cx="284" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+					<Stereotype name="Comparative relation" alias="SML - Comparative relations" notes="" cx="457" cy="114" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
 						<AppliesTo>
 							<Apply type="ToolboxPage">
 								<Property name="isActive" value=""/>
 							</Apply>
 						</AppliesTo>
 						<TaggedValues>
-							<Tag name="SML::SituationType(UMLPattern)" type="int" description="" unit="" values="" default="Situation Type"/>
+							<Tag name="SML::EqualsLink(UML::Association)" type="" description="" unit="" values="" default="equals (=)"/>
+							<Tag name="SML::InstanceOf(UML::Association)" type="" description="" unit="" values="" default="instance of (--&gt;)"/>
+							<Tag name="SML::OrderedComparativeLinkGreaterThan(UML::Association)" type="" description="" unit="" values="" default="greater than (&gt;)"/>
+							<Tag name="SML::OrderedComparativeLinkGreaterThanOrEqualTo(UML::Association)" type="" description="" unit="" values="" default="greater than or equal to (&gt;=)"/>
+							<Tag name="SML::OrderedComparativeLinkLessThan(UML::Association)" type="" description="" unit="" values="" default="less than (&lt;)"/>
+							<Tag name="SML::OrderedComparativeLinkLessThanOrEqualTo(UML::Association)" type="" description="" unit="" values="" default="less than or eaqual to (&lt;=)"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Temporal Relation" alias="SML - Temporal relations" notes="" cx="347" cy="205" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage">
+								<Property name="isActive" value=""/>
+							</Apply>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="SML::AllenLinkAfter(UML::Association)" type="" description="" unit="" values="" default="after (2)"/>
+							<Tag name="SML::AllenLinkBefore(UML::Association)" type="" description="" unit="" values="" default="before (2)"/>
+							<Tag name="SML::AllenLinkCoincides(UML::Association)" type="" description="" unit="" values="" default="coincides"/>
+							<Tag name="SML::AllenLinkDuring(UML::Association)" type="" description="" unit="" values="" default="during (4)"/>
+							<Tag name="SML::AllenLinkFinishedBy(UML::Association)" type="" description="" unit="" values="" default="finished by (6)"/>
+							<Tag name="SML::AllenLinkFinishes(UML::Association)" type="" description="" unit="" values="" default="finishes (6)"/>
+							<Tag name="SML::AllenLinkIncludes(UML::Association)" type="" description="" unit="" values="" default="includes (4)"/>
+							<Tag name="SML::AllenLinkMeets(UML::Association)" type="" description="" unit="" values="" default="meets (3)"/>
+							<Tag name="SML::AllenLinkMetBy(UML::Association)" type="" description="" unit="" values="" default="met by (3)"/>
+							<Tag name="SML::AllenLinkOverlappedBy(UML::Association)" type="" description="" unit="" values="" default="overlapped by (1)"/>
+							<Tag name="SML::AllenLinkOverlaps(UML::Association)" type="" description="" unit="" values="" default="overlaps (1)"/>
+							<Tag name="SML::AllenLinkStartedBy(UML::Association)" type="" description="" unit="" values="" default="started by (5)"/>
+							<Tag name="SML::AllenLinkStarts(UML::Association)" type="" description="" unit="" values="" default="starts (5)"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="Functions" alias="SML - Functions" notes="" cx="311" cy="70" bgcolor="-1" fontcolor="-1" bordercolor="-1" borderwidth="-1" hideicon="0">
+						<AppliesTo>
+							<Apply type="ToolboxPage">
+								<Property name="isActive" value=""/>
+							</Apply>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="SML::Function(UMLPattern)" type="" description="" unit="" values="" default="Function"/>
+							<Tag name="SML::FunctionParameter(UMLPattern)" type="" description="" unit="" values="" default="Function parameter"/>
 						</TaggedValues>
 					</Stereotype>
 				</Stereotypes>
