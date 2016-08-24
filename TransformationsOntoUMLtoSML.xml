@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<RefData version="1.0" exporter="EA.25">
+	<DataSet name="OntoUML-&gt;SML_Transform_Template" table="t_template" filter="TemplateType='#TemplateType#' and TemplateName='#TemplateName#' and Style='#Style#'" stoplist=";TemplateID;">
+		<DataRow>
+			<Column name="TemplateID" value="{CA836735-C91A-46bd-BBB3-5F7E6308987F}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="File"/>
+			<Column name="Template" value="Package&#xA;{&#xA;  name=%qt%Participants from OntoUML package: %packageName%%qt%&#xA;  stereotype=&quot;SML&quot;&#xA;&#xA;  %list=&quot;Namespace&quot; @separator=&quot;\n\n&quot; @indent=&quot;&quot;%&#xA;	&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{7465C272-9F59-4609-AABF-08156BAD70B3}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Class"/>
+			<Column name="Template" value="%if elemType != &quot;Class&quot; and elemType != &quot;Interface&quot; and elemType != &quot;Enumeration&quot;%&#xA;%endTemplate%&#xA;&#xA;%if elemType==&quot;Class&quot; and classStereotype!=&quot;Quantity&quot;%&#xA;Class&#xA;{&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;)%&#xA;	%TRANSFORM_CURRENT(&quot;language&quot;)%&#xA;	language=&quot;SML&quot;&#xA;	%list=&quot;ClassBase&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot;%&#xA;	%list=&quot;ClassInterface&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot;%&#xA;&#xA;  name=%qt%%className%%qt%&#xA;&#xA;$COMMENT=&quot;TRANSFORM STEREOTYPE ONTOUML -&gt; SML (TABLE 1. SOBRAL THESIS)&quot;&#xA;%if classStereotype==&quot;Category&quot; or classStereotype==&quot;Collective&quot; or classStereotype==&quot;Kind&quot; or classStereotype==&quot;Mixin&quot; or classStereotype==&quot;Phase&quot; or classStereotype==&quot;Role&quot; or classStereotype==&quot;RoleMixin&quot; or classStereotype==&quot;SubKind&quot; or classStereotype==&quot;PhaseMixin&quot; %&#xA;	stereotype=&quot;EntityParticipant&quot;&#xA;%elseIf classStereotype==&quot;Mode&quot; %&#xA;	stereotype=&quot;ModeReference&quot;&#xA;%elseIf classStereotype==&quot;Relator&quot; %&#xA;	stereotype=&quot;RelatorParticipant&quot;&#xA;%elseIf classStereotype==&quot;Quality&quot; %&#xA;	stereotype=&quot;AttributeReference&quot;&#xA;%endIf%&#xA;&#xA;%list=&quot;Attribute&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot;%&#xA;}&#xA;&#xA;%list=&quot;Connector&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot;%&#xA;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{4AC5CFEE-A6C8-4ca2-A810-D91C04FCFC86}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Namespace"/>
+			<Column name="Template" value="%list=&quot;Namespace&quot; @separator=&quot;\n\n&quot; @indent=&quot;&quot;%&#xA;%list=&quot;Class&quot; @separator=&quot;\n\n&quot; @indent=&quot;&quot; elemType==&quot;Class&quot; or elemType==&quot;Enumeration&quot;%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{2711E751-4DAA-414a-BD71-A466039E23B2}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Namespace__Interface"/>
+			<Column name="Template" value="$service = %Namespace__Service%&#xA;%if $service!=&quot;&quot;%&#xA;    ExposedInterface&#xA;    {&#xA;      %TRANSFORM_REFERENCE(&quot;ExposedInterface&quot;,packageGUID)%&#xA;      name=%qt%%packageName%%qt%&#xA;      Classifier&#xA;      {&#xA;        namespace=&quot;WSDL&quot;&#xA;        name=&quot;Service&quot;&#xA;        source=%qt%%packageGUID%%qt%&#xA;      }&#xA;    }&#xA;%endIf%&#xA;%list=&quot;Namespace__Interface&quot; @separator=&quot;\n\n&quot; @indent=&quot;&quot;%&#xA;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{C723C443-48D6-40ac-AD43-ED346A2B7A5B}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Namespace__Service"/>
+			<Column name="Template" value="$interfaces = %list=&quot;Class&quot; @separator=&quot;\n\n&quot; @indent=&quot;&quot; elemType==&quot;Interface&quot;%&#xA;%if $interfaces == &quot;&quot; or packageHasGenClasses!=&quot;T&quot;%&#xA;%endTemplate%&#xA;&#xA;$interfaces&#xA;Package&#xA;{&#xA;  name=&quot;Services&quot;&#xA;  Interface&#xA;  {&#xA;  %TRANSFORM_REFERENCE(&quot;Service&quot;,packageGUID)%&#xA;    name=%qt%%packageName%%qt%&#xA;    stereotype=&quot;WSDLservice&quot;&#xA;  }&#xA;}&#xA;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{839B4C60-FD89-462b-B864-7A85A1BD33B3}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Class Base"/>
+			<Column name="Template" value="Parent&#xA;{&#xA;  name=%qt%%classBaseName%%qt%&#xA;  type=&quot;Parent&quot;&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{387C3DAC-3967-4bbf-88CE-9803C0E90E61}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Class Interface"/>
+			<Column name="Template" value="Parent&#xA;{&#xA;  name=%qt%%classBaseName%%qt%&#xA;  type=&quot;Implements&quot;&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{2EA9A02A-4BD9-4190-9DC6-48BB9A882231}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Class__Messages"/>
+			<Column name="Template" value="Package&#xA;{&#xA;  name=&quot;Messages&quot;&#xA;%list=&quot;Operation__Messages&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot;%&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{EF3F7E7C-A41C-49e8-8B4B-A41241D8CC17}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Class__Binding"/>
+			<Column name="Template" value="Package&#xA;{&#xA;  name=&quot;Bindings&quot;&#xA;  Class&#xA;  {&#xA;  %TRANSFORM_REFERENCE(&quot;Binding&quot;,classGUID)%&#xA;  %TRANSFORM_CURRENT(&quot;stereotype&quot;)%&#xA;    stereotype=&quot;WSDLbinding&quot;&#xA;%list=&quot;Operation&quot; @separator=&quot;\n&quot; @indent=&quot;    &quot;%&#xA;  }&#xA;}&#xA;Realisation&#xA;{&#xA;  %TRANSFORM_REFERENCE(&quot;BindingPortType&quot;,classGUID)%&#xA;  Source&#xA;  {&#xA;    %TRANSFORM_REFERENCE(&quot;Binding&quot;,classGUID)%&#xA;  }&#xA;  Target&#xA;  {&#xA;    %TRANSFORM_REFERENCE(&quot;PortType&quot;,classGUID)%&#xA;  }&#xA;}&#xA;Association&#xA;{&#xA;  name=%qt%%className%%qt%&#xA;  %TRANSFORM_REFERENCE(&quot;ServiceBinding&quot;,classGUID)%&#xA;  Source&#xA;  {&#xA;    %TRANSFORM_REFERENCE(&quot;Service&quot;,packageGUID)%&#xA;  }&#xA;  Target&#xA;  {&#xA;    %TRANSFORM_REFERENCE(&quot;Binding&quot;,classGUID)%&#xA;  }&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{10516A3D-8591-4313-BCDF-CD2401E99379}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Class__PortType"/>
+			<Column name="Template" value="Package&#xA;{&#xA;  name=&quot;PortTypes&quot;&#xA;  Interface&#xA;  {&#xA;  %TRANSFORM_REFERENCE(&quot;PortType&quot;,classGUID)%&#xA;  %TRANSFORM_CURRENT(&quot;stereotype&quot;)%&#xA;    stereotype=&quot;WSDLportType&quot;&#xA;%list=&quot;Operation&quot; @separator=&quot;\n&quot; @indent=&quot;    &quot;%&#xA;  }&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{7FC77A85-6EBF-4fa9-8494-AC1FB91A72C6}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Attribute"/>
+			<Column name="Template" value="%if elemType!=&quot;Class&quot; and elemType!=&quot;Enumeration&quot;%&#xA;%endTemplate%&#xA;&#xA;$COMMENT=&quot;CREATES A CLASS TO REPRESENT THE ATTRIBUTE&quot;&#xA;Class&#xA;{&#xA;	name=%qt%%attName%%qt%&#xA;	stereotype=&quot;AttributeReference&quot;&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,attGUID)%&#xA;}&#xA;&#xA;$COMMENT=&quot;CREATES THE ASSOCIATION BETWEEN THE CLASS AND THE ATTRIBUTE CREATED (AS CLASS ABOVE)&quot;&#xA;Association&#xA;{&#xA;	stereotype=%qt%SML::AttributeLink%qt%&#xA;	  &#xA;	Source&#xA;	{&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,classGUID)%&#xA;	&#xA;	}&#xA;	Target&#xA;	{&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,attGUID)%&#xA;	&#xA;	}&#xA;}	&#xA;&#xA;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{9A82EEF4-3F4F-48bc-97F0-CD83CEFCE584}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Operation"/>
+			<Column name="Template" value="Operation&#xA;{&#xA;%TRANSFORM_CURRENT(&quot;type&quot;)%&#xA;  Parameter&#xA;  {&#xA;    name=%qt%%opName%RequestRequest%qt%&#xA;    type=%qt%%opName%Request%qt%&#xA;    kind=&quot;in&quot;&#xA;  }&#xA;$return = %Operation__Response%&#xA;%if $return!=&quot;&quot;%&#xA;  Parameter&#xA;  {&#xA;    name=%qt%%opName%RequestResponse%qt%&#xA;    type=%qt%%opName%Response%qt%&#xA;    kind=&quot;out&quot;&#xA;  }&#xA;%endIf%&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{56E1C65A-AB1E-453b-A388-3CE074467760}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Operation__Response"/>
+			<Column name="Template" value="$parts=%list=&quot;Parameter__MessagePart&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot; paramKind==&quot;out&quot; or paramKind==&quot;return&quot;%&#xA;%if opReturnType!=&quot;&quot; and opReturnType!=&quot;void&quot;%&#xA;$returns = &quot;T&quot;&#xA;%endIf%&#xA;&#xA;%if $parts==&quot;&quot; and $returns!=&quot;T&quot;%&#xA;%endTemplate%&#xA;&#xA;Class&#xA;{&#xA;%TRANSFORM_REFERENCE(&quot;ReturnMessage&quot;,opGUID)%&#xA;  name=%qt%%opName%Response%qt%&#xA;  stereotype=&quot;WSDLmessage&quot;&#xA;%if opReturnType!=&quot;&quot; and opReturnType!=&quot;void&quot;%&#xA;  Attribute&#xA;  {&#xA;    name=&quot;return&quot;&#xA;    type=%qt%%opReturnType%%qt%&#xA;  }&#xA;%endIf%&#xA;$parts&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{E6FED34F-B53A-4452-8334-8372AAB0776C}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Operation__Messages"/>
+			<Column name="Template" value="%Operation__Request%&#xA;%Operation__Response%"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{93C6A759-C957-4751-B4A5-E50E1277E900}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Operation__Request"/>
+			<Column name="Template" value="Class&#xA;{&#xA;%TRANSFORM_REFERENCE(&quot;ParamsMessage&quot;,opGUID)%&#xA;  name=%qt%%opName%Request%qt%&#xA;  stereotype=&quot;WSDLmessage&quot;&#xA;%list=&quot;Parameter__MessagePart&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot; paramKind==&quot;in&quot;%&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{06B275E3-DBB2-4759-964A-11A5E1855027}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Parameter"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{A87A4E89-D004-45e7-932E-1040451798B4}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Parameter__MessagePart"/>
+			<Column name="Template" value="%if paramType==&quot;&quot; or paramType==&quot;void&quot;%&#xA;%endTemplate%&#xA;&#xA;Attribute&#xA;{&#xA;  name=%qt%%paramName%%qt%&#xA;  type=%qt%%paramType%%qt%&#xA;  notes=%qt%%paramNotes%%qt%&#xA;}"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{E87AACAA-DC74-44f9-8169-344414EF92C1}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Attribute__Generalization"/>
+			<Column name="Template" value="&#xA;$COMMENT=&quot;CREATES A CLASS TO REPRESENT THE ATTRIBUTE&quot;&#xA;Class&#xA;{&#xA;	name=%qt%%attName%_%elemType%_%connectorSourceElemName%_%connectorDestElemName%%qt%&#xA;	stereotype=&quot;AttributeReference&quot;&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,connectorGUID)%&#xA;}&#xA;&#xA;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{A41A60B1-0502-4c8b-A875-3C5C382A29E1}"/>
+			<Column name="TemplateType" value="OntoUML-&gt;SML_Transform_Template"/>
+			<Column name="TemplateName" value="Connector"/>
+			<Column name="Template" value="%if connectorStereotype!=&quot;Characterization&quot; and connectorStereotype!=&quot;Mediation&quot; and connectorStereotype!=&quot;Formal&quot; and connectorType!=&quot;Generalization&quot; %&#xA;%endTemplate%&#xA;&#xA;$COMMENT=&quot;IF GENERALIZATION, ADD ATTRIBUTES OF THE PARENT TO THE CHILD&quot;&#xA;%if connectorType==&quot;Generalization&quot; %&#xA;&#xA;Class&#xA;{&#xA;	name=%qt%%elemType%_%connectorSourceElemName%_%connectorDestElemName%%qt%&#xA;	stereotype=&quot;AttributeReference&quot;&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,connectorGUID)%&#xA;}&#xA;&#xA;%list=&quot;Attribute__Generalization&quot; @separator=&quot;\n&quot; @indent=&quot;  &quot;%&#xA;&#xA;%else%&#xA;&#xA;$COMMENT=&quot;CREATES THE CONNECTOR (ASSOCIATION OR GENERALIZATION)&quot;&#xA;%connectorType%&#xA;%PI=&quot;\n  &quot;%&#xA;{&#xA;	%TRANSFORM_REFERENCE(&quot;Connector&quot;,connectorGUID)%&#xA;	name = %qt%%connectorType%_%connectorStereotype%%qt%&#xA;	&#xA;	%if connectorStereotype==&quot;Characterization&quot;%&#xA;	stereotype=%qt%SML::CharacterizationLink%qt%&#xA;	%elseIf connectorStereotype==&quot;Mediation&quot;%&#xA;	stereotype=%qt%SML::MediationLink%qt%&#xA;	%elseIf connectorStereotype==&quot;Formal&quot;%&#xA;	stereotype=%qt%SML::ContextFormalLink%qt%&#xA;	%endIf%&#xA;	&#xA;	%if connectorIsAssociationClass==&quot;T&quot;%	&#xA;	AssociationClass&#xA;	{&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,connectorAssociationClassElemGUID)%&#xA;	}&#xA;	%endIf%&#xA;	&#xA;	Source&#xA;	{&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,connectorSourceElemGUID)%&#xA;	  access=%qt%%connectorSourceAccess == &quot;Public&quot; ? &quot;Private&quot; : value%%qt%&#xA;	%TRANSFORM_CURRENT(&quot;Source&quot;,&quot;access&quot;)%&#xA;	}&#xA;	Target&#xA;	{&#xA;	%TRANSFORM_REFERENCE(&quot;Class&quot;,connectorDestElemGUID)%&#xA;	  access=%qt%%connectorDestAccess == &quot;Public&quot; ? &quot;Private&quot; : value%%qt%&#xA;	%TRANSFORM_CURRENT(&quot;Target&quot;,&quot;access&quot;)%&#xA;	%PI=&quot;\n&quot;%&#xA;	}&#xA;}&#xA;&#xA;%endIf%&#xA;"/>
+		</DataRow>
+	</DataSet>
+</RefData>
